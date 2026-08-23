@@ -1258,6 +1258,14 @@ details.guide-rank[open] .guide-rank-chevron {
     background: linear-gradient(90deg, #d18a54 0%, #a86230 100%);
 }
 
+.guide-priority-num {
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 800;
+    color: #d98c1f;
+    margin-right: 0.15rem;
+}
+
 .guide-flow-arrow {
     color: #d98c1f;
     font-weight: 800;
