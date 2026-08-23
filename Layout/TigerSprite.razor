@@ -1,0 +1,40 @@
+@implements IDisposable
+
+<div class="tiger-sprite">
+    <img src="images/tiger/tiger-@(_frameIndex + 1).png" alt="トラのマスコット" />
+</div>
+
+@code {
+    private static readonly int[] FrameDurationsMs = [350, 350, 350, 550, 550];
+
+    private int _frameIndex;
+    private CancellationTokenSource? _cts;
+
+    protected override void OnInitialized()
+    {
+        _cts = new CancellationTokenSource();
+        _ = RunAnimationAsync(_cts.Token);
+    }
+
+    private async Task RunAnimationAsync(CancellationToken token)
+    {
+        try
+        {
+            while (!token.IsCancellationRequested)
+            {
+                await Task.Delay(FrameDurationsMs[_frameIndex], token);
+                _frameIndex = (_frameIndex + 1) % FrameDurationsMs.Length;
+                StateHasChanged();
+            }
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    public void Dispose()
+    {
+        _cts?.Cancel();
+        _cts?.Dispose();
+    }
+}

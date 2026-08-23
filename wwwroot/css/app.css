@@ -190,16 +190,120 @@ code {
     }
 
 .hero-banner {
+    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 5;
-    border: 2px dashed #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    background: #fafafa;
+    min-height: 220px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fff6e5 0%, #fdecc8 100%);
+    border-radius: 8px;
     margin-bottom: 1.5rem;
     box-sizing: border-box;
+}
+
+.hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 100%;
+    min-height: 220px;
+    padding: 1rem;
+}
+
+.hero-title {
+    margin: 0;
+    color: #a35d00;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.tiger-sprite-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tiger-shadow {
+    width: 70px;
+    height: 12px;
+    margin-top: -6px;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.tiger-sprite {
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+    .tiger-sprite img {
+        height: 100%;
+        width: auto;
+        image-rendering: pixelated;
+    }
+
+.sparkle {
+    position: absolute;
+    color: #ffb703;
+    font-size: 1.5rem;
+    animation: sparkle-twinkle 2.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.s1 {
+    top: 16%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.s2 {
+    top: 24%;
+    right: 14%;
+    font-size: 1.1rem;
+    animation-delay: 0.5s;
+}
+
+.s3 {
+    bottom: 20%;
+    left: 20%;
+    font-size: 1rem;
+    animation-delay: 1s;
+}
+
+.s4 {
+    bottom: 28%;
+    right: 22%;
+    font-size: 1.3rem;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkle-twinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
 }
 
 .site-layout {
