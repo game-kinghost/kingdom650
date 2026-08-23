@@ -184,10 +184,18 @@ code {
         color: #fff;
         text-decoration: none;
         font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.15s ease;
     }
 
         .site-nav-links a:hover {
-            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .site-nav-links a.active {
+            background-color: #fff;
+            color: #d98c1f;
         }
 
 .site-search {
@@ -633,17 +641,34 @@ code {
     }
 
         .widget-box ul li {
-            padding: 0.3rem 0;
+            padding: 0.3rem 0.5rem;
+            margin: 0 -0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.15s ease;
         }
 
+            .widget-box ul li:hover {
+                background-color: #fdecc8;
+            }
+
             .widget-box ul li a {
+                display: block;
                 color: #333;
                 text-decoration: none;
             }
 
                 .widget-box ul li a:hover {
-                    text-decoration: underline;
+                    color: #a35d00;
                 }
+
+                .widget-box ul li a.active {
+                    color: #a35d00;
+                    font-weight: 700;
+                }
+
+            .widget-box ul li:has(a.active) {
+                background-color: #fdecc8;
+            }
 
 .newsletter-grid {
     display: grid;
@@ -814,6 +839,18 @@ code {
         font-weight: 700;
         background: #fdecc8 !important;
     }
+
+    .guide-table-link {
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px dashed #d98c1f;
+    }
+
+        .guide-table-link:hover {
+            color: #a35d00;
+            border-bottom-style: solid;
+        }
 
 .guide-tag {
     display: inline-block;
