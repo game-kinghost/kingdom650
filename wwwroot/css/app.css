@@ -283,14 +283,20 @@ code {
 }
 
 .firework {
-    position: relative;
+    position: absolute;
+    top: 50%;
     width: 90px;
     height: 90px;
-    flex-shrink: 0;
+    margin-top: -45px;
+    pointer-events: none;
 }
 
-.firework-right .spark {
-    animation-delay: 1.5s;
+.firework-left {
+    left: 6%;
+}
+
+.firework-right {
+    right: 6%;
 }
 
 .spark {
