@@ -1,0 +1,64 @@
+@implements IDisposable
+
+<div class="mascot-sprite">
+    <img src="@_frames[_frameIndex].Src" alt="マスコット" />
+</div>
+
+@code {
+    private readonly record struct Frame(string Src, int DurationMs);
+
+    private static readonly Frame[] _frames =
+    [
+        new("images/tiger/tiger-1.png", 350),
+        new("images/tiger/tiger-2.png", 350),
+        new("images/tiger/tiger-3.png", 350),
+        new("images/tiger/tiger-4.png", 550),
+        new("images/tiger/tiger-5.png", 550),
+
+        new("images/mouse/mouse-1.png", 350),
+        new("images/mouse/mouse-2.png", 350),
+        new("images/mouse/mouse-3.png", 350),
+        new("images/mouse/mouse-4.png", 550),
+        new("images/mouse/mouse-5.png", 550),
+
+        new("images/crown/crown-1.png", 400),
+        new("images/crown/crown-2.png", 150),
+        new("images/crown/crown-3.png", 150),
+        new("images/crown/crown-4.png", 150),
+        new("images/crown/crown-5.png", 150),
+        new("images/crown/crown-6.png", 150),
+        new("images/crown/crown-7.png", 150),
+        new("images/crown/crown-11.png", 500),
+    ];
+
+    private int _frameIndex;
+    private CancellationTokenSource? _cts;
+
+    protected override void OnInitialized()
+    {
+        _cts = new CancellationTokenSource();
+        _ = RunAnimationAsync(_cts.Token);
+    }
+
+    private async Task RunAnimationAsync(CancellationToken token)
+    {
+        try
+        {
+            while (!token.IsCancellationRequested)
+            {
+                await Task.Delay(_frames[_frameIndex].DurationMs, token);
+                _frameIndex = (_frameIndex + 1) % _frames.Length;
+                StateHasChanged();
+            }
+        }
+        catch (OperationCanceledException)
+        {
+        }
+    }
+
+    public void Dispose()
+    {
+        _cts?.Cancel();
+        _cts?.Dispose();
+    }
+}

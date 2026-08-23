@@ -233,7 +233,13 @@ code {
     width: 100%;
     min-height: 220px;
     overflow: hidden;
-    background: linear-gradient(180deg, #fff6e5 0%, #fdecc8 100%);
+    background-color: #fdecc8;
+    background-image:
+        linear-gradient(45deg, rgba(163, 93, 0, 0.07) 25%, transparent 25%, transparent 75%, rgba(163, 93, 0, 0.07) 75%, rgba(163, 93, 0, 0.07)),
+        linear-gradient(45deg, rgba(163, 93, 0, 0.07) 25%, transparent 25%, transparent 75%, rgba(163, 93, 0, 0.07) 75%, rgba(163, 93, 0, 0.07)),
+        linear-gradient(180deg, #fff6e5 0%, #fdecc8 100%);
+    background-size: 22px 22px, 22px 22px, 100% 100%;
+    background-position: 0 0, 11px 11px, 0 0;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     box-sizing: border-box;
@@ -295,7 +301,7 @@ code {
     padding: 1rem;
 }
 
-.tiger-sprite-wrap {
+.mascot-sprite-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -304,119 +310,130 @@ code {
 .firework {
     position: absolute;
     top: 50%;
-    width: 90px;
-    height: 90px;
-    margin-top: -45px;
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
     pointer-events: none;
 }
 
 .firework-left {
-    left: 6%;
+    left: 2%;
 }
 
 .firework-right {
-    right: 6%;
+    right: 2%;
 }
 
 .spark {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 7px;
-    height: 7px;
-    margin: -3.5px 0 0 -3.5px;
+    width: 13px;
+    height: 13px;
+    margin: -6.5px 0 0 -6.5px;
     border-radius: 50%;
     opacity: 0;
-    animation: spark-burst 3s ease-out infinite;
+    box-shadow: 0 0 10px 2px currentColor;
+    animation: spark-burst 2.2s ease-out infinite;
 }
 
     .spark:nth-child(1) {
-        --tx: 45px;
+        --tx: 65px;
         --ty: 0px;
         background: #ff6b6b;
+        color: #ff6b6b;
     }
 
     .spark:nth-child(2) {
-        --tx: 22.5px;
-        --ty: 39px;
+        --tx: 32.5px;
+        --ty: 56px;
         background: #ffd166;
-        animation-delay: 0.08s;
+        color: #ffd166;
+        animation-delay: 0.07s;
     }
 
     .spark:nth-child(3) {
-        --tx: -22.5px;
-        --ty: 39px;
+        --tx: -32.5px;
+        --ty: 56px;
         background: #06d6a0;
-        animation-delay: 0.16s;
+        color: #06d6a0;
+        animation-delay: 0.14s;
     }
 
     .spark:nth-child(4) {
-        --tx: -45px;
+        --tx: -65px;
         --ty: 0px;
         background: #4cc9f0;
-        animation-delay: 0.24s;
+        color: #4cc9f0;
+        animation-delay: 0.21s;
     }
 
     .spark:nth-child(5) {
-        --tx: -22.5px;
-        --ty: -39px;
+        --tx: -32.5px;
+        --ty: -56px;
         background: #f72585;
-        animation-delay: 0.32s;
+        color: #f72585;
+        animation-delay: 0.28s;
     }
 
     .spark:nth-child(6) {
-        --tx: 22.5px;
-        --ty: -39px;
+        --tx: 32.5px;
+        --ty: -56px;
         background: #ffb703;
-        animation-delay: 0.4s;
+        color: #ffb703;
+        animation-delay: 0.35s;
     }
 
 .firework-right .spark:nth-child(1) {
-    animation-delay: 1.5s;
+    animation-delay: 1.1s;
 }
 
 .firework-right .spark:nth-child(2) {
-    animation-delay: 1.58s;
+    animation-delay: 1.17s;
 }
 
 .firework-right .spark:nth-child(3) {
-    animation-delay: 1.66s;
+    animation-delay: 1.24s;
 }
 
 .firework-right .spark:nth-child(4) {
-    animation-delay: 1.74s;
+    animation-delay: 1.31s;
 }
 
 .firework-right .spark:nth-child(5) {
-    animation-delay: 1.82s;
+    animation-delay: 1.38s;
 }
 
 .firework-right .spark:nth-child(6) {
-    animation-delay: 1.9s;
+    animation-delay: 1.45s;
 }
 
 @keyframes spark-burst {
     0% {
-        transform: translate(0, 0) scale(0);
+        transform: translate(0, 0) scale(0.3);
         opacity: 0;
     }
 
-    6% {
+    10% {
         opacity: 1;
     }
 
-    45% {
-        transform: translate(var(--tx), var(--ty)) scale(1);
+    55% {
+        transform: translate(var(--tx), var(--ty)) scale(1.1);
+        opacity: 0.9;
+    }
+
+    75% {
         opacity: 0;
     }
 
     100% {
-        transform: translate(var(--tx), var(--ty)) scale(1);
+        transform: translate(var(--tx), var(--ty)) scale(1.1);
         opacity: 0;
     }
 }
 
-.tiger-shadow {
+.mascot-shadow {
     width: 70px;
     height: 12px;
     margin-top: -6px;
@@ -425,14 +442,14 @@ code {
     filter: blur(2px);
 }
 
-.tiger-sprite {
+.mascot-sprite {
     height: 180px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-    .tiger-sprite img {
+    .mascot-sprite img {
         height: 100%;
         width: auto;
         image-rendering: pixelated;
