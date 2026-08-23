@@ -2,18 +2,64 @@
 
 <RadzenComponents />
 
-<RadzenLayout>
-    <RadzenHeader>
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-2">
-            <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">Kingshot 攻略ガイド</RadzenText>
-        </RadzenStack>
-    </RadzenHeader>
-    <RadzenSidebar>
-        <NavMenu />
-    </RadzenSidebar>
-    <RadzenBody>
-        <div class="page-content">
-            @Body
+<header class="site-header">
+    <div class="site-header-top">
+        <div class="site-brand">
+            <div class="site-logo">K</div>
+            <div class="site-brand-text">
+                <h1>Kingshot 650王国</h1>
+                <p>650王国の非公式紹介サイト</p>
+            </div>
         </div>
-    </RadzenBody>
-</RadzenLayout>
+    </div>
+    <div class="site-nav">
+        <div class="site-nav-inner">
+            <NavMenu />
+            <div class="site-search">
+                <input type="search" placeholder="サイト内検索(準備中)" aria-label="サイト内検索" disabled />
+                <button type="button" aria-label="検索" disabled>🔍</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-content">
+    <div class="site-layout">
+        <main class="site-main">
+            @Body
+        </main>
+        <aside class="site-aside">
+            <div class="widget-box">
+                <h4>Social</h4>
+                <div class="widget-body">
+                    <p>公式X・Discordなどのリンクをここに掲載予定です。</p>
+                </div>
+            </div>
+            <div class="widget-box">
+                <h4>Navigate</h4>
+                <div class="widget-body">
+                    <ul>
+                        <li><NavLink href="/" Match="NavLinkMatch.All">トップ</NavLink></li>
+                        <li><NavLink href="/events">イベント</NavLink></li>
+                        <li><NavLink href="/bear">熊</NavLink></li>
+                        <li><NavLink href="/alliance">同盟</NavLink></li>
+                        <li><NavLink href="/strategy">攻略ガイド</NavLink></li>
+                        <li><NavLink href="/videos">動画</NavLink></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="site-footer-links">
+        <NavLink href="/" Match="NavLinkMatch.All">トップ</NavLink>
+        <NavLink href="/events">イベント</NavLink>
+        <NavLink href="/bear">熊</NavLink>
+        <NavLink href="/alliance">同盟</NavLink>
+        <NavLink href="/strategy">攻略ガイド</NavLink>
+        <NavLink href="/videos">動画</NavLink>
+    </div>
+    <p>Copyright Kingshot 650王国紹介サイト. 本サイトは非公式のファンサイトです。</p>
+</footer>
