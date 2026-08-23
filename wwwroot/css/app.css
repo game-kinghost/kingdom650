@@ -456,7 +456,8 @@ code {
     }
 
     .mascot-sprite img.mascot-crown {
-        height: 60%;
+        height: 80%;
+        align-self: center;
     }
 
 .sparkle {
