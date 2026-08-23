@@ -211,7 +211,8 @@ code {
     border-radius: 6px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     padding: 0.4rem 0;
-    min-width: 120px;
+    min-width: 160px;
+    width: max-content;
     z-index: 20;
 }
 
@@ -220,6 +221,7 @@ code {
         color: #333 !important;
         padding: 0.5rem 1rem;
         border-radius: 0;
+        white-space: nowrap;
     }
 
         .nav-submenu a:hover {
