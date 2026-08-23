@@ -947,7 +947,11 @@ code {
 
     .guide-bar-row .guide-tag {
         flex-shrink: 0;
+        width: 108px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: center;
     }
 
     a.guide-bar-row:hover {
@@ -1040,7 +1044,9 @@ code {
 
 .guide-rank-icon {
     flex-shrink: 0;
+    width: 1.8rem;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .guide-rank-chevron {
