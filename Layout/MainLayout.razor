@@ -14,14 +14,27 @@
     </div>
     <div class="site-nav">
         <div class="site-nav-inner">
-            <NavMenu />
-            <div class="site-search">
-                <input type="search" placeholder="サイト内検索(準備中)" aria-label="サイト内検索" disabled />
-                <button type="button" aria-label="検索" disabled>🔍</button>
+            <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="@navOpen" @onclick="ToggleNav">
+                <span class="nav-toggle-icon">☰</span>
+            </button>
+            <div class="site-nav-collapsible @(navOpen ? "nav-open" : "")">
+                <NavMenu OnNavigate="CloseNav" />
+                <div class="site-search">
+                    <input type="search" placeholder="サイト内検索(準備中)" aria-label="サイト内検索" disabled />
+                    <button type="button" aria-label="検索" disabled>🔍</button>
+                </div>
             </div>
         </div>
     </div>
 </header>
+
+@code {
+    private bool navOpen;
+
+    private void ToggleNav() => navOpen = !navOpen;
+
+    private void CloseNav() => navOpen = false;
+}
 
 <div class="page-content">
     <div class="site-layout">

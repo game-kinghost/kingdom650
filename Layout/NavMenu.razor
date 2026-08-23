@@ -1,4 +1,4 @@
-<nav class="site-nav-links" aria-label="メインナビゲーション">
+<nav class="site-nav-links" aria-label="メインナビゲーション" @onclick="HandleClick">
     <NavLink href="/" Match="NavLinkMatch.All">トップ</NavLink>
     <NavLink href="/events">イベント</NavLink>
     <NavLink href="/bear">熊</NavLink>
@@ -6,3 +6,10 @@
     <NavLink href="/strategy">攻略ガイド</NavLink>
     <NavLink href="/videos">動画</NavLink>
 </nav>
+
+@code {
+    [Parameter]
+    public EventCallback OnNavigate { get; set; }
+
+    private Task HandleClick() => OnNavigate.HasDelegate ? OnNavigate.InvokeAsync() : Task.CompletedTask;
+}
