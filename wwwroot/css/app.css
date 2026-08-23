@@ -656,8 +656,9 @@ code {
 
 .widget-box {
     border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(163, 93, 0, 0.06);
 }
 
     .widget-box h4 {
@@ -665,6 +666,29 @@ code {
         background: #f0f0f0;
         padding: 0.5rem 0.75rem;
         font-size: 0.9rem;
+    }
+
+.widget-box-nav {
+    border-color: #f0d9b5;
+}
+
+    .widget-box-nav h4 {
+        background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+        color: #fff;
+        font-weight: 700;
+        padding: 0.65rem 0.9rem;
+        letter-spacing: 0.02em;
+    }
+
+    .widget-box-nav .widget-body {
+        padding: 0.5rem;
+    }
+
+    .widget-nav-icon {
+        display: inline-block;
+        width: 1.4rem;
+        text-align: center;
+        margin-right: 0.35rem;
     }
 
     .widget-box .widget-body {
@@ -681,7 +705,8 @@ code {
             padding: 0.3rem 0.5rem;
             margin: 0 -0.5rem;
             border-radius: 4px;
-            transition: background-color 0.15s ease;
+            border-left: 3px solid transparent;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
         }
 
             .widget-box ul li:hover {
@@ -710,6 +735,7 @@ code {
 
             .widget-box ul li:has(a.active) {
                 background-color: #fdecc8;
+                border-left-color: #d98c1f;
             }
 
 .newsletter-grid {
