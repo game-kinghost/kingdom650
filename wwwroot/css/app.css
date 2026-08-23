@@ -198,6 +198,43 @@ code {
             color: #d98c1f;
         }
 
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    padding: 0.4rem 0;
+    min-width: 120px;
+    z-index: 20;
+}
+
+    .nav-submenu a {
+        display: block;
+        color: #333 !important;
+        padding: 0.5rem 1rem;
+        border-radius: 0;
+    }
+
+        .nav-submenu a:hover {
+            background-color: #fdecc8 !important;
+        }
+
+        .nav-submenu a.active {
+            background-color: #fdecc8 !important;
+            color: #a35d00 !important;
+        }
+
+.nav-item-dropdown:hover .nav-submenu {
+    display: block;
+}
+
 .site-search {
     display: flex;
 }
@@ -651,6 +688,11 @@ code {
                 background-color: #fdf6ea;
             }
 
+            .widget-box ul li.widget-submenu-item {
+                padding-left: 1.5rem;
+                font-size: 0.9rem;
+            }
+
             .widget-box ul li a {
                 display: block;
                 color: #333;
@@ -766,6 +808,20 @@ code {
         width: 100%;
     }
 
+    .nav-submenu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: none;
+        padding: 0 0 0 1.2rem;
+        margin-top: 0.3rem;
+    }
+
+        .nav-submenu a {
+            color: #fff !important;
+            padding: 0.3rem 0.5rem;
+        }
+
     .site-search {
         width: 100%;
     }
@@ -880,7 +936,7 @@ code {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0.55rem 0.75rem;
     border-radius: 8px;
     text-decoration: none;
@@ -888,6 +944,11 @@ code {
     background: #fdf6ea;
     border: 1px solid #f5e6c8;
 }
+
+    .guide-bar-row .guide-tag {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
 
     a.guide-bar-row:hover {
         background: #fdecc8;
@@ -1091,5 +1152,9 @@ details.guide-rank[open] .guide-rank-chevron {
 
     .guide-bar-track {
         flex-basis: 60px;
+    }
+
+    .guide-bar-row .guide-tag {
+        display: none;
     }
 }

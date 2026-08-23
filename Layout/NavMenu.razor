@@ -1,8 +1,12 @@
 <nav class="site-nav-links" aria-label="メインナビゲーション" @onclick="HandleClick">
     <NavLink href="" Match="NavLinkMatch.All">トップ</NavLink>
-    <NavLink href="events">イベント</NavLink>
-    <NavLink href="bear">熊</NavLink>
     <NavLink href="alliance">同盟</NavLink>
+    <div class="nav-item-dropdown">
+        <NavLink href="events">イベント</NavLink>
+        <div class="nav-submenu">
+            <NavLink href="bear">熊</NavLink>
+        </div>
+    </div>
     <NavLink href="strategy">育成順位</NavLink>
     <NavLink href="videos">動画</NavLink>
 </nav>
