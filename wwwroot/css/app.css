@@ -1051,12 +1051,6 @@ code {
     overflow: hidden;
 }
 
-.guide-anchor-section {
-    scroll-margin-top: 1rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #eee;
-}
 
 .guide-rank-header {
     display: flex;
@@ -1147,8 +1141,25 @@ details.guide-rank[open] .guide-rank-chevron {
 }
 
 .guide-checklist {
-    list-style: "✅ ";
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0;
 }
+
+    .guide-checklist li {
+        background: #eef7f0;
+        border: 1px solid #cdead4;
+        border-radius: 8px;
+        padding: 0.5rem 0.9rem;
+        color: #1f7a3d;
+        font-weight: 600;
+    }
+
+        .guide-checklist li::before {
+            content: "✅ ";
+        }
 
 .guide-callout {
     margin-top: 0.9rem;

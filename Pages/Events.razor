@@ -9,8 +9,16 @@
     ここに各イベントの情報・攻略を記載します。
 </RadzenText>
 
-<div id="bear" class="guide-anchor-section">
-    <RadzenText TextStyle="TextStyle.H3">🐻 熊狩り攻略</RadzenText>
+<details id="bear" class="guide-rank">
+    <summary class="guide-rank-header">
+        <span class="guide-rank-icon">🐻</span>
+        <div>
+            <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">熊狩り攻略</RadzenText>
+            <span class="guide-rank-percent">同盟集結イベント</span>
+        </div>
+        <span class="guide-rank-chevron">▾</span>
+    </summary>
+    <div class="guide-rank-body">
     <RadzenText TextStyle="TextStyle.Body1">
         熊狩りは、同盟メンバーと集結して熊にダメージを与え、個人・同盟の合計ダメージに応じて報酬を獲得するイベントです。
     </RadzenText>
@@ -94,7 +102,8 @@
         <li>プリセットを作っておく — 「1：10：89」など熊専用編成を保存しておくと、集結参加がスムーズになります。</li>
         <li>戦報で比較する — 比率を少しずつ変更し、同じ集結主・近い条件でダメージを比較すると、自分に合った編成を見つけやすくなります。</li>
     </ol>
-</div>
+    </div>
+</details>
 
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
