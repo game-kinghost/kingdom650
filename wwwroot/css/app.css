@@ -203,6 +203,9 @@ code {
         color: #fff;
         font-family: 'Mochiy Pop One', sans-serif;
         letter-spacing: 0.03em;
+        font-size: clamp(1.05rem, 5vw, 1.75rem);
+        word-break: keep-all;
+        overflow-wrap: normal;
     }
 
 .hero-banner {
@@ -276,6 +279,115 @@ code {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.firework {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+.firework-right .spark {
+    animation-delay: 1.5s;
+}
+
+.spark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    margin: -3.5px 0 0 -3.5px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spark-burst 3s ease-out infinite;
+}
+
+    .spark:nth-child(1) {
+        --tx: 45px;
+        --ty: 0px;
+        background: #ff6b6b;
+    }
+
+    .spark:nth-child(2) {
+        --tx: 22.5px;
+        --ty: 39px;
+        background: #ffd166;
+        animation-delay: 0.08s;
+    }
+
+    .spark:nth-child(3) {
+        --tx: -22.5px;
+        --ty: 39px;
+        background: #06d6a0;
+        animation-delay: 0.16s;
+    }
+
+    .spark:nth-child(4) {
+        --tx: -45px;
+        --ty: 0px;
+        background: #4cc9f0;
+        animation-delay: 0.24s;
+    }
+
+    .spark:nth-child(5) {
+        --tx: -22.5px;
+        --ty: -39px;
+        background: #f72585;
+        animation-delay: 0.32s;
+    }
+
+    .spark:nth-child(6) {
+        --tx: 22.5px;
+        --ty: -39px;
+        background: #ffb703;
+        animation-delay: 0.4s;
+    }
+
+.firework-right .spark:nth-child(1) {
+    animation-delay: 1.5s;
+}
+
+.firework-right .spark:nth-child(2) {
+    animation-delay: 1.58s;
+}
+
+.firework-right .spark:nth-child(3) {
+    animation-delay: 1.66s;
+}
+
+.firework-right .spark:nth-child(4) {
+    animation-delay: 1.74s;
+}
+
+.firework-right .spark:nth-child(5) {
+    animation-delay: 1.82s;
+}
+
+.firework-right .spark:nth-child(6) {
+    animation-delay: 1.9s;
+}
+
+@keyframes spark-burst {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    45% {
+        transform: translate(var(--tx), var(--ty)) scale(1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1);
+        opacity: 0;
+    }
 }
 
 .tiger-shadow {
