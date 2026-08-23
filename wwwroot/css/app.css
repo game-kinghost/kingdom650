@@ -869,6 +869,28 @@ code {
     gap: 0.9rem;
     background: linear-gradient(90deg, #fdf1de 0%, #fdecc8 100%);
     padding: 0.9rem 1.1rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+    .guide-rank-header::-webkit-details-marker {
+        display: none;
+    }
+
+    .guide-rank-header > div {
+        flex: 1;
+    }
+
+.guide-rank-chevron {
+    flex-shrink: 0;
+    color: #a35d00;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+details.guide-rank[open] .guide-rank-chevron {
+    transform: rotate(180deg);
 }
 
 .guide-rank-badge {
