@@ -203,9 +203,10 @@ code {
         color: #fff;
         font-family: 'Mochiy Pop One', sans-serif;
         letter-spacing: 0.03em;
-        font-size: clamp(1.05rem, 5vw, 1.75rem);
-        word-break: keep-all;
-        overflow-wrap: normal;
+        font-size: clamp(0.85rem, 4.3vw, 1.75rem) !important;
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 .hero-banner {
