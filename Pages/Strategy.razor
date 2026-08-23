@@ -1,4 +1,6 @@
 @page "/strategy"
+@inject NavigationManager Nav
+@inject IJSRuntime JS
 
 <PageTitle>育成順位 - Kingshot 650王国</PageTitle>
 
@@ -339,3 +341,17 @@
         </div>
     </div>
 </details>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var fragment = new Uri(Nav.Uri).Fragment;
+            if (fragment.StartsWith("#rank-"))
+            {
+                await JS.InvokeVoidAsync("guideOpenRank", fragment[1..]);
+            }
+        }
+    }
+}
