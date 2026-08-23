@@ -252,16 +252,38 @@
     </div>
 </details>
 
+@implements IDisposable
+
 @code {
+    protected override void OnInitialized()
+    {
+        Nav.LocationChanged += OnLocationChanged;
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            var fragment = new Uri(Nav.Uri).Fragment;
-            if (!string.IsNullOrEmpty(fragment))
-            {
-                await JS.InvokeVoidAsync("guideOpenRank", fragment[1..]);
-            }
+            await OpenFromFragmentAsync(Nav.Uri);
         }
+    }
+
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        await OpenFromFragmentAsync(e.Location);
+    }
+
+    private async Task OpenFromFragmentAsync(string uri)
+    {
+        var fragment = new Uri(uri).Fragment;
+        if (!string.IsNullOrEmpty(fragment))
+        {
+            await JS.InvokeVoidAsync("guideOpenRank", fragment[1..]);
+        }
+    }
+
+    public void Dispose()
+    {
+        Nav.LocationChanged -= OnLocationChanged;
     }
 }
