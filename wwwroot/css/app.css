@@ -239,11 +239,11 @@ code {
 .hero-marquee-track {
     display: flex;
     white-space: nowrap;
-    animation: hero-marquee-scroll 16s linear infinite;
+    animation: hero-marquee-scroll 28s linear infinite;
 }
 
     .hero-marquee-track span {
-        font-size: 180px;
+        font-size: 70px;
         font-weight: 800;
         color: rgba(163, 93, 0, 0.14);
         letter-spacing: 0.05em;
