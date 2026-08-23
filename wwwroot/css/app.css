@@ -868,29 +868,87 @@ code {
     font-weight: 700;
 }
 
-.guide-toc {
-    background: #fdf6ea;
-    border: 1px solid #f0d9b5;
-    border-radius: 8px;
-    padding: 0.9rem 1.2rem;
-    margin: 1rem 0 1.5rem;
+
+.guide-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1.5rem;
 }
 
-    .guide-toc ol {
-        margin: 0.5rem 0 0;
-        padding-left: 1.2rem;
-        columns: 2;
+.guide-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    background: #fdf6ea;
+    border: 1px solid #f5e6c8;
+}
+
+    a.guide-bar-row:hover {
+        background: #fdecc8;
     }
 
-    .guide-toc a {
-        color: #a35d00;
-        text-decoration: none;
-        font-weight: 600;
-    }
+.guide-bar-badge {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f0a830 0%, #d98c1f 100%);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .guide-toc a:hover {
-            text-decoration: underline;
-        }
+.guide-bar-icon {
+    flex-shrink: 0;
+    font-size: 1.15rem;
+    width: 1.3rem;
+    text-align: center;
+}
+
+.guide-bar-label {
+    flex-shrink: 0;
+    width: 92px;
+    font-weight: 700;
+    color: #333;
+}
+
+.guide-bar-track {
+    flex: 1 1 80px;
+    min-width: 60px;
+    height: 10px;
+    background: #f0e0bf;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.guide-bar-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+    border-radius: 999px;
+}
+
+.guide-bar-value {
+    flex-shrink: 0;
+    width: 40px;
+    text-align: right;
+    font-weight: 700;
+    color: #a35d00;
+    font-size: 0.9rem;
+}
+
+.guide-overview-compact .guide-bar-row {
+    background: #fff;
+}
 
 .guide-rank {
     scroll-margin-top: 1rem;
@@ -918,6 +976,11 @@ code {
     .guide-rank-header > div {
         flex: 1;
     }
+
+.guide-rank-icon {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+}
 
 .guide-rank-chevron {
     flex-shrink: 0;
@@ -1021,7 +1084,12 @@ details.guide-rank[open] .guide-rank-chevron {
     }
 
 @media (max-width: 700px) {
-    .guide-toc ol {
-        columns: 1;
+    .guide-bar-label {
+        width: 68px;
+        font-size: 0.9rem;
+    }
+
+    .guide-bar-track {
+        flex-basis: 60px;
     }
 }

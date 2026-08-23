@@ -5,47 +5,67 @@
 <RadzenText TextStyle="TextStyle.H3">育成順位</RadzenText>
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">総合的な育成優先順位</RadzenText>
 
-<div class="table-wrap">
-    <table class="guide-table">
-        <thead>
-            <tr>
-                <th>順位</th>
-                <th>育成要素</th>
-                <th>重要度</th>
-                <th>評価</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td class="guide-table-rank">1</td><td><a href="#rank-1" class="guide-table-link">英雄</a></td><td>25％</td><td><span class="guide-tag guide-tag-top">最優先</span></td></tr>
-            <tr><td class="guide-table-rank">2</td><td><a href="#rank-2" class="guide-table-link">英雄装備</a></td><td>22％</td><td><span class="guide-tag guide-tag-top">最優先</span></td></tr>
-            <tr><td class="guide-table-rank">3</td><td><a href="#rank-3" class="guide-table-link">科学研究</a></td><td>20％</td><td><span class="guide-tag">常時進める</span></td></tr>
-            <tr><td class="guide-table-rank">4</td><td><a href="#rank-4" class="guide-table-link">ペット</a></td><td>12％</td><td><span class="guide-tag">中盤以降かなり重要</span></td></tr>
-            <tr><td class="guide-table-rank">5</td><td><a href="#rank-5" class="guide-table-link">マスター</a></td><td>9％</td><td><span class="guide-tag">報酬・特殊効果重視</span></td></tr>
-            <tr><td class="guide-table-rank">6</td><td><a href="#rank-6" class="guide-table-link">領主装備</a></td><td>8％</td><td><span class="guide-tag">コツコツ型</span></td></tr>
-            <tr><td class="guide-table-rank">7</td><td><a href="#rank-7" class="guide-table-link">島</a></td><td>4％</td><td><span class="guide-tag">課金優先度は低い</span></td></tr>
-            <tr class="guide-table-total"><td colspan="2">合計</td><td>100％</td><td></td></tr>
-        </tbody>
-    </table>
+<div class="guide-overview">
+    <a href="#rank-1" class="guide-bar-row">
+        <span class="guide-bar-badge">1</span>
+        <span class="guide-bar-icon">⚔️</span>
+        <span class="guide-bar-label">英雄</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:25%"></span></span>
+        <span class="guide-bar-value">25%</span>
+        <span class="guide-tag guide-tag-top">最優先</span>
+    </a>
+    <a href="#rank-2" class="guide-bar-row">
+        <span class="guide-bar-badge">2</span>
+        <span class="guide-bar-icon">🛡️</span>
+        <span class="guide-bar-label">英雄装備</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:22%"></span></span>
+        <span class="guide-bar-value">22%</span>
+        <span class="guide-tag guide-tag-top">最優先</span>
+    </a>
+    <a href="#rank-3" class="guide-bar-row">
+        <span class="guide-bar-badge">3</span>
+        <span class="guide-bar-icon">🔬</span>
+        <span class="guide-bar-label">科学研究</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:20%"></span></span>
+        <span class="guide-bar-value">20%</span>
+        <span class="guide-tag">常時進める</span>
+    </a>
+    <a href="#rank-4" class="guide-bar-row">
+        <span class="guide-bar-badge">4</span>
+        <span class="guide-bar-icon">🐾</span>
+        <span class="guide-bar-label">ペット</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:12%"></span></span>
+        <span class="guide-bar-value">12%</span>
+        <span class="guide-tag">中盤以降重要</span>
+    </a>
+    <a href="#rank-5" class="guide-bar-row">
+        <span class="guide-bar-badge">5</span>
+        <span class="guide-bar-icon">👑</span>
+        <span class="guide-bar-label">マスター</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:9%"></span></span>
+        <span class="guide-bar-value">9%</span>
+        <span class="guide-tag">報酬・特殊効果</span>
+    </a>
+    <a href="#rank-6" class="guide-bar-row">
+        <span class="guide-bar-badge">6</span>
+        <span class="guide-bar-icon">🏰</span>
+        <span class="guide-bar-label">領主装備</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:8%"></span></span>
+        <span class="guide-bar-value">8%</span>
+        <span class="guide-tag">コツコツ型</span>
+    </a>
+    <a href="#rank-7" class="guide-bar-row">
+        <span class="guide-bar-badge">7</span>
+        <span class="guide-bar-icon">🏝️</span>
+        <span class="guide-bar-label">島</span>
+        <span class="guide-bar-track"><span class="guide-bar-fill" style="width:4%"></span></span>
+        <span class="guide-bar-value">4%</span>
+        <span class="guide-tag">課金優先度低</span>
+    </a>
 </div>
 
-<nav class="guide-toc" aria-label="育成要素の目次">
-    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">目次</RadzenText>
-    <ol>
-        <li><a href="#rank-1">英雄 (25％)</a></li>
-        <li><a href="#rank-2">英雄装備 (22％)</a></li>
-        <li><a href="#rank-3">科学研究 (20％)</a></li>
-        <li><a href="#rank-4">ペット (12％)</a></li>
-        <li><a href="#rank-5">マスター (9％)</a></li>
-        <li><a href="#rank-6">領主装備 (8％)</a></li>
-        <li><a href="#rank-7">島 (4％)</a></li>
-    </ol>
-</nav>
-
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">実際のおすすめ育成手順</RadzenText>
-<RadzenText TextStyle="TextStyle.Body1">
-    完全に一つずつ終わらせるのではなく、次のように並行します。
-</RadzenText>
-<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">毎日行うもの</RadzenText>
+<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-2">毎日行うもの</RadzenText>
 <ul class="guide-list guide-checklist">
     <li>科学研究を常時稼働</li>
     <li>島の生命の水を回収</li>
@@ -54,26 +74,26 @@
 </ul>
 <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">貴重素材を集中させる順</RadzenText>
 <div class="guide-flow">
-    <span>主力英雄3人</span>
+    <span>⚔️ 主力英雄3人</span>
     <span class="guide-flow-arrow">→</span>
-    <span>主力3人の英雄装備</span>
+    <span>🛡️ 英雄装備</span>
     <span class="guide-flow-arrow">→</span>
-    <span>強いペット</span>
+    <span>🐾 強いペット</span>
     <span class="guide-flow-arrow">→</span>
-    <span>マスター</span>
+    <span>👑 マスター</span>
     <span class="guide-flow-arrow">→</span>
-    <span>領主装備</span>
+    <span>🏰 領主装備</span>
 </div>
 
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">イベント交換アイテムの目安</RadzenText>
 <div class="guide-flow">
-    <span>鍛造ハンマー</span>
+    <span>🔨 鍛造ハンマー</span>
     <span class="guide-flow-arrow">＞</span>
-    <span>英雄欠片</span>
+    <span>⚔️ 英雄欠片</span>
     <span class="guide-flow-arrow">＞</span>
-    <span>ペット洗練素材</span>
+    <span>🐾 ペット洗練素材</span>
     <span class="guide-flow-arrow">＞</span>
-    <span>領主装備素材</span>
+    <span>🏰 領主装備素材</span>
 </div>
 
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">プレイスタイル別の割合</RadzenText>
@@ -81,52 +101,39 @@
 <div class="guide-compare">
     <div>
         <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">集結参加中心・無課金〜微課金</RadzenText>
-        <div class="table-wrap">
-            <table class="guide-table">
-                <thead>
-                    <tr><th>要素</th><th>重要度</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>英雄</td><td>25％</td></tr>
-                    <tr><td>英雄装備</td><td>22％</td></tr>
-                    <tr><td>科学研究</td><td>20％</td></tr>
-                    <tr><td>ペット</td><td>12％</td></tr>
-                    <tr><td>マスター</td><td>9％</td></tr>
-                    <tr><td>領主装備</td><td>8％</td></tr>
-                    <tr><td>島</td><td>4％</td></tr>
-                </tbody>
-            </table>
+        <div class="guide-overview guide-overview-compact">
+            <div class="guide-bar-row"><span class="guide-bar-icon">⚔️</span><span class="guide-bar-label">英雄</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:25%"></span></span><span class="guide-bar-value">25%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🛡️</span><span class="guide-bar-label">英雄装備</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:22%"></span></span><span class="guide-bar-value">22%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🔬</span><span class="guide-bar-label">科学研究</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:20%"></span></span><span class="guide-bar-value">20%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🐾</span><span class="guide-bar-label">ペット</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:12%"></span></span><span class="guide-bar-value">12%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">👑</span><span class="guide-bar-label">マスター</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:9%"></span></span><span class="guide-bar-value">9%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🏰</span><span class="guide-bar-label">領主装備</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:8%"></span></span><span class="guide-bar-value">8%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🏝️</span><span class="guide-bar-label">島</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:4%"></span></span><span class="guide-bar-value">4%</span></div>
         </div>
     </div>
     <div>
         <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">集結主・PvP主力</RadzenText>
-        <div class="table-wrap">
-            <table class="guide-table">
-                <thead>
-                    <tr><th>要素</th><th>重要度</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>英雄</td><td>23％</td></tr>
-                    <tr><td>英雄装備</td><td>22％</td></tr>
-                    <tr><td>科学研究</td><td>20％</td></tr>
-                    <tr><td>領主装備</td><td>15％</td></tr>
-                    <tr><td>ペット</td><td>10％</td></tr>
-                    <tr><td>マスター</td><td>7％</td></tr>
-                    <tr><td>島</td><td>3％</td></tr>
-                </tbody>
-            </table>
+        <div class="guide-overview guide-overview-compact">
+            <div class="guide-bar-row"><span class="guide-bar-icon">⚔️</span><span class="guide-bar-label">英雄</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:23%"></span></span><span class="guide-bar-value">23%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🛡️</span><span class="guide-bar-label">英雄装備</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:22%"></span></span><span class="guide-bar-value">22%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🔬</span><span class="guide-bar-label">科学研究</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:20%"></span></span><span class="guide-bar-value">20%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🏰</span><span class="guide-bar-label">領主装備</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:15%"></span></span><span class="guide-bar-value">15%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🐾</span><span class="guide-bar-label">ペット</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:10%"></span></span><span class="guide-bar-value">10%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">👑</span><span class="guide-bar-label">マスター</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:7%"></span></span><span class="guide-bar-value">7%</span></div>
+            <div class="guide-bar-row"><span class="guide-bar-icon">🏝️</span><span class="guide-bar-label">島</span><span class="guide-bar-track"><span class="guide-bar-fill" style="width:3%"></span></span><span class="guide-bar-value">3%</span></div>
         </div>
     </div>
 </div>
 
 <div class="guide-callout guide-callout-conclusion">
     <span class="guide-callout-label">結論</span>
-    通常プレイヤーなら「英雄・英雄装備・科学研究」で全体の約67％を占めると考えるのがよいです。領主装備の数字だけ立派でも、英雄と英雄装備が弱いと、立派な鎧を着た案山子になりがちです。
+    「英雄・英雄装備・科学研究」で全体の約67％。領主装備だけ立派でも、英雄と装備が弱いと立派な鎧を着た案山子になりがちです。
 </div>
 
 <details id="rank-1" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">1</span>
+        <span class="guide-rank-icon">⚔️</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">英雄</RadzenText>
             <span class="guide-rank-percent">重要度 25％</span>
@@ -135,22 +142,16 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            英雄は、星ランク・遠征スキル・探検スキル・専用装備によって、戦闘結果そのものを大きく変えます。
-        </RadzenText>
-        <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-            ただし、すべての英雄を平均的に育てるのではなく、基本は次の3人に集中します。
+            星ランク・遠征スキル・専用装備で戦闘力が大きく変わります。全員を平均的に育てず、次の3人に絞りましょう。
         </RadzenText>
         <ul class="guide-list">
             <li>主力歩兵英雄：1人</li>
             <li>主力騎兵英雄：1人</li>
             <li>主力弓兵英雄：1人</li>
         </ul>
-        <RadzenText TextStyle="TextStyle.Body1">
-            無課金・微課金では、英雄を世代ごとに中途半端に乗り換えるより、ルーレット英雄など星5まで育てやすい英雄を絞る方が強くなります。英雄は世代更新で入れ替わりますが、星が低い新英雄より、完成した旧英雄の方が強い場面も多いです。
-        </RadzenText>
         <div class="guide-callout">
             <span class="guide-callout-label">育成方針</span>
-            主力3人の星上げ・遠征スキルを優先し、使用しない英雄への共通欠片投入は抑える。
+            主力3人の星上げ・遠征スキルを優先。星が低い新英雄より、完成した旧英雄の方が強い場面も多いので、使わない英雄への欠片投入は抑える。
         </div>
     </div>
 </details>
@@ -158,6 +159,7 @@
 <details id="rank-2" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">2</span>
+        <span class="guide-rank-icon">🛡️</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">英雄装備</RadzenText>
             <span class="guide-rank-percent">重要度 22％</span>
@@ -166,41 +168,18 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            英雄装備は、長期間使い回せるうえに、重要ステータスである殺傷力・HPを大きく伸ばせます。特に鍛造ハンマーによる精通鍛造は、主要な戦力増加手段とされています。
-        </RadzenText>
-        <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-            英雄を世代交代しても装備は新英雄に移せるため、専用装備よりも資産価値が安定しています。
+            長期間使い回せて殺傷力・HPを大きく伸ばせます。世代交代しても新英雄に移せるため、専用装備より資産価値が安定。
         </RadzenText>
         <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">強化順序</RadzenText>
         <ol class="guide-list guide-list-numbered">
-            <li>
-                歩兵：グローブ・アーマー
-                <ul class="guide-list">
-                    <li>HP・防御を強化</li>
-                    <li>前衛が長く生存するほど後衛が攻撃できる</li>
-                </ul>
-            </li>
-            <li>
-                弓兵：ヘルメット・ブーツ
-                <ul class="guide-list">
-                    <li>殺傷力・攻撃を強化</li>
-                    <li>巨熊狩猟などのダメージ源</li>
-                </ul>
-            </li>
-            <li>
-                騎兵：ヘルメット・ブーツ
-                <ul class="guide-list">
-                    <li>殺傷力・攻撃を強化</li>
-                </ul>
-            </li>
+            <li>歩兵：グローブ・アーマー(HP・防御。前衛が生存するほど後衛が攻撃できる)</li>
+            <li>弓兵：ヘルメット・ブーツ(殺傷力・攻撃。巨熊狩猟のダメージ源)</li>
+            <li>騎兵：ヘルメット・ブーツ(殺傷力・攻撃)</li>
             <li>残りの部位</li>
         </ol>
-        <RadzenText TextStyle="TextStyle.Body1">
-            歩兵の耐久装備を最優先とする方針は、日本語攻略情報と海外コミュニティでもおおむね一致しています。
-        </RadzenText>
         <div class="guide-callout guide-callout-warn">
             <span class="guide-callout-label">注意点</span>
-            装備を全英雄に分散させるのは、資材をシュレッダーに入れるのとほぼ同じです。主力3人だけに集中します。
+            装備を全英雄に分散させるのは資材をシュレッダーに入れるのとほぼ同じ。主力3人だけに集中します。
         </div>
     </div>
 </details>
@@ -208,6 +187,7 @@
 <details id="rank-3" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">3</span>
+        <span class="guide-rank-icon">🔬</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">科学研究</RadzenText>
             <span class="guide-rank-percent">重要度 20％</span>
@@ -216,10 +196,7 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            科学研究は派手さがありませんが、恒久的に効果が残り、英雄が世代交代しても無駄になりません。
-        </RadzenText>
-        <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-            学院は基本的に24時間、何かを研究している状態が理想です。序盤側の研究ほど時間・資源に対するステータス上昇効率がよく、武器特訓Ⅱ付近までは優先度が特に高いとされています。
+            恒久的に効果が残り、英雄が世代交代しても無駄になりません。学院は24時間常に何か研究している状態が理想。
         </RadzenText>
         <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">おすすめ順序</RadzenText>
         <ol class="guide-list guide-list-numbered">
@@ -227,19 +204,20 @@
             <li>建造・訓練などの発展系</li>
             <li>部隊容量・集結関連</li>
             <li>歩兵の耐久または攻撃・殺傷力</li>
-            <li>弓兵の攻撃・殺傷力</li>
-            <li>騎兵の攻撃・殺傷力</li>
+            <li>弓兵→騎兵の攻撃・殺傷力</li>
             <li>高コストな終盤研究</li>
         </ol>
-        <RadzenText TextStyle="TextStyle.Body1">
-            集結に参加する側では、集結主の戦闘ステータスが強く影響するため、無理に最終戦闘研究へ加速を大量投入するより、兵士ランク・部隊容量・成長効率を優先する方が合理的です。集結主の場合は逆に、終盤の戦闘研究の価値が大幅に上がります。
-        </RadzenText>
+        <div class="guide-callout">
+            <span class="guide-callout-label">ポイント</span>
+            集結参加側は兵士ランク・部隊容量を優先。集結主は終盤の戦闘研究の価値が大幅に上がる。
+        </div>
     </div>
 </details>
 
 <details id="rank-4" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">4</span>
+        <span class="guide-rank-icon">🐾</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">ペット</RadzenText>
             <span class="guide-rank-percent">重要度 12％</span>
@@ -248,24 +226,18 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            ペットは、全兵種のステータスを底上げでき、建造速度・部隊容量・集結容量・敵弱体化など、固有スキルも強力です。洗練による殺傷力・HP強化は全部隊に適用されるため、見た目以上に影響があります。
+            全兵種のステータスを底上げ。建造速度・部隊容量・敵弱体化など固有スキルも強力です。
         </RadzenText>
-        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">基本的な育成順</RadzenText>
+        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">育成順</RadzenText>
         <ol class="guide-list guide-list-numbered">
-            <li>
-                グレイウルフ
-                <ul class="guide-list">
-                    <li>建造速度上昇</li>
-                    <li>まずスキル解放、最終的にレベル50を目標</li>
-                </ul>
-            </li>
+            <li>グレイウルフ(建造速度+最大15%。まずスキル解放→Lv50)</li>
             <li>ジャイアントライノ・巨大黒豹など：攻撃・殺傷力系</li>
             <li>巨大蛮牛・巨大ヘラジカ：出征部隊数・集結容量</li>
             <li>HP・防御・敵弱体化系</li>
         </ol>
         <div class="guide-callout">
             <span class="guide-callout-label">ポイント</span>
-            グレイウルフは最大で建造速度を15％上げられ、必要素材も比較的少ないため、最初に育てる価値が高いと評価されています。
+            グレイウルフは必要素材も少なく、最初に育てる価値が高い。
         </div>
     </div>
 </details>
@@ -273,6 +245,7 @@
 <details id="rank-5" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">5</span>
+        <span class="guide-rank-icon">👑</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">マスター</RadzenText>
             <span class="guide-rank-percent">重要度 9％</span>
@@ -281,7 +254,7 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            マスターは、純粋な戦闘ステータスだけでなく、巨熊狩猟のダメージ・報酬、補給宝箱、資源獲得などに影響するシステムです。英雄とペットの中間のような位置づけで、直接戦力よりもアカウント全体の効率を高める効果が多くなっています。
+            巨熊狩猟のダメージ・報酬、補給宝箱、資源獲得に影響。直接戦力よりアカウント全体の効率を高めます。
         </RadzenText>
         <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">優先する効果</RadzenText>
         <ol class="guide-list guide-list-numbered">
@@ -289,11 +262,11 @@
             <li>資源補給</li>
             <li>巨熊狩猟のダメージ・報酬</li>
             <li>部隊戦闘系</li>
-            <li>限定的なコンテンツ専用効果</li>
+            <li>限定コンテンツ専用効果</li>
         </ol>
         <div class="guide-callout">
             <span class="guide-callout-label">ポイント</span>
-            特にパーンの「資源補給」など、毎日獲得できる報酬を増やす天賦は、早く取得するほど累積利益が大きくなります。
+            パーンの「資源補給」など毎日の報酬を増やす天賦は、早く取るほど累積利益が大きい。
         </div>
     </div>
 </details>
@@ -301,6 +274,7 @@
 <details id="rank-6" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">6</span>
+        <span class="guide-rank-icon">🏰</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">領主装備</RadzenText>
             <span class="guide-rank-percent">重要度 8％</span>
@@ -309,27 +283,17 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            領主装備は恒久的に使えますが、主に攻撃力・防御力を上げます。一般的には、殺傷力・HPを伸ばす英雄装備や領主宝石の方が、同程度の資材投入に対する戦闘効果が高いと評価されています。
+            恒久的だが主に攻撃・防御力のみ。殺傷力・HPを伸ばす英雄装備の方が、同じ投入量に対する効果は高め。
         </RadzenText>
-        <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-            ただし、次の場合は重要度が上がります。
-        </RadzenText>
+        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">重要度が上がる場合</RadzenText>
         <ul class="guide-list">
-            <li>集結主を担当する</li>
-            <li>駐屯リーダーを担当する</li>
+            <li>集結主・駐屯リーダーを担当する</li>
             <li>王城決戦やPvPで主力になる</li>
             <li>英雄装備が一定水準まで完成している</li>
         </ul>
-        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">基本方針</RadzenText>
-        <ul class="guide-list">
-            <li>極端に1部位だけ上げず、段階ボーナスを意識</li>
-            <li>歩兵系を優先</li>
-            <li>巨熊狩猟を重視するなら弓兵系も強化</li>
-            <li>専用イベント素材は使うが、汎用交換通貨を大量投入しすぎない</li>
-        </ul>
         <div class="guide-callout">
             <span class="guide-callout-label">ポイント</span>
-            領主装備は集結主の能力として多数の兵士に影響するため、集結主なら重要度は8％から15％前後まで上昇します。
+            歩兵系を優先、段階ボーナスを意識。集結主なら重要度は8％→15％前後に上昇。
         </div>
     </div>
 </details>
@@ -337,6 +301,7 @@
 <details id="rank-7" class="guide-rank" open>
     <summary class="guide-rank-header">
         <span class="guide-rank-badge">7</span>
+        <span class="guide-rank-icon">🏝️</span>
         <div>
             <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">島</RadzenText>
             <span class="guide-rank-percent">重要度 4％</span>
@@ -345,20 +310,18 @@
     </summary>
     <div class="guide-rank-body">
         <RadzenText TextStyle="TextStyle.Body1">
-            島の建物は、研究速度・建造・資源・戦闘ステータスなどの恒久バフを提供します。ただし生命の水など専用資源で進めるため、英雄装備や領主装備と素材が競合しにくく、実際には「後回し」ではなく毎日無料で進める別枠コンテンツです。
+            研究速度・建造・資源・戦闘の恒久バフ。専用資源(生命の水)で進むため他コンテンツと素材が競合せず、毎日無料で進められます。
         </RadzenText>
-        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">島で優先するもの</RadzenText>
+        <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">優先するもの</RadzenText>
         <ol class="guide-list guide-list-numbered">
             <li>生命の水の生産・貯蔵</li>
-            <li>研究速度</li>
-            <li>建造速度</li>
-            <li>訓練速度</li>
+            <li>研究速度・建造速度・訓練速度</li>
             <li>部隊攻撃・HP・殺傷力</li>
             <li>採集・資源生産</li>
-            <li>見た目だけの装飾</li>
         </ol>
-        <RadzenText TextStyle="TextStyle.Body1">
-            同じ建物を複数置いても効果が重複しない場合があり、基本的には各種類の最もレベルが高い建物だけが有効です。
-        </RadzenText>
+        <div class="guide-callout">
+            <span class="guide-callout-label">ポイント</span>
+            同種の建物は最もレベルが高いものだけが有効(重複しない場合あり)。
+        </div>
     </div>
 </details>
