@@ -1236,6 +1236,28 @@ details.guide-rank[open] .guide-rank-chevron {
     gap: 0.6rem;
 }
 
+.guide-squad-badge {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.guide-squad-badge-1 {
+    background: linear-gradient(90deg, #f7c948 0%, #d9a520 100%);
+}
+
+.guide-squad-badge-2 {
+    background: linear-gradient(90deg, #b8c0c8 0%, #8b96a3 100%);
+}
+
+.guide-squad-badge-3 {
+    background: linear-gradient(90deg, #d18a54 0%, #a86230 100%);
+}
+
 .guide-flow-arrow {
     color: #d98c1f;
     font-weight: 800;
