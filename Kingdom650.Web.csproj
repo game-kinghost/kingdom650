@@ -5,7 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
-    <CompressionEnabled>false</CompressionEnabled>
+    <EnableDefaultCompressionFormats>false</EnableDefaultCompressionFormats>
+    <PublishCompressionFormats>gzip</PublishCompressionFormats>
   </PropertyGroup>
 
   <ItemGroup>

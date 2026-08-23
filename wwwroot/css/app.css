@@ -189,6 +189,22 @@ code {
         padding: 0.4rem 0.8rem;
     }
 
+.page-title-band {
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+    .page-title-band .rz-text-h3 {
+        color: #fff;
+        font-family: 'Mochiy Pop One', sans-serif;
+        letter-spacing: 0.03em;
+    }
+
 .hero-banner {
     position: relative;
     width: 100%;
@@ -211,24 +227,49 @@ code {
     pointer-events: none;
 }
 
+.hero-marquee {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: hero-marquee-scroll 16s linear infinite;
+}
+
+    .hero-marquee-track span {
+        font-size: 180px;
+        font-weight: 800;
+        color: rgba(163, 93, 0, 0.14);
+        letter-spacing: 0.05em;
+    }
+
+@keyframes hero-marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .hero-content {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     height: 100%;
     min-height: 220px;
     padding: 1rem;
-}
-
-.hero-title {
-    margin: 0;
-    color: #a35d00;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .tiger-sprite-wrap {
