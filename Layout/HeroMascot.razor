@@ -46,6 +46,7 @@
         _frames[_frameIndex].Src switch
         {
             var s when s.Contains("crown") => "mascot-crown",
+            var s when s.Contains("eggplant-3") || s.Contains("eggplant-4") || s.Contains("eggplant-5") => "mascot-eggplant-jump",
             var s when s.Contains("eggplant") => "mascot-eggplant",
             _ => "",
         };

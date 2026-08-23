@@ -468,6 +468,14 @@ code {
         align-self: flex-end;
     }
 
+    .mascot-sprite img.mascot-eggplant-jump {
+        height: 180px;
+        width: 170px;
+        object-fit: contain;
+        object-position: bottom center;
+        align-self: flex-end;
+    }
+
 .sparkle {
     position: absolute;
     color: #ffb703;
