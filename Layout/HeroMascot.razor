@@ -30,25 +30,17 @@
         new("images/crown/crown-7.png", 150),
         new("images/crown/crown-11.png", 500),
 
-        new("images/eggplant/eggplant-1.png", 250),
-        new("images/eggplant/eggplant-2.png", 250),
-        new("images/eggplant/eggplant-3.png", 200),
-        new("images/eggplant/eggplant-4.png", 400),
-        new("images/eggplant/eggplant-5.png", 200),
-        new("images/eggplant/eggplant-6.png", 400),
-        new("images/eggplant/eggplant-7.png", 250),
+        new("images/eggplant/eggplant-1.png", 350),
+        new("images/eggplant/eggplant-2.png", 350),
+        new("images/eggplant/eggplant-1.png", 350),
+        new("images/eggplant/eggplant-2.png", 350),
     ];
 
     private int _frameIndex;
     private CancellationTokenSource? _cts;
 
     private string FrameClass =>
-        _frames[_frameIndex].Src switch
-        {
-            var s when s.Contains("crown") => "mascot-crown",
-            var s when s.Contains("eggplant") => "mascot-eggplant",
-            _ => "",
-        };
+        _frames[_frameIndex].Src.Contains("crown") ? "mascot-crown" : "";
 
     protected override void OnInitialized()
     {
