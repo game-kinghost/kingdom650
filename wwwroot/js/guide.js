@@ -10,7 +10,7 @@ window.guideOpenRank = function (id) {
 };
 
 document.addEventListener('click', function (e) {
-    var a = e.target.closest('a[href^="#rank-"]');
+    var a = e.target.closest('a[href^="#"]');
     if (!a) return;
 
     var id = a.getAttribute('href').slice(1);

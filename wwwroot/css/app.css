@@ -1051,6 +1051,13 @@ code {
     overflow: hidden;
 }
 
+.guide-anchor-section {
+    scroll-margin-top: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
 .guide-rank-header {
     display: flex;
     align-items: center;
@@ -1120,6 +1127,24 @@ details.guide-rank[open] .guide-rank-chevron {
     .guide-list li {
         margin: 0.3rem 0;
     }
+
+    .guide-list li::marker {
+        color: #d98c1f;
+        font-weight: 700;
+    }
+
+.guide-rank-body > ul.guide-list,
+.guide-rank-body > ol.guide-list {
+    background: #fdf9ef;
+    border: 1px solid #f5e6c8;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem 0.75rem 2rem;
+    margin: 0.75rem 0;
+}
+
+.guide-rank-body strong {
+    color: #a35d00;
+}
 
 .guide-checklist {
     list-style: "✅ ";
