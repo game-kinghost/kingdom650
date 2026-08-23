@@ -319,7 +319,22 @@ code {
         font-weight: 800;
         color: rgba(163, 93, 0, 0.14);
         letter-spacing: 0.05em;
+        animation: hero-marquee-color 6s ease-in-out infinite;
     }
+
+@keyframes hero-marquee-color {
+    0% {
+        color: rgba(122, 62, 0, 0.55);
+    }
+
+    45%, 55% {
+        color: rgba(163, 93, 0, 0.14);
+    }
+
+    100% {
+        color: rgba(122, 62, 0, 0.55);
+    }
+}
 
 @keyframes hero-marquee-scroll {
     0% {
