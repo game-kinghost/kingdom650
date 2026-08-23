@@ -1129,12 +1129,25 @@ details.guide-rank[open] .guide-rank-chevron {
 
 .guide-rank-body > ul.guide-list,
 .guide-rank-body > ol.guide-list {
-    background: #fdf9ef;
+    background: #fff;
     border: 1px solid #f5e6c8;
     border-radius: 8px;
-    padding: 0.75rem 1.25rem 0.75rem 2rem;
+    padding: 0.4rem 1.25rem 0.4rem 2rem;
     margin: 0.75rem 0;
+    overflow: hidden;
 }
+
+    .guide-rank-body > ul.guide-list > li,
+    .guide-rank-body > ol.guide-list > li {
+        padding: 0.4rem 0.5rem;
+        margin: 0.15rem -0.5rem;
+        border-radius: 4px;
+    }
+
+        .guide-rank-body > ul.guide-list > li:nth-child(even),
+        .guide-rank-body > ol.guide-list > li:nth-child(even) {
+            background: #fdf1de;
+        }
 
 .guide-rank-body strong {
     color: #a35d00;
