@@ -1,7 +1,7 @@
 @implements IDisposable
 
 <div class="mascot-sprite">
-    <img src="@_frames[_frameIndex].Src" alt="マスコット" />
+    <img src="@_frames[_frameIndex].Src" alt="マスコット" class="@(IsCrownFrame ? "mascot-crown" : "")" />
 </div>
 
 @code {
@@ -33,6 +33,8 @@
 
     private int _frameIndex;
     private CancellationTokenSource? _cts;
+
+    private bool IsCrownFrame => _frames[_frameIndex].Src.Contains("crown");
 
     protected override void OnInitialized()
     {

@@ -455,6 +455,10 @@ code {
         image-rendering: pixelated;
     }
 
+    .mascot-sprite img.mascot-crown {
+        height: 60%;
+    }
+
 .sparkle {
     position: absolute;
     color: #ffb703;
