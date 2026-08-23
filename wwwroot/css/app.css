@@ -247,7 +247,18 @@ code {
         linear-gradient(45deg, rgba(163, 93, 0, 0.07) 25%, transparent 25%, transparent 75%, rgba(163, 93, 0, 0.07) 75%, rgba(163, 93, 0, 0.07));
     background-size: 22px 22px, 22px 22px;
     background-position: 0 0, 11px 11px;
+    animation: hero-checker-drift 14s linear infinite;
     pointer-events: none;
+}
+
+@keyframes hero-checker-drift {
+    0% {
+        background-position: 0 0, 11px 11px;
+    }
+
+    100% {
+        background-position: 22px 0, 33px 11px;
+    }
 }
 
 .hero-checker-gray {
