@@ -1411,10 +1411,16 @@ details.guide-rank[open] .guide-rank-chevron {
 }
 
     .alliance-highlight-card:hover {
+        background: linear-gradient(180deg, #f7c15c 0%, #d98c1f 100%);
+        border-color: #a35d00;
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(163, 93, 0, 0.18);
-        border-color: #d98c1f;
+        box-shadow: 0 10px 22px rgba(163, 93, 0, 0.3);
     }
+
+        .alliance-highlight-card:hover .alliance-highlight-title,
+        .alliance-highlight-card:hover .alliance-highlight-desc {
+            color: #fff;
+        }
 
 .alliance-highlight-icon {
     font-size: 1.8rem;
