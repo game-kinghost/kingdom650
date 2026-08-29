@@ -13,6 +13,22 @@ function currentPath() {
     return window.location.pathname.replace(/\/$/, '');
 }
 
+document.addEventListener('mouseover', function (e) {
+    var row = e.target.closest('.guide-bar-row');
+    if (!row) return;
+
+    var href = row.getAttribute('href');
+    if (!href) return;
+
+    var hashIndex = href.indexOf('#');
+    if (hashIndex === -1) return;
+
+    var el = document.getElementById(href.slice(hashIndex + 1));
+    if (el && el.tagName === 'DETAILS') {
+        el.open = true;
+    }
+});
+
 document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href]');
     if (!a) return;
