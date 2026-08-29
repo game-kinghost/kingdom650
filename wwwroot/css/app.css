@@ -140,6 +140,10 @@ code {
     font-size: 1.4rem;
 }
 
+    .site-brand-text h1:focus {
+        outline: none;
+    }
+
 .site-brand-text p {
     margin: 0;
     color: #666;
@@ -805,11 +809,136 @@ code {
         margin-top: 0.4rem;
     }
 
-.video-grid {
+.video-guide-card {
+    background: #fff;
+    border: 1px solid #f0e0c0;
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem 1.4rem;
+    margin: 1.25rem 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+    .video-guide-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(163, 93, 0, 0.16);
+        border-color: #f0c988;
+    }
+
+.video-guide-card-pending {
+    border-style: dashed;
+    background: #fafafa;
+}
+
+    .video-guide-card-pending:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+.video-guide-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.video-guide-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.video-guide-heading {
+    flex: 1 1 auto;
+    min-width: 180px;
+}
+
+.video-guide-subtitle {
+    display: block;
+    color: #a35d00;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.video-guide-stars {
+    flex-shrink: 0;
+    color: #d98c1f;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+}
+
+.video-guide-star-empty {
+    color: #e6d5b0;
+}
+
+.video-guide-tag {
+    display: inline-block;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-top: 0.6rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.video-guide-tag-beginner {
+    background: #eaf3fb;
+    color: #2a6ca8;
+}
+
+.video-guide-tag-tactics {
+    background: #ffe1c2;
+    color: #a35d00;
+}
+
+.video-guide-tag-alliance {
+    background: #eef7f0;
+    color: #1f7a3d;
+}
+
+.video-guide-tag-kingdom {
+    background: #f3e8fb;
+    color: #7a3fa8;
+}
+
+.video-guide-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 0.9rem;
+}
+
+.video-guide-link {
+    color: #333;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px dashed #d98c1f;
+    align-self: flex-start;
+}
+
+    .video-guide-link:hover {
+        color: #a35d00;
+        border-bottom-style: solid;
+    }
+
+.video-legend {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    margin: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin: 0.75rem 0 1.5rem;
+}
+
+.video-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #fdf6ea;
+    border: 1px solid #f5e6c8;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.88rem;
+    color: #555;
 }
 
 .site-footer {
@@ -997,6 +1126,26 @@ code {
     background: #fdecec;
     color: #c0392b;
     font-weight: 700;
+}
+
+.kvk-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.25rem 0;
+    flex-wrap: wrap;
+}
+
+.kvk-crest-image {
+    width: 130px;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 6px 14px rgba(163, 93, 0, 0.35));
+}
+
+.kvk-hero .kvk-stat-band {
+    margin: 0;
+    flex: 1 1 320px;
 }
 
 .kvk-stat-band {
