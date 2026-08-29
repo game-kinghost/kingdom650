@@ -54,7 +54,7 @@ document.addEventListener('click', function (e) {
 });
 
 (function () {
-    var BUBBLE_COUNT = 18;
+    var BUBBLE_COUNT = 32;
     var COLORS = [
         [255, 107, 107],
         [76, 201, 240],
@@ -74,8 +74,8 @@ document.addEventListener('click', function (e) {
         var rgb = c[0] + ', ' + c[1] + ', ' + c[2];
         bubble.el.style.width = bubble.r * 2 + 'px';
         bubble.el.style.height = bubble.r * 2 + 'px';
-        bubble.el.style.background = 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 30%, rgba(' + rgb + ',0.32) 65%, rgba(' + rgb + ',0.14) 100%)';
-        bubble.el.style.border = '2px solid rgba(' + rgb + ',0.5)';
+        bubble.el.style.background = 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.45) 30%, rgba(' + rgb + ',0.18) 65%, rgba(' + rgb + ',0.07) 100%)';
+        bubble.el.style.border = '1px solid rgba(' + rgb + ',0.18)';
     }
 
     function place(bubble) {
