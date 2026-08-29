@@ -178,12 +178,60 @@
         集結に参加する場合は、<strong>左端に配置する英雄が重要</strong>です。
     </RadzenText>
     <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">おすすめ優先順位</RadzenText>
-    <ol class="guide-list guide-list-numbered">
-        <li>アマデウス / チェンコ / インウー — 殺傷 +25%</li>
-        <li>あまね / マーゴ — 攻撃 +25%</li>
-        <li>ビビアン — 敵被ダメージ +25%</li>
-        <li>ヒルデ — 攻撃 +15%(<strong>暫定枠</strong>。英雄が育ってきたら他の英雄に入れ替えを検討)</li>
-    </ol>
+    <div class="hero-tier-grid">
+        <div class="hero-tier">
+            <span class="hero-badge hero-badge-blue">⚔️ 殺傷 +25%</span>
+            <div class="hero-portrait-row">
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/amadeus.png" alt="アマデウス" class="hero-portrait hero-portrait-blue" />
+                    <span class="hero-portrait-name hero-portrait-name-blue">アマデウス</span>
+                </div>
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/chenko.jpg" alt="チェンコ" class="hero-portrait hero-portrait-blue" />
+                    <span class="hero-portrait-name hero-portrait-name-blue">チェンコ</span>
+                </div>
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/inwu.jpg" alt="インウー" class="hero-portrait hero-portrait-blue" />
+                    <span class="hero-portrait-name hero-portrait-name-blue">インウー</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-tier">
+            <span class="hero-badge hero-badge-red">🗡️ 攻撃 +25%</span>
+            <div class="hero-portrait-row">
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/amane.jpg" alt="あまね" class="hero-portrait hero-portrait-red" />
+                    <span class="hero-portrait-name hero-portrait-name-red">あまね</span>
+                </div>
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/margo.jpg" alt="マーゴ" class="hero-portrait hero-portrait-red hero-portrait-margo" />
+                    <span class="hero-portrait-name hero-portrait-name-red">マーゴ</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-tier">
+            <span class="hero-badge hero-badge-purple">💠 敵被ダメージ +25%</span>
+            <div class="hero-portrait-row">
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/vivian.jpg" alt="ビビアン" class="hero-portrait hero-portrait-purple" />
+                    <span class="hero-portrait-name hero-portrait-name-purple">ビビアン</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-tier">
+            <span class="hero-badge hero-badge-green">⬆️ 攻撃 +15%</span>
+            <div class="hero-portrait-row">
+                <div class="hero-portrait-item">
+                    <img src="images/heroes/hilde.jpg" alt="ヒルデ" class="hero-portrait hero-portrait-green" />
+                    <span class="hero-portrait-name hero-portrait-name-green">ヒルデ</span>
+                </div>
+            </div>
+            <RadzenText TextStyle="TextStyle.Body2" class="hero-tier-note"><strong>暫定枠</strong>。英雄が育ってきたら他の英雄に入れ替えを検討。</RadzenText>
+        </div>
+    </div>
     <RadzenText TextStyle="TextStyle.Body1">
         集結参加者から反映される英雄スキルは、基本的に左英雄の第1遠征スキルのみです。さらに集結内で有効になるのは最大4人分。第1遠征スキルのLvが高い英雄が優先されるため、対象英雄の第1遠征スキルLv5を優先しましょう。
     </RadzenText>
@@ -194,11 +242,37 @@
 
     <div class="guide-section-divider"></div>
     <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">👑 おすすめ集結主編成</RadzenText>
-    <div class="guide-callout">
-        <span class="guide-callout-label">編成</span>
-        アマデウス(ヘルガ) / ペーラ / ヤン
-        <br />
-        ヤンが未育成の場合 → ローザ(マリン)
+    <div class="hero-tier">
+        <span class="hero-badge hero-badge-gold">👑 メイン編成</span>
+        <div class="hero-portrait-row">
+            <div class="hero-portrait-item">
+                <div class="hero-portrait-pair">
+                    <img src="images/heroes/amadeus.png" alt="アマデウス" class="hero-portrait hero-portrait-gold" />
+                    <span class="hero-portrait-plus">＋</span>
+                    <img src="images/heroes/helga.png" alt="ヘルガ" class="hero-portrait hero-portrait-gold hero-portrait-sm" />
+                </div>
+                <span class="hero-portrait-name hero-portrait-name-gold">アマデウス(ヘルガ)</span>
+            </div>
+            <div class="hero-portrait-item">
+                <img src="images/heroes/paera.jpg" alt="ペーラ" class="hero-portrait hero-portrait-gold" />
+                <span class="hero-portrait-name hero-portrait-name-gold">ペーラ</span>
+            </div>
+            <div class="hero-portrait-item">
+                <img src="images/heroes/yan.jpg" alt="ヤン" class="hero-portrait hero-portrait-gold" />
+                <span class="hero-portrait-name hero-portrait-name-gold">ヤン</span>
+            </div>
+        </div>
+        <RadzenText TextStyle="TextStyle.Body2" class="hero-tier-note">ヤンが未育成の場合 ↓</RadzenText>
+        <div class="hero-portrait-row">
+            <div class="hero-portrait-item">
+                <div class="hero-portrait-pair">
+                    <img src="images/heroes/rosa.jpg" alt="ローザ" class="hero-portrait hero-portrait-gold" />
+                    <span class="hero-portrait-plus">＋</span>
+                    <img src="images/heroes/marin.png" alt="マリン" class="hero-portrait hero-portrait-gold hero-portrait-sm" />
+                </div>
+                <span class="hero-portrait-name hero-portrait-name-gold">ローザ(マリン)</span>
+            </div>
+        </div>
     </div>
     <RadzenText TextStyle="TextStyle.Body1">
         集結主は参加者とは仕組みが異なり、編成した3英雄の遠征スキルや集結主自身の各種ステータスが反映されます。そのため、<strong>強いプレイヤーが集結主になり、他のメンバーがその集結へ参加する</strong>ことでダメージを伸ばしやすくなります。
@@ -251,6 +325,172 @@
         <li>プリセットを作っておく — 「1：10：89」など熊専用編成を保存しておくと、集結参加がスムーズになります。</li>
         <li>戦報で比較する — 比率を少しずつ変更し、同じ集結主・近い条件でダメージを比較すると、自分に合った編成を見つけやすくなります。</li>
     </ol>
+    </div>
+</details>
+
+<details id="swordland" name="events-accordion" class="guide-rank">
+    <summary class="guide-rank-header">
+        <span class="guide-rank-icon">⚔️</span>
+        <div>
+            <RadzenText TextStyle="TextStyle.H5" class="rz-m-0">聖剣争奪 攻略</RadzenText>
+            <span class="guide-rank-percent">施設ポイント争奪イベント</span>
+        </div>
+        <span class="guide-rank-chevron">▾</span>
+    </summary>
+    <div class="guide-rank-body">
+        <RadzenText TextStyle="TextStyle.Body1">
+            聖剣争奪は数あるイベントの中でも<strong>特にルールが分かりづらいイベント</strong>です。みんなでルールを覚えて、コツを掴んで楽しみましょう！
+        </RadzenText>
+
+        <div class="guide-section-divider"></div>
+        <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🗺️ 施設配置図</RadzenText>
+        <RadzenText TextStyle="TextStyle.Body1">
+            左右の菱形マークが両陣営の拠点、中央の祭壇を中心に各施設が配置されています。
+        </RadzenText>
+        <img src="images/swordland/swordland-map.jpg" alt="聖剣争奪 施設配置図" class="guide-diagram" />
+
+        <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🏰 施設ごとの効果</RadzenText>
+        <RadzenText TextStyle="TextStyle.Body1">
+            下の図の番号と対応しています。占有すると同盟・個人それぞれに聖契ポイントが毎分入り、一部の施設には固有の特殊効果もあります。
+        </RadzenText>
+        <div class="table-wrap">
+            <table class="guide-table">
+                <thead>
+                    <tr><th>施設</th><th>同盟ポイント</th><th>個人ポイント</th><th>特殊効果</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="swordland-num swordland-num-red">①</span> <ruby>鐘楼<rt>しょうろう</rt></ruby></td><td>+240/分</td><td>+120/分</td><td>占有時間の半減</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-pink">⑪</span> <ruby>厩舎<rt>きゅうしゃ</rt></ruby></td><td>+240/分</td><td>+120/分</td><td>無料移転時間の半減</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-green">③</span> <ruby>傭兵<rt>ようへい</rt></ruby></td><td>+240/分</td><td>+120/分</td><td>敵軍へのデバフ</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-teal">⑨</span> <ruby>教化<rt>きょうか</rt></ruby></td><td>+240/分</td><td>+120/分</td><td>自軍へのバフ</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-orange">⑥</span> <ruby>祭壇<rt>さいだん</rt></ruby>(中央)</td><td>+1800/分</td><td>+90/分</td><td>ー</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-blue">②</span> <span class="swordland-num swordland-num-blue">⑤</span> <span class="swordland-num swordland-num-blue">⑦</span> <span class="swordland-num swordland-num-blue">⑩</span> <ruby>修道院<rt>しゅうどういん</rt></ruby></td><td>+600/分</td><td>+300/分</td><td>ー</td></tr>
+                    <tr><td><span class="swordland-num swordland-num-purple">④</span> <span class="swordland-num swordland-num-purple">⑧</span> <ruby>聖域<rt>せいいき</rt></ruby></td><td>+1200/分</td><td>+600/分</td><td>ー</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="guide-callout">
+            <span class="guide-callout-label">狙い方の目安</span>
+            中央の<strong>祭壇</strong>は同盟ポイントが圧倒的に高いので同盟全体で死守。<strong>聖域</strong>は個人ポイントの効率が良く、個人の稼ぎを重視するならここ。<strong>鐘楼・厩舎・傭兵・教化</strong>はポイント自体は控えめですが、占有時間半減や敵デバフなど戦況を左右する特殊効果があるため軽視できません。
+        </div>
+
+        <div class="guide-section-divider"></div>
+        <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📊 施設占有・採取の優先順位</RadzenText>
+        <div class="swordland-phase-grid">
+            <div class="swordland-phase-card">
+                <span class="swordland-phase-badge swordland-phase-early">序盤</span>
+                <div class="swordland-priority-chain">
+                    <span class="swordland-chip swordland-num-red">鐘楼</span>
+                    <span class="swordland-chain-op">≧</span>
+                    <span class="swordland-chip swordland-num-pink">厩舎</span>
+                    <span class="swordland-chain-op">＞</span>
+                    <span class="swordland-chip swordland-num-purple">聖域</span>
+                    <span class="swordland-chain-op">≧</span>
+                    <span class="swordland-chip swordland-num-blue">修道院</span>
+                </div>
+                <ul class="guide-list swordland-phase-notes">
+                    <li>鐘楼・厩舎の効果を早めに確保しつつ、聖域・修道院でポイントを稼ぐ</li>
+                </ul>
+            </div>
+
+            <span class="swordland-phase-arrow">↓</span>
+
+            <div class="swordland-phase-card">
+                <span class="swordland-phase-badge swordland-phase-mid">中盤</span>
+                <div class="swordland-priority-chain">
+                    <span class="swordland-chip swordland-num-orange">祭壇</span>
+                    <span class="swordland-chain-op">＞</span>
+                    <span class="swordland-chip swordland-num-red">鐘楼</span>
+                    <span class="swordland-chain-op">≧</span>
+                    <span class="swordland-chip swordland-num-pink">厩舎</span>
+                    <span class="swordland-chain-op">＞</span>
+                    <span class="swordland-chip swordland-num-green">傭兵</span>
+                    <span class="swordland-chain-op">＝</span>
+                    <span class="swordland-chip swordland-num-teal">教化</span>
+                </div>
+                <ul class="guide-list swordland-phase-notes">
+                    <li>祭壇を中心に争い、傭兵・教化のバフ／デバフも活用</li>
+                    <li>相手が格上の場合は、無理に祭壇を争わず諦めるのも有効</li>
+                </ul>
+            </div>
+
+            <span class="swordland-phase-arrow">↓</span>
+
+            <div class="swordland-phase-card">
+                <span class="swordland-phase-badge swordland-phase-late">終盤</span>
+                <div class="swordland-priority-chain">
+                    <span class="swordland-chip swordland-num-purple">聖域</span>
+                    <span class="swordland-chain-op">≧</span>
+                    <span class="swordland-chip swordland-num-blue">修道院</span>
+                    <span class="swordland-chain-op">＞</span>
+                    <span class="swordland-chip swordland-num-red">鐘楼</span>
+                    <span class="swordland-chain-op">≧</span>
+                    <span class="swordland-chip swordland-num-pink">厩舎</span>
+                </div>
+                <ul class="guide-list swordland-phase-notes">
+                    <li>ポイント獲得を優先し、最後まで施設占有を継続</li>
+                </ul>
+            </div>
+
+            <span class="swordland-phase-plus">＋</span>
+
+            <div class="swordland-phase-card">
+                <span class="swordland-phase-badge swordland-phase-gather">採取</span>
+                <RadzenText TextStyle="TextStyle.Body2" class="rz-m-0">
+                    <strong>施設戦に参加しにくいメンバーを中心に</strong>積極的に採取
+                </RadzenText>
+                <ul class="guide-list swordland-phase-notes rz-mt-2">
+                    <li>施設の奪い合いが難しい場合でも、採取で安定してポイントを獲得できる</li>
+                    <li>高戦力メンバーは施設戦・援軍を優先し、採取は中～低戦力メンバーが担当すると効率的</li>
+                </ul>
+            </div>
+        </div>
+        <div class="guide-callout guide-callout-conclusion">
+            <strong>高戦力＝施設戦、中～低戦力＝採取と援護。全員に役割があります。</strong>
+        </div>
+
+        <div class="guide-section-divider"></div>
+        <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🏆 戦場で意識するポイント</RadzenText>
+        <div class="tip-list">
+            <div class="tip-item">
+                <span class="tip-num">1</span>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">空いている施設は積極的に確保する</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">初回占有ボーナスがあるため序盤は特に重要。無人・手薄な施設を見つけたらすぐ狙いましょう。</RadzenText>
+                </div>
+            </div>
+            <div class="tip-item">
+                <span class="tip-num">2</span>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">勝てない施設に固執しない</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">格上が駐屯する施設を攻め続けるより、別施設への移動や敵都市への攻撃で相手の動きを崩す方が有効です。</RadzenText>
+                </div>
+            </div>
+            <div class="tip-item">
+                <span class="tip-num">3</span>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">無料都市移転は積極的に活用する</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">聖剣争奪は機動力が重要。厩舎を確保すると再使用までの時間も短縮されるので、温存せず施設攻略や敵への攻撃に使いましょう。</RadzenText>
+                </div>
+            </div>
+            <div class="tip-item">
+                <span class="tip-num">4</span>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">散らばったポイントは素早く回収する</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">施設が奪われた時などに散らばるポイントは貴重な得点源。低〜中戦力メンバーが回収に回り、高戦力は施設の攻防に集中しましょう。</RadzenText>
+                </div>
+            </div>
+            <div class="tip-item">
+                <span class="tip-num">5</span>
+                <div>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-m-0">採取(Undercellar)も忘れない</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">施設戦で活躍しにくいメンバーもポイントに貢献できます。特に終盤は残っている採取ポイントの回収を意識しましょう。</RadzenText>
+                </div>
+            </div>
+        </div>
+        <div class="guide-callout guide-callout-conclusion">
+            <strong>施設を守る・敵を攻める・ポイントを拾う・採取する。</strong>それぞれが戦力に応じた役割を持つことが勝利への近道です。
+        </div>
     </div>
 </details>
 
