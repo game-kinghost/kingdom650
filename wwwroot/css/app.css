@@ -779,36 +779,6 @@ code {
                     background-color: #ffe4b8;
                 }
 
-.newsletter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-    .newsletter-grid figure {
-        margin: 0;
-        text-align: center;
-    }
-
-    .newsletter-grid .thumb {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        border: 1px dashed #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #999;
-        background: #fafafa;
-        box-sizing: border-box;
-    }
-
-    .newsletter-grid figcaption {
-        font-size: 0.8rem;
-        color: #666;
-        margin-top: 0.4rem;
-    }
-
 .video-thumb-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
