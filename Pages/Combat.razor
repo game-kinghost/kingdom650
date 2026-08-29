@@ -1,134 +1,152 @@
 @page "/combat"
 
-<PageTitle>戦闘計算 - Kingshot 650王国</PageTitle>
+<PageTitle>戦闘の仕組み - Kingshot 650王国</PageTitle>
 
 <div class="page-title-band">
-    <RadzenText TextStyle="TextStyle.H3" class="rz-m-0">⚔️ 戦闘ステータス・ダメージ計算</RadzenText>
+    <RadzenText TextStyle="TextStyle.H3" class="rz-m-0">⚔️ 強くなるための戦闘基礎</RadzenText>
 </div>
 <RadzenText TextStyle="TextStyle.Body1">
-    Kingshotの戦闘計算式は公式には公開されていませんが、コミュニティでの検証・解析で有力とされている推測モデルをまとめています。
+    「攻撃だけ上げればいい」「兵士は多ければ多いほどいい」わけではありません。Kingshotの戦闘は、攻撃・殺傷・防御・HP・兵数・英雄スキル・兵士比率など複数の要素で結果が決まります。育成ガイド・熊攻略・イベント攻略の土台になる考え方をまとめました。
 </RadzenText>
 
 <div class="guide-callout guide-callout-warn">
-    ここで紹介している内容は、コミュニティによる戦報検証・解析から導き出された<strong>現在有力な推測モデル</strong>です。アップデートや今後の検証によって変更・修正される可能性があります。
+    ここで紹介している内容は、コミュニティによる戦報検証・解析(Kingshot Optimizerなど)から導き出された<strong>現在有力な推測モデル</strong>です。公式に公開されている計算式ではなく、アップデートや今後の検証によって変更・修正される可能性があります。
 </div>
 
 <div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📐 現在有力な推測計算式</RadzenText>
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">① 📐 戦闘計算の仕組み</RadzenText>
     <RadzenText TextStyle="TextStyle.Body1">
         簡略化すると、以下の式が有力とされています。
     </RadzenText>
     <div class="guide-callout guide-callout-conclusion">
-        撃破 ≒ √兵数 ×（攻撃 × 殺傷）÷（敵防御 × 敵HP）× SkillMod
+        撃破 ≒ √兵数 ×（攻撃 × 殺傷）÷（敵防御 × 敵HP）× スキル補正
     </div>
     <RadzenText TextStyle="TextStyle.Body1">
         大きく分けると、次の4つの要素でダメージが決まると考えられています。
     </RadzenText>
     <ul class="guide-list">
-        <li>① 兵数</li>
-        <li>② 攻撃 × 殺傷</li>
-        <li>③ 敵防御 × 敵HP</li>
-        <li>④ 英雄スキルなどの補正(SkillMod)</li>
+        <li>① 兵数(単純比例ではなく、平方根で効いてくる)</li>
+        <li>② 攻撃 × 殺傷(火力)</li>
+        <li>③ 敵防御 × 敵HP(相手の耐久)</li>
+        <li>④ 英雄スキルなどの補正(スキル補正)</li>
     </ul>
     <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">※実際の内部計算はさらに複雑です。この式は各ステータスの関係を理解するための簡略式です。</RadzenText>
 </div>
 
 <div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⚔️ 攻撃と殺傷</RadzenText>
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">② 📊 育成で意識すること — ステータスはバランスが重要</RadzenText>
     <RadzenText TextStyle="TextStyle.Body1">
-        基本的な攻撃性能は<strong>攻撃 × 殺傷</strong>で決まると考えられています。そのため、どちらか一方だけを極端に高くするより、バランスを取ることが重要です。
+        計算式の中では<strong>攻撃 × 殺傷 → 攻撃性能</strong>、<strong>防御 × HP → 防御性能</strong>として掛け算で影響します。そのため、どちらか一方だけを極端に伸ばすより、バランスよく育てる方が効率的です。
     </RadzenText>
 
-    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">例：攻撃500 × 殺傷300 = 150,000</RadzenText>
-    <RadzenText TextStyle="TextStyle.Body1">
-        ここから同じ「+100」を振れる場合。
-    </RadzenText>
+    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">例：合計値が同じでも、積は変わる</RadzenText>
     <div class="guide-compare">
         <div>
-            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">攻撃+100</RadzenText>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">偏った配分</RadzenText>
             <div class="guide-callout rz-mt-2">
-                600 × 300<br />
-                = <strong>180,000</strong>
+                攻撃120 × 殺傷80<br />
+                = <strong>9,600</strong>
             </div>
         </div>
         <div>
-            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">殺傷+100</RadzenText>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">バランス配分</RadzenText>
             <div class="guide-callout guide-callout-conclusion rz-mt-2">
-                500 × 400<br />
-                = <strong>200,000</strong>
+                攻撃100 × 殺傷100<br />
+                = <strong>10,000</strong>
             </div>
         </div>
     </div>
     <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-        この場合は、低い「殺傷」を上げた方が伸びます。
+        合計値(200)は同じでも、バランスよく配分した方が積は大きくなります。同じ考え方で、<strong>攻撃と殺傷、防御とHPは低い方を伸ばす方が効率的</strong>です。
     </RadzenText>
     <div class="guide-callout">
         <span class="guide-callout-label">💡 ポイント</span>
-        <strong>同じ数値を上げられるなら、低い方を上げる方が効率的。</strong>ただし、同じ「＋25%」という倍率を掛ける場合は「攻撃×1.25×殺傷」でも「攻撃×殺傷×1.25」でも結果は同じです。そのため、<strong>「殺傷は攻撃より必ず強い」わけではありません。</strong>実際には攻撃の方が高くなりやすいため、結果として殺傷を伸ばした方が効率的になるケースが多い、と考えるのが分かりやすいです。
+        ただし、同じ「＋25%」という倍率を掛ける場合は「攻撃×1.25×殺傷」でも「攻撃×殺傷×1.25」でも結果は同じです。そのため<strong>「殺傷は攻撃より必ず強い」わけではありません。</strong>実際には攻撃の方が高くなりやすいため、結果として殺傷を伸ばした方が効率的になるケースが多い、と考えるのが分かりやすいです。
     </div>
-</div>
 
-<div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🛡️ 防御とHP</RadzenText>
+    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-4">🔥 英雄スキルによる補正</RadzenText>
     <RadzenText TextStyle="TextStyle.Body1">
-        耐久性能についても同じで、<strong>防御 × HP</strong>として考えます。防御とHPのどちらかだけに偏らせるより、バランスよく育成した方が積を大きくしやすくなります。
+        英雄スキルには、通常の攻撃・殺傷・防御・HPとは別に、最終的なダメージを補正する<strong>スキル補正</strong>という仕組みがあると考えられています。現在の解析では、簡略化すると以下のような構造です。
     </RadzenText>
     <div class="guide-callout guide-callout-conclusion">
-        ⚔️ 攻撃 × 殺傷 → 火力<br />
-        🛡️ 防御 × HP → 耐久力
-    </div>
-</div>
-
-<div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🔥 SkillModとは？</RadzenText>
-    <RadzenText TextStyle="TextStyle.Body1">
-        ここが英雄を考えるうえで非常に重要です。現在の解析では、簡略化すると以下のような構造と考えられています。
-    </RadzenText>
-    <div class="guide-callout guide-callout-conclusion">
-        SkillMod ≒（DamageUp × 敵DefenseDown）÷（敵DamageDown × DefenseUp）
+        スキル補正 ≒（自軍ダメージ上昇 × 敵防御低下）÷（敵ダメージ低下 × 自軍防御上昇）
     </div>
     <RadzenText TextStyle="TextStyle.Body1">
-        つまり英雄スキルには、通常の攻撃・殺傷・防御・HPとは別に、最終的なダメージを補正する仕組みがあります。
+        通常ステータスをどれだけ伸ばしても、スキル補正が弱ければ結果は伸び悩みます。<strong>ステータスとスキル、両方のバランス</strong>を意識しましょう。
     </RadzenText>
 </div>
 
 <div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">👥 集結参加英雄は少し特殊</RadzenText>
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">③ 🏹 兵士比率も相手によって変わる</RadzenText>
     <RadzenText TextStyle="TextStyle.Body1">
-        ここは特に注意が必要です。集結参加時に左端へ配置する英雄の第1遠征スキルには、「攻撃+25%」「殺傷+25%」「敵被ダメージ+25%」など様々な表記があります。
+        <strong>万能な兵士比率はありません。</strong>「相手・イベント・使用英雄」に合わせて比率を変えることが重要です。
     </RadzenText>
+    <div class="guide-compare">
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">⚔️ PvP</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1">
+                歩兵が前衛、弓兵が火力役。反撃を受けるため、<strong>歩兵を多めにした編成</strong>が基本になります。
+            </RadzenText>
+        </div>
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">🐻 熊狩り</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body1">
+                熊から攻撃を受けないため、防御を考える必要がなく、<strong>弓兵を大幅に増やした火力特化編成</strong>が有効です。
+            </RadzenText>
+        </div>
+    </div>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc rz-mt-2">具体的な比率は <NavLink href="events#bear">熊狩り攻略</NavLink> にまとめています。</RadzenText>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">④ 👥 集結の仕組み — 「集結主」が重要</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        集結では、参加者全員のステータスがそのまま使われるわけではありません。<strong>集結主の英雄・研究・装備・各種バフなどのステータスが集結部隊全体に適用</strong>され、参加者からは兵士と一部の英雄スキルが加わる仕組みとされています。
+    </RadzenText>
+    <div class="guide-compare">
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">👑 強い人が集結主</RadzenText>
+            <div class="guide-callout guide-callout-conclusion rz-mt-2">◎ ステータスを最大限活かせる</div>
+        </div>
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">🐴 強い人が集結参加</RadzenText>
+            <div class="guide-callout rz-mt-2">△ 集結主ほどステータスを活かせない</div>
+        </div>
+    </div>
     <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-        しかし現在の解析では、これらをそのまま通常ステータスの「攻撃」や「殺傷」に+25%するものとして計算するのではなく、<strong>集結参加スキル用のSkillModとして処理される</strong>と考えられています。
+        王城戦やKvKでは、<strong>誰が集結を出すか</strong>も重要な戦略になります。
     </RadzenText>
     <div class="guide-callout guide-callout-warn">
-        <strong>通常ステータスの「攻撃+25%」</strong>と<strong>集結参加英雄のスキルに書かれている「攻撃+25%」</strong>は、計算上まったく同じものとは限りません。
+        <span class="guide-callout-label">集結参加英雄は少し特殊</span>
+        集結参加時に左端へ配置する英雄の第1遠征スキルには「攻撃+25%」などの表記がありますが、通常ステータスにそのまま+25%するのではなく、<strong>集結参加スキル用の補正として処理される</strong>と考えられています。通常ステータスの「攻撃+25%」とは、計算上まったく同じものとは限りません。
     </div>
 </div>
 
 <div class="alliance-section">
-    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🐻 熊で重要になる理由</RadzenText>
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⑤ 🐻 熊への応用</RadzenText>
     <RadzenText TextStyle="TextStyle.Body1">
-        熊狩りでは耐久よりも、<strong>制限時間内にどれだけダメージを与えられるか</strong>が重要です。そのため基本的には、<strong>攻撃 × 殺傷 ＋ SkillMod</strong>を伸ばすことが重要になります。
+        熊狩りでは耐久よりも、<strong>制限時間内にどれだけダメージを与えられるか</strong>が重要です。そのため基本的には、<strong>攻撃 × 殺傷 ＋ スキル補正</strong>を伸ばすことが重要になります。
     </RadzenText>
     <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
-        逆に、防御・HP・被ダメージ減少など、こちらの耐久力だけを上げる効果は熊へのダメージ増加にはつながりません。
+        逆に、防御・HP・被ダメージ減少など、こちらの耐久力だけを上げる効果は熊へのダメージ増加にはつながりません。「なぜ弓89%なのか」「なぜ左英雄を指定するのか」は、ここまでの考え方がそのまま理由になっています。
     </RadzenText>
+    <div class="guide-callout">
+        詳しい編成・兵士比率は <NavLink href="events#bear">熊狩り攻略</NavLink>、育成の優先順位は <NavLink href="strategy">育成順位</NavLink> にまとめています。
+    </div>
 </div>
 
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📌 まとめ</RadzenText>
-<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">基本ステータス</RadzenText>
 <ul class="guide-list guide-checklist">
-    <li>⚔️ 攻撃 × 殺傷 ＝ 火力</li>
-    <li>🛡️ 防御 × HP ＝ 耐久</li>
-    <li>同じ強化量なら、低い方を伸ばしてバランスを取るのが効率的</li>
-</ul>
-<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">英雄スキル</RadzenText>
-<ul class="guide-list guide-checklist">
-    <li>💥 SkillMod ＝ スキルによる別系統の補正</li>
-    <li>集結参加英雄の第1遠征スキルは、表記上「攻撃」「殺傷」でも単純加算とは限らない</li>
+    <li>⚔️ 攻撃 × 殺傷 ＝ 火力、🛡️ 防御 × HP ＝ 耐久。同じ強化量なら低い方を伸ばしてバランスを取る</li>
+    <li>💥 スキル補正はステータスと別枠。ステータスだけ伸ばしても頭打ちになる</li>
+    <li>🏹 兵士比率に万能解はない。PvPは歩兵多め、熊は弓兵特化</li>
+    <li>👥 集結は集結主のステータスが全体に反映される。強い人が集結主になるのが基本</li>
+    <li>集結参加英雄の第1遠征スキルは、表記上「攻撃」「殺傷」でも通常ステータスへの単純加算とは限らない</li>
 </ul>
 
 <div class="guide-callout guide-callout-warn">
     <span class="guide-callout-label">⚠️ 注意</span>
-    Kingshotの正確なサーバー内部計算式は公式には公開されていません。ここで紹介している内容は、コミュニティによる戦報検証・解析などから導き出された現在有力な推測モデルです。アップデートや今後の検証によって変更・修正される可能性があります。
+    Kingshotの正確なサーバー内部計算式は公式には公開されていません。ここで紹介している内容は、コミュニティによる戦報検証・解析(Kingshot Optimizerなど)から導き出された現在有力な推測モデルです。アップデートや今後の検証によって変更・修正される可能性があります。
 </div>
+
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc rz-mt-2">🎥 実例や計算式をさらに詳しく解説した参考動画は <NavLink href="videos">動画ページ</NavLink> にまとめています。</RadzenText>

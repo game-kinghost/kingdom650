@@ -28,12 +28,28 @@
         <span class="spark"></span>
         <span class="spark"></span>
         <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
     </div>
     <div class="firework firework-right" aria-hidden="true">
         <span class="spark"></span>
         <span class="spark"></span>
         <span class="spark"></span>
         <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+        <span class="spark"></span>
+    </div>
+    <div class="marbles" aria-hidden="true">
+        <span class="marble marble-1"></span>
+        <span class="marble marble-2"></span>
+        <span class="marble marble-3"></span>
+        <span class="marble marble-4"></span>
+        <span class="marble marble-5"></span>
+        <span class="marble marble-6"></span>
+        <span class="marble marble-7"></span>
+        <span class="marble marble-8"></span>
     </div>
     <div class="hero-content">
         <div class="mascot-sprite-wrap">
@@ -43,41 +59,107 @@
     </div>
 </div>
 
-<RadzenText TextStyle="TextStyle.H5" class="rz-mt-4">📖 コンテンツ一覧</RadzenText>
-<div class="alliance-highlight-grid">
-    <a href="kvk" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">👑</span>
-        <span class="alliance-highlight-title">KvK戦況</span>
-        <span class="alliance-highlight-desc">王城決戦の対戦履歴</span>
-    </a>
-    <a href="alliance" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">🏰</span>
-        <span class="alliance-highlight-title">同盟</span>
-        <span class="alliance-highlight-desc">王国運営・同盟間ルール</span>
-    </a>
-    <a href="strategy" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">📊</span>
-        <span class="alliance-highlight-title">育成順位</span>
-        <span class="alliance-highlight-desc">何から育てるべきか一目で分かる</span>
-    </a>
-    <a href="events" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">🎉</span>
-        <span class="alliance-highlight-title">イベント</span>
-        <span class="alliance-highlight-desc">聖剣争奪・熊・秘境の試練の攻略</span>
-    </a>
-    <a href="combat" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">⚔️</span>
-        <span class="alliance-highlight-title">戦闘計算</span>
-        <span class="alliance-highlight-desc">ダメージ計算式の考え方</span>
-    </a>
-    <a href="videos" class="alliance-highlight-card">
-        <span class="alliance-highlight-icon">📺</span>
-        <span class="alliance-highlight-title">動画</span>
-        <span class="alliance-highlight-desc">おすすめ参考動画まとめ</span>
-    </a>
-</div>
+<RadzenText TextStyle="TextStyle.H5" class="rz-mt-4">👑 直近のKvK戦績</RadzenText>
+<a href="kvk" class="kvk-stat-band home-kvk-highlight">
+    <div class="kvk-stat-crown">👑</div>
+    <div class="kvk-stat-item">
+        <span class="kvk-stat-value">12</span>
+        <span class="kvk-stat-label">総戦数</span>
+    </div>
+    <div class="kvk-stat-item kvk-stat-win">
+        <span class="kvk-stat-value">9</span>
+        <span class="kvk-stat-label">勝利</span>
+    </div>
+    <div class="kvk-stat-item kvk-stat-lose">
+        <span class="kvk-stat-value">3</span>
+        <span class="kvk-stat-label">敗北</span>
+    </div>
+    <div class="kvk-stat-item kvk-stat-rate">
+        <span class="kvk-stat-value">75%</span>
+        <span class="kvk-stat-label">勝率</span>
+    </div>
+    <span class="home-kvk-highlight-more">詳しい対戦履歴を見る →</span>
+</a>
 
-<div class="guide-callout guide-callout-conclusion rz-mt-4">
-    <span class="guide-callout-label">👑 直近のKvK戦績</span>
-    <strong>12戦 9勝 3敗 ｜ 勝率 75%</strong> — 詳しい対戦履歴は <NavLink href="kvk">KvK戦況ページ</NavLink> で確認できます。
+<RadzenCard class="rz-my-4">
+    <RadzenText TextStyle="TextStyle.Subtitle1">🔥 注目の動画｜炎竜イベント参考動画</RadzenText>
+    <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/fe859w3Ruf0"
+                title="炎竜イベント参考動画"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+    <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
+        他の参考動画は <NavLink href="videos">動画ページ</NavLink> にまとめています。
+    </RadzenText>
+</RadzenCard>
+
+<RadzenText TextStyle="TextStyle.H5" class="rz-mt-4">📖 コンテンツ一覧</RadzenText>
+
+<div class="home-content-grid">
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">📢 王国のお知らせ</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">650王国独自の情報</RadzenText>
+    <div class="alliance-highlight-grid">
+        <a href="alliance" class="alliance-highlight-card home-card-red">
+            <span class="alliance-highlight-icon">🏰</span>
+            <span class="alliance-highlight-title">同盟</span>
+            <span class="alliance-highlight-desc">王国運営・同盟間ルール</span>
+        </a>
+        <a href="kvk" class="alliance-highlight-card home-card-gold">
+            <span class="alliance-highlight-icon">👑</span>
+            <span class="alliance-highlight-title">KvK戦況</span>
+            <span class="alliance-highlight-desc">王城決戦の対戦履歴</span>
+        </a>
+    </div>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🎮 イベント攻略</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">一般的な定石・攻略法</RadzenText>
+    <div class="alliance-highlight-grid">
+        <a href="events" class="alliance-highlight-card home-card-green">
+            <span class="alliance-highlight-icon">🎉</span>
+            <span class="alliance-highlight-title">イベント</span>
+            <span class="alliance-highlight-desc">聖剣争奪・熊・秘境の試練の攻略</span>
+        </a>
+        <a href="videos" class="alliance-highlight-card home-card-teal">
+            <span class="alliance-highlight-icon">📺</span>
+            <span class="alliance-highlight-title">動画</span>
+            <span class="alliance-highlight-desc">おすすめ参考動画まとめ</span>
+        </a>
+    </div>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">💪 育成ガイド</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">育成優先順位・戦闘計算</RadzenText>
+    <div class="alliance-highlight-grid">
+        <a href="strategy" class="alliance-highlight-card home-card-blue">
+            <span class="alliance-highlight-icon">📊</span>
+            <span class="alliance-highlight-title">育成順位</span>
+            <span class="alliance-highlight-desc">何から育てるべきか一目で分かる</span>
+        </a>
+        <a href="combat" class="alliance-highlight-card home-card-purple">
+            <span class="alliance-highlight-icon">⚔️</span>
+            <span class="alliance-highlight-title">戦闘計算</span>
+            <span class="alliance-highlight-desc">ダメージ計算式の考え方</span>
+        </a>
+    </div>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🌱 初心者ガイド</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">王国メンバー向け入門</RadzenText>
+    <div class="alliance-highlight-grid">
+        <div class="alliance-highlight-card alliance-highlight-card-pending">
+            <span class="alliance-highlight-icon">🌱</span>
+            <span class="alliance-highlight-title">初心者ガイド</span>
+            <span class="alliance-highlight-desc">準備中</span>
+        </div>
+    </div>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🧮 便利ツール</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">自作計算機</RadzenText>
+    <div class="alliance-highlight-grid">
+        <div class="alliance-highlight-card alliance-highlight-card-pending">
+            <span class="alliance-highlight-icon">🧮</span>
+            <span class="alliance-highlight-title">便利ツール</span>
+            <span class="alliance-highlight-desc">準備中</span>
+        </div>
+    </div>
 </div>
