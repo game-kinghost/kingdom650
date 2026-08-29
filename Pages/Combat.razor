@@ -1,0 +1,134 @@
+@page "/combat"
+
+<PageTitle>戦闘計算 - Kingshot 650王国</PageTitle>
+
+<div class="page-title-band">
+    <RadzenText TextStyle="TextStyle.H3" class="rz-m-0">⚔️ 戦闘ステータス・ダメージ計算</RadzenText>
+</div>
+<RadzenText TextStyle="TextStyle.Body1">
+    Kingshotの戦闘計算式は公式には公開されていませんが、コミュニティでの検証・解析で有力とされている推測モデルをまとめています。
+</RadzenText>
+
+<div class="guide-callout guide-callout-warn">
+    ここで紹介している内容は、コミュニティによる戦報検証・解析から導き出された<strong>現在有力な推測モデル</strong>です。アップデートや今後の検証によって変更・修正される可能性があります。
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📐 現在有力な推測計算式</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        簡略化すると、以下の式が有力とされています。
+    </RadzenText>
+    <div class="guide-callout guide-callout-conclusion">
+        撃破 ≒ √兵数 ×（攻撃 × 殺傷）÷（敵防御 × 敵HP）× SkillMod
+    </div>
+    <RadzenText TextStyle="TextStyle.Body1">
+        大きく分けると、次の4つの要素でダメージが決まると考えられています。
+    </RadzenText>
+    <ul class="guide-list">
+        <li>① 兵数</li>
+        <li>② 攻撃 × 殺傷</li>
+        <li>③ 敵防御 × 敵HP</li>
+        <li>④ 英雄スキルなどの補正(SkillMod)</li>
+    </ul>
+    <RadzenText TextStyle="TextStyle.Body2" class="tip-desc">※実際の内部計算はさらに複雑です。この式は各ステータスの関係を理解するための簡略式です。</RadzenText>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⚔️ 攻撃と殺傷</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        基本的な攻撃性能は<strong>攻撃 × 殺傷</strong>で決まると考えられています。そのため、どちらか一方だけを極端に高くするより、バランスを取ることが重要です。
+    </RadzenText>
+
+    <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">例：攻撃500 × 殺傷300 = 150,000</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        ここから同じ「+100」を振れる場合。
+    </RadzenText>
+    <div class="guide-compare">
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">攻撃+100</RadzenText>
+            <div class="guide-callout rz-mt-2">
+                600 × 300<br />
+                = <strong>180,000</strong>
+            </div>
+        </div>
+        <div>
+            <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-2">殺傷+100</RadzenText>
+            <div class="guide-callout guide-callout-conclusion rz-mt-2">
+                500 × 400<br />
+                = <strong>200,000</strong>
+            </div>
+        </div>
+    </div>
+    <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
+        この場合は、低い「殺傷」を上げた方が伸びます。
+    </RadzenText>
+    <div class="guide-callout">
+        <span class="guide-callout-label">💡 ポイント</span>
+        <strong>同じ数値を上げられるなら、低い方を上げる方が効率的。</strong>ただし、同じ「＋25%」という倍率を掛ける場合は「攻撃×1.25×殺傷」でも「攻撃×殺傷×1.25」でも結果は同じです。そのため、<strong>「殺傷は攻撃より必ず強い」わけではありません。</strong>実際には攻撃の方が高くなりやすいため、結果として殺傷を伸ばした方が効率的になるケースが多い、と考えるのが分かりやすいです。
+    </div>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🛡️ 防御とHP</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        耐久性能についても同じで、<strong>防御 × HP</strong>として考えます。防御とHPのどちらかだけに偏らせるより、バランスよく育成した方が積を大きくしやすくなります。
+    </RadzenText>
+    <div class="guide-callout guide-callout-conclusion">
+        ⚔️ 攻撃 × 殺傷 → 火力<br />
+        🛡️ 防御 × HP → 耐久力
+    </div>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🔥 SkillModとは？</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        ここが英雄を考えるうえで非常に重要です。現在の解析では、簡略化すると以下のような構造と考えられています。
+    </RadzenText>
+    <div class="guide-callout guide-callout-conclusion">
+        SkillMod ≒（DamageUp × 敵DefenseDown）÷（敵DamageDown × DefenseUp）
+    </div>
+    <RadzenText TextStyle="TextStyle.Body1">
+        つまり英雄スキルには、通常の攻撃・殺傷・防御・HPとは別に、最終的なダメージを補正する仕組みがあります。
+    </RadzenText>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">👥 集結参加英雄は少し特殊</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        ここは特に注意が必要です。集結参加時に左端へ配置する英雄の第1遠征スキルには、「攻撃+25%」「殺傷+25%」「敵被ダメージ+25%」など様々な表記があります。
+    </RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
+        しかし現在の解析では、これらをそのまま通常ステータスの「攻撃」や「殺傷」に+25%するものとして計算するのではなく、<strong>集結参加スキル用のSkillModとして処理される</strong>と考えられています。
+    </RadzenText>
+    <div class="guide-callout guide-callout-warn">
+        <strong>通常ステータスの「攻撃+25%」</strong>と<strong>集結参加英雄のスキルに書かれている「攻撃+25%」</strong>は、計算上まったく同じものとは限りません。
+    </div>
+</div>
+
+<div class="alliance-section">
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🐻 熊で重要になる理由</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        熊狩りでは耐久よりも、<strong>制限時間内にどれだけダメージを与えられるか</strong>が重要です。そのため基本的には、<strong>攻撃 × 殺傷 ＋ SkillMod</strong>を伸ばすことが重要になります。
+    </RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">
+        逆に、防御・HP・被ダメージ減少など、こちらの耐久力だけを上げる効果は熊へのダメージ増加にはつながりません。
+    </RadzenText>
+</div>
+
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📌 まとめ</RadzenText>
+<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">基本ステータス</RadzenText>
+<ul class="guide-list guide-checklist">
+    <li>⚔️ 攻撃 × 殺傷 ＝ 火力</li>
+    <li>🛡️ 防御 × HP ＝ 耐久</li>
+    <li>同じ強化量なら、低い方を伸ばしてバランスを取るのが効率的</li>
+</ul>
+<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">英雄スキル</RadzenText>
+<ul class="guide-list guide-checklist">
+    <li>💥 SkillMod ＝ スキルによる別系統の補正</li>
+    <li>集結参加英雄の第1遠征スキルは、表記上「攻撃」「殺傷」でも単純加算とは限らない</li>
+</ul>
+
+<div class="guide-callout guide-callout-warn">
+    <span class="guide-callout-label">⚠️ 注意</span>
+    Kingshotの正確なサーバー内部計算式は公式には公開されていません。ここで紹介している内容は、コミュニティによる戦報検証・解析などから導き出された現在有力な推測モデルです。アップデートや今後の検証によって変更・修正される可能性があります。
+</div>
