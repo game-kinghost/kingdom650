@@ -69,13 +69,20 @@ document.addEventListener('click', function (e) {
         return Math.random() * (max - min) + min;
     }
 
+    var INTENSITIES = [
+        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 1 },
+        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 1.5 },
+        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 2 }
+    ];
+
     function paint(bubble) {
         var c = bubble.color;
         var rgb = c[0] + ', ' + c[1] + ', ' + c[2];
+        var tone = bubble.tone;
         bubble.el.style.width = bubble.r * 2 + 'px';
         bubble.el.style.height = bubble.r * 2 + 'px';
-        bubble.el.style.background = 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.45) 30%, rgba(' + rgb + ',0.18) 65%, rgba(' + rgb + ',0.07) 100%)';
-        bubble.el.style.border = '1px solid rgba(' + rgb + ',0.18)';
+        bubble.el.style.background = 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.45) 30%, rgba(' + rgb + ',' + tone.inner + ') 65%, rgba(' + rgb + ',' + tone.outer + ') 100%)';
+        bubble.el.style.border = tone.borderWidth + 'px solid rgba(' + rgb + ',' + tone.border + ')';
     }
 
     function place(bubble) {
@@ -85,6 +92,8 @@ document.addEventListener('click', function (e) {
     function respawn(bubble, w, h) {
         bubble.r = rand(11, 30);
         bubble.color = COLORS[Math.floor(rand(0, COLORS.length))];
+        var toneRoll = Math.random();
+        bubble.tone = toneRoll < 0.5 ? INTENSITIES[0] : (toneRoll < 0.8 ? INTENSITIES[1] : INTENSITIES[2]);
         bubble.x = rand(bubble.r, Math.max(bubble.r + 1, w - bubble.r));
         bubble.y = rand(bubble.r, Math.max(bubble.r + 1, h - bubble.r));
         var speed = rand(12, 26);
