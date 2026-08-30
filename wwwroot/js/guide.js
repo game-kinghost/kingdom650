@@ -70,9 +70,9 @@ document.addEventListener('click', function (e) {
     }
 
     var INTENSITIES = [
-        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 1 },
-        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 1.5 },
-        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 2 }
+        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 2.5 },
+        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 3 },
+        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 3.5 }
     ];
 
     function paint(bubble) {
@@ -202,9 +202,36 @@ document.addEventListener('click', function (e) {
         requestAnimationFrame(tick);
     }
 
+    var SPARKLE_COLORS = ['#ffb703', '#f0a830', '#ffd166', '#d98c1f', '#ffe3a3', '#fff2cf'];
+    var SPARKLE_COUNT = 12;
+
+    function initHeroSparkles() {
+        var container = document.querySelector('.hero-banner .sparkles');
+        if (!container || container.dataset.sparklesInit) return;
+        container.dataset.sparklesInit = '1';
+
+        for (var i = 0; i < SPARKLE_COUNT; i++) {
+            var el = document.createElement('span');
+            el.className = 'sparkle';
+            el.textContent = '✦';
+            el.style.top = rand(4, 90) + '%';
+            el.style.left = rand(3, 95) + '%';
+            el.style.fontSize = rand(0.6, 2.1).toFixed(2) + 'rem';
+            el.style.color = SPARKLE_COLORS[Math.floor(rand(0, SPARKLE_COLORS.length))];
+            var peak = rand(0.4, 1);
+            el.style.setProperty('--sparkle-min', (peak * rand(0.2, 0.4)).toFixed(2));
+            el.style.setProperty('--sparkle-max', peak.toFixed(2));
+            el.style.animationDelay = rand(0, 2.4).toFixed(2) + 's';
+            el.style.animationDuration = rand(1.8, 3.4).toFixed(2) + 's';
+            container.appendChild(el);
+        }
+    }
+
     new MutationObserver(function () {
         initHeroBubbles();
+        initHeroSparkles();
     }).observe(document.body, { childList: true, subtree: true });
 
     initHeroBubbles();
+    initHeroSparkles();
 })();

@@ -350,9 +350,9 @@ code {
     position: absolute;
     top: 46%;
     left: 50%;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.35) 62%, rgba(255, 255, 255, 0) 85%);
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
@@ -475,7 +475,7 @@ code {
 }
 
 .mascot-sprite {
-    height: 180px;
+    height: 230px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -509,56 +509,38 @@ code {
     }
 
     .mascot-sprite img.mascot-eggplant-7 {
-        height: 155px;
-        width: 145px;
+        height: 195px;
+        width: 183px;
         object-fit: contain;
         object-position: bottom center;
         align-self: flex-end;
     }
 
+.sparkles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .sparkle {
     position: absolute;
     color: #ffb703;
     font-size: 1.5rem;
-    animation: sparkle-twinkle 2.2s ease-in-out infinite;
+    animation-name: sparkle-twinkle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     pointer-events: none;
-}
-
-.s1 {
-    top: 16%;
-    left: 12%;
-    animation-delay: 0s;
-}
-
-.s2 {
-    top: 24%;
-    right: 14%;
-    font-size: 1.1rem;
-    animation-delay: 0.5s;
-}
-
-.s3 {
-    bottom: 20%;
-    left: 20%;
-    font-size: 1rem;
-    animation-delay: 1s;
-}
-
-.s4 {
-    bottom: 28%;
-    right: 22%;
-    font-size: 1.3rem;
-    animation-delay: 1.5s;
 }
 
 @keyframes sparkle-twinkle {
     0%, 100% {
-        opacity: 0.25;
+        opacity: var(--sparkle-min, 0.25);
         transform: scale(0.8);
     }
 
     50% {
-        opacity: 1;
+        opacity: var(--sparkle-max, 1);
         transform: scale(1.15);
     }
 }
