@@ -1,0 +1,76 @@
+@page "/generation"
+
+<PageTitle>英雄世代アップデート - Kingshot 650王国</PageTitle>
+
+<div class="page-title-band">
+    <RadzenText TextStyle="TextStyle.H3" class="rz-m-0">🎖️ 英雄世代アップデート</RadzenText>
+</div>
+<RadzenText TextStyle="TextStyle.Body1">
+    Kingshotでは王国ごとに一定のペースで新しい「英雄世代(Hero Generation)」が解放されます。ここでは650王国における次の世代解放の見込みと、追加される英雄の情報をまとめています。
+</RadzenText>
+
+<div class="gen-stat-band">
+    <div class="gen-stat-item">
+        <span class="gen-stat-value">Gen @GenerationInfo.CurrentGeneration</span>
+        <span class="gen-stat-label">現在の世代</span>
+    </div>
+    <div class="gen-stat-arrow">→</div>
+    <div class="gen-stat-item gen-stat-item-next">
+        <span class="gen-stat-value">Gen @GenerationInfo.NextGeneration</span>
+        <span class="gen-stat-label">次の世代</span>
+    </div>
+    <div class="gen-stat-divider"></div>
+    <div class="gen-stat-item">
+        <span class="gen-stat-value">@GenerationInfo.TargetDate.ToString("yyyy-MM-dd")</span>
+        <span class="gen-stat-label">解放予定日</span>
+    </div>
+    <div class="gen-stat-item gen-stat-item-days">
+        <span class="gen-stat-value">@GenerationInfo.DaysRemainingLabel</span>
+        <span class="gen-stat-label">カウントダウン</span>
+    </div>
+</div>
+
+<div class="guide-callout rz-mt-3">
+    <span class="guide-callout-label">📌 現在のステータス</span>
+    650王国は現在 <strong>Hero Generation @GenerationInfo.CurrentGeneration ／ Truegold @GenerationInfo.TruegoldLevel</strong> です。開国日は <strong>@GenerationInfo.FoundingDate.ToString("yyyy年M月d日")</strong>、本日で開国から <strong>@(GenerationInfo.ElapsedDays)日目</strong>です。
+</div>
+
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⚔️🐎🏹 第7世代の追加英雄</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    第7世代では、以下の3人の新英雄が追加されます。<strong>レン＆ロン</strong> はルーレット(ガチャ)で入手する英雄として案内されています。各カードから、アルテマの英雄個別ページ(評価・スキル詳細)に移動できます。
+</RadzenText>
+
+<div class="alliance-highlight-grid gen-hero-grid">
+    <a href="https://altema.jp/kingshot/chara/32" target="_blank" rel="noopener noreferrer" class="alliance-highlight-card home-card-red">
+        <img src="images/heroes/charles.png" alt="チャールズ" class="gen-hero-portrait gen-hero-portrait-red" />
+        <span class="alliance-highlight-title">チャールズ</span>
+        <span class="alliance-highlight-desc">歩兵</span>
+        <span class="gen-hero-more">アルテマで詳しく見る →</span>
+    </a>
+    <a href="https://altema.jp/kingshot/chara/33" target="_blank" rel="noopener noreferrer" class="alliance-highlight-card home-card-blue">
+        <img src="images/heroes/aiva.png" alt="アイヴァ" class="gen-hero-portrait gen-hero-portrait-blue" />
+        <span class="alliance-highlight-title">アイヴァ</span>
+        <span class="alliance-highlight-desc">騎兵</span>
+        <span class="gen-hero-more">アルテマで詳しく見る →</span>
+    </a>
+    <a href="https://altema.jp/kingshot/chara/34" target="_blank" rel="noopener noreferrer" class="alliance-highlight-card home-card-purple">
+        <img src="images/heroes/ren-ron.png" alt="レン＆ロン" class="gen-hero-portrait gen-hero-portrait-purple" />
+        <span class="alliance-highlight-title">レン＆ロン</span>
+        <span class="alliance-highlight-desc">弓兵 ・ 🎰 ルーレット英雄</span>
+        <span class="gen-hero-more">アルテマで詳しく見る →</span>
+    </a>
+</div>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🔍 情報ソースと注意事項</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    上記の解放予定日は、王国横断で王国ごとのステータスをまとめている非公式サイト
+    <a href="https://kingshot.net/nexus/650" target="_blank" rel="noopener noreferrer">Kingshot.net の650王国ページ</a>
+    に掲載されている「Next milestone」の表示(2026年8月30日時点で「Generation 7 ・ 12-10-2026」)を基にしています。
+</RadzenText>
+<ul class="guide-list">
+    <li>Kingshot.netは「KvK・移民・トラッカーデータから構築したライブスナップショット」と説明しており、王国ごとの実データを元に算出しているとみられます。</li>
+    <li>一般的には王国開設から約440日前後で第7世代が解放されるとされており、650王国(開国 2025-07-17)の場合、この計算式で10月12日ごろという見込みになっています。</li>
+    <li>ページ内に一般公開されたAPI・JSONエンドポイントは確認できませんでした。表示されている数値もHTMLとして掲載されているのみのため、本ページの日付は<strong>Kingshot公式の確定情報ではなく、コミュニティによる予測値</strong>である点にご注意ください。</li>
+    <li>公式のアップデート内容やスケジュールが発表され次第、本ページの情報も更新します。</li>
+</ul>

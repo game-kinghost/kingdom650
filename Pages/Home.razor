@@ -9,6 +9,17 @@
     650王国は、Kingshotをプレイする王国メンバーのための非公式紹介サイトです。同盟間のルールから育成優先順位、イベント攻略、戦闘計算まで、王国で共有したい情報をまとめています。
 </RadzenText>
 
+<a href="generation" class="gen-countdown-band">
+    <span class="gen-countdown-icon">🎖️</span>
+    <div class="gen-countdown-text">
+        <span class="gen-countdown-label">次回解放</span>
+        <span class="gen-countdown-title">第7世代英雄</span>
+    </div>
+    <span class="gen-countdown-date">@GenerationInfo.TargetDate.ToString("M/d")</span>
+    <span class="gen-countdown-days">@GenerationInfo.DaysRemainingLabel</span>
+    <span class="gen-countdown-more">詳しく見る →</span>
+</a>
+
 <div class="hero-banner">
     <div class="hero-checker" aria-hidden="true"></div>
     <div class="hero-checker-gray" aria-hidden="true"></div>
@@ -83,6 +94,11 @@
             <span class="alliance-highlight-icon">👑</span>
             <span class="alliance-highlight-title">KvK戦況</span>
             <span class="alliance-highlight-desc">王城決戦の対戦履歴</span>
+        </a>
+        <a href="generation" class="alliance-highlight-card home-card-purple">
+            <span class="alliance-highlight-icon">🎖️</span>
+            <span class="alliance-highlight-title">英雄世代</span>
+            <span class="alliance-highlight-desc">第7世代 解放まで @GenerationInfo.DaysRemainingLabel</span>
         </a>
     </div>
 
