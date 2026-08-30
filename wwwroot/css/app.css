@@ -2286,3 +2286,51 @@ details.guide-rank[open] .guide-rank-chevron {
     color: #fff;
     opacity: 1;
 }
+
+.emu-toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 440px;
+    background: #f0e6d2;
+    border-radius: 999px;
+    padding: 5px;
+    margin: 0.75rem 0 1.2rem;
+    box-shadow: inset 0 1px 4px rgba(163, 93, 0, 0.15);
+}
+
+.emu-toggle-thumb {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(163, 93, 0, 0.4);
+    transition: transform 0.25s ease;
+}
+
+    .emu-toggle-thumb.is-right {
+        transform: translateX(100%);
+    }
+
+.emu-toggle-btn {
+    position: relative;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    padding: 0.6rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.88rem;
+    color: #a35d00;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+    .emu-toggle-btn.active {
+        color: #fff;
+    }

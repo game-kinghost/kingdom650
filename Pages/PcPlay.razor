@@ -1,0 +1,115 @@
+@page "/pcplay"
+
+<PageTitle>PCでプレイする - Kingshot 650王国</PageTitle>
+
+<div class="page-title-band">
+    <RadzenText TextStyle="TextStyle.H3" class="rz-m-0">💻 KingshotをPCでプレイする</RadzenText>
+</div>
+<RadzenText TextStyle="TextStyle.Body1">
+    Kingshotはスマートフォンだけでなく、Androidエミュレーターを利用することでPCでもプレイできます。大きな画面でプレイできるほか、マウスやキーボードを使った操作も可能です。ここでは、PCでKingshotをプレイできる<strong>「BlueStacks」と「LDPlayer」</strong>の2つを紹介します。
+</RadzenText>
+
+<div class="emu-toggle">
+    <span class="emu-toggle-thumb @(emuTab == "ldplayer" ? "is-right" : "")"></span>
+    <button type="button" class="emu-toggle-btn @(emuTab == "bluestacks" ? "active" : "")" @onclick='() => emuTab = "bluestacks"'>🟦 BlueStacks</button>
+    <button type="button" class="emu-toggle-btn @(emuTab == "ldplayer" ? "active" : "")" @onclick='() => emuTab = "ldplayer"'>🟨 LDPlayer</button>
+</div>
+
+@if (emuTab == "bluestacks")
+{
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🟦 BlueStacks ｜ 定番のAndroidエミュレーター</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        BlueStacksは、AndroidのゲームやアプリをWindows PCで動かせるAndroidアプリプレイヤーです。どれを使えばいいか迷った場合は、まずBlueStacksから試してみるのがおすすめです。
+    </RadzenText>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">特徴</RadzenText>
+    <ul class="guide-list">
+        <li>KingshotをPCでプレイ可能</li>
+        <li>Google Play ストア対応</li>
+        <li>マウス・キーボード操作対応</li>
+        <li>複数のゲーム画面を起動できる「マルチインスタンス」対応</li>
+        <li>Windows 10 / 11対応</li>
+        <li>無料で利用可能</li>
+    </ul>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">📥 インストール方法</RadzenText>
+    <ol class="guide-list guide-list-numbered">
+        <li><a href="https://www.bluestacks.com/" target="_blank" rel="noopener noreferrer">BlueStacks公式サイト</a>を開く — 公式サイトから「BlueStacks 5」をダウンロードします。</li>
+        <li>ダウンロードしたファイルを起動 — インストーラーを起動し、画面の案内に従ってBlueStacksをインストールします。</li>
+        <li>Google Playにログイン — BlueStacksを起動して、GoogleアカウントでGoogle Playストアにログインします。</li>
+        <li>Kingshotをインストール — Google Playで「キングショット」を検索してインストールします。</li>
+        <li>Kingshotを起動 — インストールが完了するとBlueStacksのホーム画面にKingshotが表示されます。これでPCからプレイできます。</li>
+    </ol>
+}
+else
+{
+    <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🟨 LDPlayer ｜ 軽快さを重視するならこちら</RadzenText>
+    <RadzenText TextStyle="TextStyle.Body1">
+        LDPlayerも、AndroidゲームをWindows PCでプレイできるAndroidエミュレーターです。BlueStacksで動作が重い場合や、PCとの相性が良くない場合の選択肢としておすすめです。
+    </RadzenText>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">特徴</RadzenText>
+    <ul class="guide-list">
+        <li>Kingshotに対応</li>
+        <li>Google Play ストア対応</li>
+        <li>マウス・キーボード操作対応</li>
+        <li>マルチインスタンス対応</li>
+        <li>ゲーム向けに最適化</li>
+        <li>無料で利用可能</li>
+    </ul>
+
+    <RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">📥 インストール方法</RadzenText>
+    <ol class="guide-list guide-list-numbered">
+        <li><a href="https://www.ldplayer.net/" target="_blank" rel="noopener noreferrer">LDPlayer公式サイト</a>を開く — 公式サイトからLDPlayerをダウンロードします。</li>
+        <li>LDPlayerをインストール — ダウンロードしたインストーラーを起動し、画面の案内に従ってインストールします。</li>
+        <li>Google Playにログイン — LDPlayerを起動してGoogle Playストアを開き、Googleアカウントでログインします。</li>
+        <li>Kingshotを検索 — Google Playで「キングショット」を検索します。</li>
+        <li>インストールして起動 — インストール完了後、ホーム画面のKingshotアイコンからゲームを起動します。</li>
+    </ol>
+}
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">🤔 どっちがおすすめ？</RadzenText>
+<div class="table-wrap">
+    <table class="guide-table">
+        <thead>
+            <tr><th></th><th>🟦 BlueStacks</th><th>🟨 LDPlayer</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Kingshot</td><td>◎</td><td>◎</td></tr>
+            <tr><td>導入の簡単さ</td><td>◎</td><td>◎</td></tr>
+            <tr><td>Google Play</td><td>○</td><td>○</td></tr>
+            <tr><td>キーボード操作</td><td>○</td><td>○</td></tr>
+            <tr><td>マルチインスタンス</td><td>○</td><td>○</td></tr>
+            <tr><td>初めて使う人</td><td>⭐ おすすめ</td><td>○</td></tr>
+            <tr><td>動作が合わない場合</td><td>―</td><td>⭐ 代替候補</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="guide-callout rz-mt-3">
+    <span class="guide-callout-label">👑 迷ったらBlueStacks</span>
+    初めてAndroidエミュレーターを使う場合は、まず<strong>BlueStacks</strong>がおすすめです。BlueStacksが重い・正常に動かないなど、PCとの相性に問題がある場合は<strong>LDPlayer</strong>も試してみましょう。PCのスペックや環境によって、どちらが快適に動くかは異なります。
+</div>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⚙️ PCスペックについて</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    BlueStacksでは最低4GB以上のRAMが必要とされています。快適にプレイするなら、以下のPCがおすすめです。
+</RadzenText>
+<ul class="guide-list">
+    <li>Windows 10 / 11</li>
+    <li>メモリ 8GB以上</li>
+    <li>SSD搭載</li>
+    <li>仮想化(Virtualization)有効</li>
+</ul>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">複数アカウントを同時に起動する場合は、さらに多くのメモリが必要になる場合があります。</RadzenText>
+
+<div class="guide-callout guide-callout-warn rz-mt-3">
+    <span class="guide-callout-label">⚠️ 注意事項</span>
+    Androidエミュレーターは必ず<strong>公式サイトからダウンロード</strong>してください。また、BlueStacksやLDPlayerにはさまざまな機能がありますが、オンラインゲームで外部ツールや自動操作機能などを使用する場合は、ゲームの利用規約を確認してください。当サイトでは、通常のPCプレイ用途での利用を紹介しています。
+</div>
+
+@code {
+    private string emuTab = "bluestacks";
+}
