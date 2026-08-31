@@ -2334,3 +2334,111 @@ details.guide-rank[open] .guide-rank-chevron {
     .emu-toggle-btn.active {
         color: #fff;
     }
+
+.cycle-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+    margin: 1rem 0;
+}
+
+.cycle-flow-arrow {
+    align-self: center;
+    color: #d98c1f;
+    font-weight: 800;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.cycle-flow-note {
+    align-self: center;
+    color: #a35d00;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-top: -0.15rem;
+}
+
+.cycle-card {
+    background: #fff;
+    border: 1px solid #f0e0c0;
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+}
+
+.cycle-card-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.cycle-card-desc {
+    color: #555;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.cycle-badge {
+    display: inline-block;
+    padding: 0.22rem 0.8rem;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.cycle-badge-red {
+    background: linear-gradient(90deg, #f87171 0%, #dc2626 100%);
+}
+
+.cycle-badge-orange {
+    background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+}
+
+.cycle-badge-gold {
+    background: linear-gradient(90deg, #d9a520 0%, #b8860b 100%);
+}
+
+.cycle-badge-blue {
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.cycle-badge-teal {
+    background: linear-gradient(90deg, #14b8a6 0%, #0f766e 100%);
+}
+
+.cycle-badge-purple {
+    background: linear-gradient(90deg, #a855f7 0%, #7e22ce 100%);
+}
+
+.cycle-badge-gray {
+    background: linear-gradient(90deg, #9ca3af 0%, #4b5563 100%);
+}
+
+.cycle-overlay-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0;
+}
+
+.cycle-overlay-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fdf6ea;
+    border: 1px solid #f0e0c0;
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #a35d00;
+}
