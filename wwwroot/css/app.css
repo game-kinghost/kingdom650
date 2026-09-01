@@ -2442,3 +2442,181 @@ details.guide-rank[open] .guide-rank-chevron {
     font-weight: 700;
     color: #a35d00;
 }
+
+.cycle-timeline {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0.2rem 1.1rem;
+    margin: 0.75rem 0;
+}
+
+.cycle-timeline-node {
+    flex: 0 0 auto;
+    padding: 0.65rem 1.1rem;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.cycle-timeline-node-red {
+    background: linear-gradient(90deg, #f87171 0%, #dc2626 100%);
+}
+
+.cycle-timeline-node-orange {
+    background: linear-gradient(90deg, #f0a830 0%, #d98c1f 100%);
+}
+
+.cycle-timeline-node-gold {
+    background: linear-gradient(90deg, #d9a520 0%, #b8860b 100%);
+}
+
+.cycle-timeline-node-blue {
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.cycle-timeline-node-teal {
+    background: linear-gradient(90deg, #14b8a6 0%, #0f766e 100%);
+}
+
+.cycle-timeline-node-purple {
+    background: linear-gradient(90deg, #a855f7 0%, #7e22ce 100%);
+}
+
+.cycle-timeline-node-gray {
+    background: linear-gradient(90deg, #9ca3af 0%, #4b5563 100%);
+}
+
+.cycle-timeline-arrow {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.1;
+}
+
+.cycle-timeline-arrow-symbol {
+    color: #d98c1f;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.cycle-timeline-arrow-label {
+    color: #a35d00;
+    font-weight: 700;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.cycle-flow .cycle-timeline-node {
+    align-self: center;
+}
+
+.cycle-flow-h {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0.2rem 1.1rem;
+    margin: 0.75rem 0;
+}
+
+.cycle-card-h {
+    flex: 0 0 230px;
+    border-top-width: 4px;
+    border-top-style: solid;
+}
+
+.cycle-card-accent-red {
+    border-top-color: #dc2626;
+}
+
+.cycle-card-accent-orange {
+    border-top-color: #d98c1f;
+}
+
+.cycle-card-accent-gold {
+    border-top-color: #b8860b;
+}
+
+.cycle-card-accent-blue {
+    border-top-color: #1d4ed8;
+}
+
+.cycle-card-accent-teal {
+    border-top-color: #0f766e;
+}
+
+.cycle-card-accent-purple {
+    border-top-color: #7e22ce;
+}
+
+.cycle-card-accent-gray {
+    border-top-color: #4b5563;
+}
+
+.guide-stars {
+    color: #d98c1f;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+}
+
+.guide-star-empty {
+    color: #e6d5b0;
+}
+
+.guide-tag-day1,
+.guide-tag-day2,
+.guide-tag-day3,
+.guide-tag-day4,
+.guide-tag-day5 {
+    font-weight: 700;
+}
+
+.guide-tag-day1 {
+    background: #fdecc8;
+    color: #a35d00;
+}
+
+.guide-tag-day2 {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.guide-tag-day3 {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+.guide-tag-day4 {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+.guide-tag-day5 {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.budget-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.guide-checklist-warn li {
+    background: #fdecec;
+    border-color: #f3c6c6;
+    color: #b3261e;
+}
+
+    .guide-checklist-warn li::before {
+        content: "❌ ";
+    }

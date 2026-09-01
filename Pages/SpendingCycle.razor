@@ -14,44 +14,54 @@
     <strong>KvK王城戦を「Day 0」</strong>とすると、以降のイベントは「Day 何日目」で表せます。成熟王国の大イベントは、概ね<strong>「同盟対決週 → 至高領主系 → 同盟総動員 → KvK」</strong>という4週間ループとして整理できます。
 </div>
 
+<div class="guide-callout guide-callout-conclusion rz-mt-2">
+    <span class="guide-callout-label">🔥 次回同盟総動員(予想)</span>
+    <strong>@AllianceMobilizationInfo.FormatRangeLong(AllianceMobilizationInfo.NextWindow.Start, AllianceMobilizationInfo.NextWindow.End)</strong>
+    @if (AllianceMobilizationInfo.IsOngoing)
+    {
+        <text>(現在開催中：@AllianceMobilizationInfo.FormatRangeLong(AllianceMobilizationInfo.CurrentWindow().Start, AllianceMobilizationInfo.CurrentWindow().End))</text>
+    }
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">※28日周期から算出した予想です。実際の開催日はゲーム内イベントセンターで最終確認してください。</RadzenText>
+
 <div class="guide-section-divider"></div>
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">📌 全体像(4週間ループ)</RadzenText>
 <div class="cycle-flow">
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-red">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 0</span>⚔️ KvK王城戦</div>
         <p class="cycle-card-desc">サイクルの起点。土曜開催。</p>
     </div>
     <span class="cycle-flow-arrow">↓</span>
     <span class="cycle-flow-note">約1週間</span>
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-gray">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-gray">Week 1</span>🤝 同盟対決 ＋ 🗡️ 聖剣争奪</div>
         <p class="cycle-card-desc">同盟対決は基本<strong>温存</strong>。聖剣争奪は日曜に戦闘。</p>
     </div>
     <span class="cycle-flow-arrow">↓</span>
     <span class="cycle-flow-note">約1週間</span>
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-purple">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-purple">Week 2</span>👑 至高領主系 ＋ 🏰 国内王城</div>
         <p class="cycle-card-desc">至高・最強領主系はポイント報酬が欲しい分だけ参加。国内王城は通常運用。</p>
     </div>
     <span class="cycle-flow-arrow">↓</span>
     <span class="cycle-flow-note">約1週間</span>
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-gold">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-gold">Week 3</span>💰 同盟総動員【課金】＋ ⚔️ 三盟争覇 ＋ 🗡️ 聖剣争奪</div>
         <p class="cycle-card-desc">このタイミングで課金パックを購入し、総動員ポイントを稼ぐのが基本方針。</p>
     </div>
     <span class="cycle-flow-arrow">↓</span>
     <span class="cycle-flow-note">約1週間</span>
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-orange">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-orange">Week 4</span>🔥 KvK準備【素材放出】</div>
         <p class="cycle-card-desc">同盟総動員で購入した素材＋28日間貯めた素材をここで放出。</p>
     </div>
     <span class="cycle-flow-arrow">↓</span>
-    <div class="cycle-card">
+    <div class="cycle-card cycle-card-accent-red">
         <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 28 = 次のDay 0</span>⚔️ KvK王城戦</div>
         <p class="cycle-card-desc">次の28日サイクルが始まります。</p>
     </div>
     <span class="cycle-flow-arrow">🔄</span>
-    <span class="cycle-flow-note">28日周期でDay 0へ</span>
+    <span class="cycle-flow-note">Day 0へ</span>
 </div>
 
 <RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">常にこの上に重なってくるイベント</RadzenText>
@@ -89,67 +99,6 @@
 </div>
 
 <div class="guide-section-divider"></div>
-<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">💰 課金サイクルの流れ(詳細)</RadzenText>
-<RadzenText TextStyle="TextStyle.Body1">
-    ここがこのページで一番伝えたい部分です。<strong>いつ課金して、いつ使うか</strong>を時系列で追っていきます。
-</RadzenText>
-
-<div class="cycle-flow rz-mt-2">
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 0</span>⚔️ KvK王城戦</div>
-        <p class="cycle-card-desc">サイクルの起点。ここでKvKが終了します。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約2日後〜</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-gray">Day 2〜8</span>🤝 同盟対決</div>
-        <p class="cycle-card-desc">ここでは基本<strong>温存</strong>。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約1週間後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-purple">Day 9〜15</span>👑 至高領主・最強領主系</div>
-        <p class="cycle-card-desc">ポイント報酬を取りたい場合だけ使用。<strong>KvK用素材を全部使わない</strong>のがポイント。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約14日後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-orange">〜Day 15前後</span>🏰 国内王城戦</div>
-        <p class="cycle-card-desc">育成素材を放出するイベントではないので、基本は戦闘用資源・治療・バフ中心に運用。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約16日後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-gold">Day 16〜21</span>💰 同盟総動員</div>
-        <p class="cycle-card-desc">ここが重要。<strong>チャージ任務を取る → 課金パック購入 → 総動員ポイント獲得</strong>。購入した素材はまだ使わない。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">同じ週</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-blue">Week 3 土</span>⚔️ 三盟争覇</div>
-        <p class="cycle-card-desc">月1回開催。公式ヘルプでは「月〜火：投票／水〜木：エントリー／金：マッチング／土：戦闘」となっています。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約21日後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-teal">Day 21頃</span>🗡️ 聖剣争奪</div>
-        <p class="cycle-card-desc">聖剣争奪は<strong>14日周期</strong>。公式FAQでも、聖剣頂上リーグ導入後もこの14日周期は変更されないと明記されています。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約23日後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 23〜27前後</span>🔥 KvK準備</div>
-        <p class="cycle-card-desc">ここで<strong>同盟総動員で購入した素材 ＋ 28日間貯めた素材</strong>を放出します。</p>
-    </div>
-    <span class="cycle-flow-arrow">↓</span>
-    <span class="cycle-flow-note">約28日後</span>
-    <div class="cycle-card">
-        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 28 = 次のDay 0</span>⚔️ KvK王城戦</div>
-        <p class="cycle-card-desc">次の28日サイクルへ。</p>
-    </div>
-</div>
-
-<div class="guide-section-divider"></div>
 <RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⚔️ 戦闘イベントの周期だけ抜き出すと</RadzenText>
 <div class="table-wrap">
     <table class="guide-table">
@@ -170,14 +119,17 @@
 </div>
 
 <RadzenText TextStyle="TextStyle.Body1" class="rz-mt-2">王城だけを見ると、次のようなループになります。</RadzenText>
-<div class="guide-flow">
-    <span>🏰 国内王城</span>
-    <span class="guide-flow-arrow">→ 14日 →</span>
-    <span>⚔️ KvK王城</span>
-    <span class="guide-flow-arrow">→ 14日 →</span>
-    <span>🏰 国内王城</span>
-    <span class="guide-flow-arrow">→ 14日 →</span>
-    <span>⚔️ KvK王城</span>
+<div class="cycle-flow">
+    <div class="cycle-timeline-node cycle-timeline-node-orange">🏰 国内王城</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <span class="cycle-flow-note">14日</span>
+    <div class="cycle-timeline-node cycle-timeline-node-red">⚔️ KvK王城</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <span class="cycle-flow-note">14日</span>
+    <div class="cycle-timeline-node cycle-timeline-node-orange">🏰 国内王城</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <span class="cycle-flow-note">14日</span>
+    <div class="cycle-timeline-node cycle-timeline-node-red">⚔️ KvK王城</div>
 </div>
 
 <div class="guide-callout guide-callout-warn rz-mt-2">
@@ -190,18 +142,18 @@
 <RadzenText TextStyle="TextStyle.Body1">
     28日サイクルとは<strong>別物</strong>として考えるイベントです。現在確認できる開催頻度は<strong>約2か月に1回</strong>、イベント全体は<strong>約9日間</strong>です。公式ヘルプによる流れは次の通りです。
 </RadzenText>
-<div class="guide-flow">
-    <span>📢 前週：予告</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>🤝 月〜火：同盟エントリー</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>⚔️ 水〜木：参戦任命</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>🕐 金〜日：戦場開放前</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>🔥 日：本戦</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>💊 日〜火：戦後回復</span>
+<div class="cycle-flow">
+    <div class="cycle-timeline-node cycle-timeline-node-gray">📢 前週：予告</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-blue">🤝 月〜火：同盟エントリー</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-teal">⚔️ 水〜木：参戦任命</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-gold">🕐 金〜日：戦場開放前</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-red">🔥 日：本戦</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-orange">💊 日〜火：戦後回復</div>
 </div>
 <div class="guide-callout rz-mt-2">
     <span class="guide-callout-label">🔥 炎竜の覇者：約2か月周期</span>
@@ -213,16 +165,16 @@
 <RadzenText TextStyle="TextStyle.Body1">
     これも<strong>28日固定イベントではありません</strong>。通常の聖剣争奪の上位大会で、公式FAQでは毎週固定開催ではないと明記されています。1シーズンはかなり長く、約7週間規模です。
 </RadzenText>
-<div class="guide-flow">
-    <span>📢 予告：2日間</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>📝 エントリー：約1週間</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>⚔️ 第1フェーズ：第1〜4週</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>🔥 第2フェーズ：第5〜6週</span>
-    <span class="guide-flow-arrow">→</span>
-    <span>🏆 表彰フェーズ：第7週</span>
+<div class="cycle-flow">
+    <div class="cycle-timeline-node cycle-timeline-node-gray">📢 予告：2日間</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-blue">📝 エントリー：約1週間</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-teal">⚔️ 第1フェーズ：第1〜4週</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-gold">🔥 第2フェーズ：第5〜6週</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-red">🏆 表彰フェーズ：第7週</div>
 </div>
 <div class="guide-callout guide-callout-warn rz-mt-2">
     <span class="guide-callout-label">⚠️ 通常の聖剣争奪との関係</span>
@@ -234,20 +186,324 @@
 </ul>
 
 <div class="guide-section-divider"></div>
-<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">💡 課金方針まとめ</RadzenText>
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">💰 効率のいい課金・育成サイクル</RadzenText>
 <RadzenText TextStyle="TextStyle.Body1">
-    課金については、かなりシンプルにこの繰り返しとして覚えておくのがおすすめです。
+    「お得なパックを買う」だけでなく、<strong>いつ買うか＋いつ使うか</strong>まで考えることで、同じ課金額でも回収できるイベント報酬が変わります。
 </RadzenText>
-<div class="guide-flow">
-    <span>💰 同盟総動員で買う</span>
-    <span class="guide-flow-arrow">→ 約1週間 →</span>
-    <span>🔥 KvK準備で使う</span>
-    <span class="guide-flow-arrow">→ 約3週間 →</span>
-    <span>💰 次の同盟総動員で買う</span>
-    <span class="guide-flow-arrow">→ 約1週間 →</span>
-    <span>🔥 次のKvKで使う</span>
+<div class="guide-callout guide-callout-conclusion rz-mt-2">
+    <span class="guide-callout-label">✅ 基本方針</span>
+    <strong>普段 → 高コスパ商品を買う／同盟総動員 → 追加課金を集中／KvK準備 → 貯めた育成素材を放出。</strong>この3段階で考えるのがおすすめです。
+</div>
+
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-4">🔄 1か月の基本サイクル</RadzenText>
+<div class="cycle-flow">
+    <div class="cycle-card cycle-card-accent-teal">
+        <div class="cycle-card-title">🛒 通常期間</div>
+        <p class="cycle-card-desc">デイリー・ウィークリー・マンスリー。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-purple">
+        <div class="cycle-card-title">👑 最強領主など</div>
+        <p class="cycle-card-desc">必要最低限だけ使用。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-gold">
+        <div class="cycle-card-title">💰 同盟総動員</div>
+        <p class="cycle-card-desc">チャージ系ミッションを受けてから、まとまった追加課金。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <span class="cycle-flow-note">約1週間</span>
+    <div class="cycle-card cycle-card-accent-gray">
+        <div class="cycle-card-title">🔒 温存期間</div>
+        <p class="cycle-card-desc">購入素材を使わず保存。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-red">
+        <div class="cycle-card-title">🔥 KvK準備 Day1〜5</div>
+        <p class="cycle-card-desc">対象日に合わせて素材を放出。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-red">
+        <div class="cycle-card-title">⚔️ KvK王城戦</div>
+        <p class="cycle-card-desc">サイクルの節目。</p>
+    </div>
+    <span class="cycle-flow-arrow">🔄</span>
+    <span class="cycle-flow-note">約28日周期</span>
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">
+    同盟総動員 → KvKという並びは一般的な成熟王国のサイクルとして報告されていますが、王国ごとに開始位置が異なるため、実際の日付はゲーム内イベントセンターを確認してください。
+</RadzenText>
+
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-4">📅 同盟総動員 予想スケジュール</RadzenText>
+<div class="table-wrap">
+    <table class="guide-table">
+        <thead>
+            <tr><th>開催予想</th><th>状態</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var row in AllianceMobilizationInfo.ScheduleRows())
+            {
+                <tr class="@(string.IsNullOrEmpty(row.Label) ? "" : "guide-table-total")">
+                    <td>@AllianceMobilizationInfo.FormatRangeLong(row.Start, row.End)</td>
+                    <td>@row.Label</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">28日周期(開国以降の実績パターン)から算出した予想です。ゲーム内イベントセンターで最終確認してください。</RadzenText>
+
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-4">🗓️ 実際の日付で見る課金スケジュール</RadzenText>
+<div class="cycle-flow">
+    @{ var cycles = AllianceMobilizationInfo.UpcomingCycles(3); }
+    @for (var i = 0; i < cycles.Count; i++)
+    {
+        var c = cycles[i];
+        <div class="cycle-card cycle-card-accent-gold">
+            <div class="cycle-card-title">💰 同盟総動員で追加課金</div>
+            <p class="cycle-card-desc">@AllianceMobilizationInfo.FormatRange(c.MobStart, c.MobEnd)</p>
+        </div>
+        <span class="cycle-flow-arrow">↓</span>
+        <span class="cycle-flow-note">約1週間</span>
+        <div class="cycle-card cycle-card-accent-red">
+            <div class="cycle-card-title">🔥 KvK準備で素材放出</div>
+            <p class="cycle-card-desc">@(c.KvkApprox.Month)月上旬〜中旬頃</p>
+        </div>
+        if (i < cycles.Count - 1)
+        {
+            <span class="cycle-flow-arrow">↓</span>
+        }
+    }
+</div>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🛒 通常日は何を買う？</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    「同盟総動員まで何も買わない」という意味ではありません。<strong>毎日・毎週・毎月受け取ることで価値が高くなる商品</strong>を優先します。
+</RadzenText>
+<div class="alliance-highlight-grid">
+    <div class="alliance-highlight-card home-card-gold">
+        <span class="alliance-highlight-icon">📅</span>
+        <span class="alliance-highlight-title">超得マンスリー ★★★★★</span>
+        <span class="alliance-highlight-desc">1,600円/30日。ダイヤ5,000＋30日VIP＋毎日報酬。期限を切らさず更新するのが基本。</span>
+    </div>
+    <div class="alliance-highlight-card home-card-blue">
+        <span class="alliance-highlight-icon">📆</span>
+        <span class="alliance-highlight-title">ウィークリー ★★★★☆</span>
+        <span class="alliance-highlight-desc">800円/7日。種類が複数あるので、今一番不足している育成項目を1〜2種類だけ選ぶ。</span>
+    </div>
+    <div class="alliance-highlight-card home-card-teal">
+        <span class="alliance-highlight-icon">🎫</span>
+        <span class="alliance-highlight-title">デイリー割引 ★★★★☆</span>
+        <span class="alliance-highlight-desc">150〜500円。育てたい英雄が対象の日だけ購入するのがポイント。</span>
+    </div>
+</div>
+
+<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">ウィークリーの選び方の例</RadzenText>
+<ul class="guide-list">
+    <li>黄金不足 → 黄金ウィークリー</li>
+    <li>戦争学院育成中 → 黄金微粒子ウィークリー</li>
+    <li>英雄装備不足 → 装備ウィークリー</li>
+    <li>KvK用に上級調教印を貯めたい → ペットウィークリー</li>
+    <li>加速不足 → 時間ウィークリー</li>
+</ul>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">💰 同盟総動員 — 追加課金するならここ！ <span class="guide-stars">★★★★★</span></RadzenText>
+<div class="cycle-flow">
+    <div class="cycle-timeline-node cycle-timeline-node-gold">① ミッションで課金系を確認</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-orange">② パックを購入</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-teal">③ 総動員ポイント獲得</div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-timeline-node cycle-timeline-node-gray">④ 素材はKvKまで保存</div>
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">専用ミッションには120%〜200%のポイント補正が付く場合があります。</RadzenText>
+<div class="guide-callout guide-callout-warn rz-mt-2">
+    <span class="guide-callout-label">⚠️ 注意</span>
+    <strong>課金系ミッションを取る前に購入しないこと。</strong>先に買うとチャージミッションに利用できません。「同盟総動員だから課金する」のではなく<strong>「元々する予定だった追加課金を同盟総動員まで待つ」</strong>という考え方がおすすめです。
+</div>
+<div class="guide-callout rz-mt-2">
+    <span class="guide-callout-label">🌟 さらにお得なタイミング</span>
+    公式ストアの「王国の星」は、<strong>ボーナスイベント開催中に購入すると通常より多く獲得できる場合があります。</strong>同盟総動員とボーナスイベント、欲しい期間限定パックが重なるタイミングは特に狙い目です。
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">※王国の星購入が各ゲーム内課金ミッションの対象になるかは、対象条件をゲーム内で確認してください。</RadzenText>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🔥 KvKは「使うイベント」— Day別使用早見表</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    KvK準備は5日間。日によって得点対象が変わるため、<strong>素材ごとに最適な日まで待つ</strong>のが基本です。
+</RadzenText>
+<div class="table-wrap">
+    <table class="guide-table">
+        <thead>
+            <tr><th>日</th><th>主なおすすめ素材</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><span class="guide-tag guide-tag-day1">🏗️ Day1</span></td><td>黄金・精製黄金・建設加速・領主宝石・監視塔</td></tr>
+            <tr><td><span class="guide-tag guide-tag-day2">🦸 Day2</span></td><td>英雄ルーレット・英雄欠片・黄金微粒子・研究加速・マスター</td></tr>
+            <tr><td><span class="guide-tag guide-tag-day3">🐺 Day3</span></td><td>上級調教印・ペット育成・英雄ルーレット・英雄欠片</td></tr>
+            <tr><td><span class="guide-tag guide-tag-day4">⚔️ Day4</span></td><td>ミスリル・英雄専用装備素材・鍛造ハンマー・兵士訓練</td></tr>
+            <tr><td><span class="guide-tag guide-tag-day5">🔥 Day5</span></td><td>ミスリル・専用装備素材・ハンマー・上級調教印・領主装備・黄金系など</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="cycle-flow rz-mt-2">
+    <div class="cycle-card cycle-card-accent-orange">
+        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-orange">Day 1</span>🏗️ 建設・領主宝石</div>
+        <p class="cycle-card-desc">黄金(Truegold)・精製黄金・建設加速・領主宝石・監視塔情報。</p>
+        <p class="cycle-card-desc">Day5でも得点できる黄金系は、一部残しておく選択肢もあります。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-blue">
+        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-blue">Day 2</span>🦸 英雄・研究・マスター</div>
+        <p class="cycle-card-desc">英雄ルーレット(8,000pt)・レジェンド英雄欠片(3,040pt)・黄金微粒子・研究加速・マスター紋章(6,000pt)/文書。</p>
+        <p class="cycle-card-desc">英雄関連はDay2が第一候補。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-teal">
+        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-teal">Day 3</span>🐺 ペット育成</div>
+        <p class="cycle-card-desc">上級調教印(15,000pt)・通常調教印・ペット突破/育成・英雄ルーレット・英雄欠片。</p>
+        <p class="cycle-card-desc">上級調教印は特に高得点。普段は使い切らずKvK用に保存したい素材です。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-purple">
+        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-purple">Day 4</span>⚔️ 英雄装備＋兵士</div>
+        <p class="cycle-card-desc">ミスリル(40,000pt)・英雄専用装備素材(8,000pt)・鍛造ハンマー(4,000pt)・兵士訓練/昇級。</p>
+        <p class="cycle-card-desc">ミスリル・ハンマー・専用装備素材はDay5でも得点可能。点差を見て調整。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-red">
+        <div class="cycle-card-title"><span class="cycle-badge cycle-badge-red">Day 5</span>🔥 最終放出</div>
+        <p class="cycle-card-desc">ミスリル・上級調教印・黄金系・英雄専用装備素材・鍛造ハンマー・領主装備・ペット育成・各種加速・監視塔。</p>
+        <p class="cycle-card-desc">対象範囲が広い最終調整日。<strong>「Day5に使える弾を残す」</strong>のがおすすめ。</p>
+    </div>
+</div>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">💴 課金額別プラン</RadzenText>
+<RadzenText TextStyle="TextStyle.Body1">
+    金額が増えるほど、<strong>「毎日もっと買う」のではなく「同盟総動員へ回す追加予算を増やす」</strong>のがポイントです。
+</RadzenText>
+<div class="budget-tier-grid">
+    <div class="cycle-card cycle-card-accent-gray">
+        <div class="cycle-card-title">💴 月1万円 — 定常課金を中心に</div>
+        <p class="cycle-card-desc">まず<strong>超得マンスリー＋ウィークリー</strong>を取りこぼさないことを優先。デイリーは<strong>育成英雄の対象日だけ</strong>購入し、同盟総動員用の予算を確保します。</p>
+        <ul class="guide-list">
+            <li>超得マンスリー 約1,600円</li>
+            <li>ウィークリー1種類×4回 約3,200円</li>
+            <li>デイリー(対象日のみ)約20日 約3,000円</li>
+            <li>同盟総動員・期間限定用 約2,200円</li>
+        </ul>
+        <p class="cycle-card-desc">KvKはDay2(英雄)・Day3(ペット)・Day4/5(装備)へ集中。<strong>ランキングより段階報酬重視</strong>で、無理に全Dayで上位を狙いません。</p>
+    </div>
+    <div class="cycle-card cycle-card-accent-blue">
+        <div class="cycle-card-title">💴 月3万円 — 定常課金＋同盟総動員</div>
+        <p class="cycle-card-desc">「通常課金」と「イベント課金」をはっきり分けます。定常課金(マンスリー＋デイリー毎日＋ウィークリー1種類)で約9,300円、残り<strong>約2万円を同盟総動員・期間限定イベント</strong>に。</p>
+        <p class="cycle-card-desc">同盟総動員では黄金・英雄装備・領主装備/宝石・ペット素材・マスター素材から不足分を選択。</p>
+        <p class="cycle-card-desc">KvK：<span class="guide-stars">★★★★★</span> Day2/3・<span class="guide-stars">★★★★<span class="guide-star-empty">☆</span></span> Day4・<span class="guide-stars">★★★★★</span> Day5</p>
+    </div>
+    <div class="cycle-card cycle-card-accent-purple">
+        <div class="cycle-card-title">💴 月5万円 — 育成ラインを2つに絞る</div>
+        <p class="cycle-card-desc">定常課金(マンスリー＋デイリー毎日＋ウィークリー2種類)で約12,500円、残り<strong>約37,500円を同盟総動員＋高効率パック</strong>に。</p>
+        <p class="cycle-card-desc">例えば<strong>「黄金＋英雄装備」</strong>や<strong>「ペット＋マスター」</strong>など、2系統程度に絞って伸ばします。</p>
+        <p class="cycle-card-desc">KvKはDay2〜5すべて<span class="guide-stars">★★★★★</span>級。<strong>毎日何かを使うより、各Dayに十分な素材を残す</strong>ことが重要になります。</p>
+    </div>
+    <div class="cycle-card cycle-card-accent-gold">
+        <div class="cycle-card-title">💴 月10万円 — 高価値・入手困難素材を優先</div>
+        <p class="cycle-card-desc">高額になるほど<strong>通常資源や加速の大量購入ではなく、入手困難な素材へ課金を寄せる</strong>方が効率的。それ以外の予算は同盟総動員まで温存します。</p>
+        <p class="cycle-card-desc">優先度：<span class="guide-stars">★★★★★</span> ミスリル・専用装備素材・マスター素材・上級調教印・領主装備/宝石 ／ <span class="guide-stars">★★★★<span class="guide-star-empty">☆</span></span> 黄金・鍛造ハンマー・英雄関連</p>
+        <p class="cycle-card-desc">Day4で王国が十分リードしているなら、ミスリル等をDay5へ回す選択肢もあります。</p>
+    </div>
+</div>
+
+<RadzenText TextStyle="TextStyle.Subtitle2" class="rz-mt-3">📊 課金額別まとめ</RadzenText>
+<div class="table-wrap">
+    <table class="guide-table">
+        <thead>
+            <tr><th>月額</th><th>通常課金</th><th>同盟総動員</th><th>KvK方針</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1万円</td><td><span class="guide-stars">★★★★★</span></td><td><span class="guide-stars">★★<span class="guide-star-empty">☆☆☆</span></span></td><td>段階報酬中心</td></tr>
+            <tr><td>3万円</td><td><span class="guide-stars">★★★★<span class="guide-star-empty">☆</span></span></td><td><span class="guide-stars">★★★★<span class="guide-star-empty">☆</span></span></td><td>Day2・3・5重点</td></tr>
+            <tr><td>5万円</td><td><span class="guide-stars">★★★★<span class="guide-star-empty">☆</span></span></td><td><span class="guide-stars">★★★★★</span></td><td>5日間バランス</td></tr>
+            <tr><td>10万円</td><td><span class="guide-stars">★★★<span class="guide-star-empty">☆☆</span></span></td><td><span class="guide-stars">★★★★★</span></td><td>高価値素材＋王国順位調整</td></tr>
+        </tbody>
+    </table>
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">課金額が増えても、マンスリーを10個買えるわけではありません。金額が増えるほど「定常課金の割合」ではなく「同盟総動員・期間限定イベントに回す割合」を増やすのがポイントです。</RadzenText>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">👑 最強領主ではどうする？</RadzenText>
+<div class="guide-callout guide-callout-warn rz-mt-2">
+    最強領主で育成素材を全放出すると、<strong>2週間後のKvKで何もない</strong>状態になりがち。ランキング上位を狙わない場合は<strong>段階報酬を取れるところまで</strong>など、自分で使用上限を決めておくのがおすすめです。
 </div>
 <div class="guide-callout guide-callout-conclusion rz-mt-2">
-    <span class="guide-callout-label">結論</span>
-    <strong>「同盟総動員で買って、KvK準備で使う」</strong>が650王国の基本課金サイクルです。同盟対決や国内王城で素材を温存し、同盟総動員で購入した分とあわせてKvK準備で一気に放出するのが効率的です。
+    <span class="guide-callout-label">王国優先なら</span>
+    <strong>最強領主 ＜ KvK</strong> を基本に考えます。
 </div>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">🏰 王城・聖剣・炎竜など — 基本は「戦うイベント」</RadzenText>
+<div class="table-wrap">
+    <table class="guide-table">
+        <thead>
+            <tr><th>イベント</th><th>課金の考え方</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>🏰 国内王城戦</td><td>必要なら治療・移転・戦闘資源</td></tr>
+            <tr><td>⚔️ KvK王城戦</td><td>治療加速・資源・移転など</td></tr>
+            <tr><td>🗡️ 聖剣争奪</td><td>基本は事前準備</td></tr>
+            <tr><td>⚔️ 三盟争覇</td><td>基本は事前準備</td></tr>
+            <tr><td>🔥 炎竜の覇者</td><td>戦場用の必要分のみ</td></tr>
+            <tr><td>🏆 聖剣頂上リーグ</td><td>上位層を除き、直前の大量育成課金は基本不要</td></tr>
+        </tbody>
+    </table>
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">育成用の追加課金は、可能なら同盟総動員へ寄せます。</RadzenText>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.Subtitle1" class="rz-mt-3">⚠️ やりがちな課金ロス</RadzenText>
+<ul class="guide-checklist guide-checklist-warn">
+    <li>通常資源が足りないからその場で大量購入</li>
+    <li>課金系ミッションを取る前にパック購入</li>
+    <li>同盟総動員で買った素材をその日に全部使用</li>
+    <li>最強領主で全素材放出</li>
+    <li>KvK Day1ですべて使う</li>
+    <li>ランキング順位を追って予算上限を超える</li>
+    <li>「○○%お得」という表示だけでパックを選ぶ</li>
+</ul>
+
+<div class="guide-section-divider"></div>
+<RadzenText TextStyle="TextStyle.H4" class="rz-mt-4">⭐ 一番簡単な覚え方</RadzenText>
+<div class="cycle-flow">
+    <div class="cycle-card cycle-card-accent-teal">
+        <div class="cycle-card-title">🛒 普段</div>
+        <p class="cycle-card-desc">デイリー＋ウィークリー＋マンスリー。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-gold">
+        <div class="cycle-card-title">💰 同盟総動員</div>
+        <p class="cycle-card-desc">課金系ミッション → パック購入 → 素材保存。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <span class="cycle-flow-note">約1週間</span>
+    <div class="cycle-card cycle-card-accent-gray">
+        <div class="cycle-card-title">🔒 使わず貯める</div>
+        <p class="cycle-card-desc">KvKまで温存。</p>
+    </div>
+    <span class="cycle-flow-arrow">↓</span>
+    <div class="cycle-card cycle-card-accent-red">
+        <div class="cycle-card-title">🔥 KvK Day1〜5</div>
+        <p class="cycle-card-desc">Day1建設・Day2英雄・Day3ペット・Day4装備/訓練・Day5最終放出。</p>
+    </div>
+    <span class="cycle-flow-arrow">🔄</span>
+    <span class="cycle-flow-note">次の28日サイクルへ</span>
+</div>
+<div class="guide-callout guide-callout-conclusion rz-mt-2">
+    <span class="guide-callout-label">✅ 結論</span>
+    <strong>普段はコスパ商品／総動員で追加課金／KvKで放出。</strong>KvKでは素材を使える最初の日ではなく、<strong>最も効率よく得点できる日に合わせて使う</strong>ことで、同じ課金額でも王国への貢献度を高められます。
+</div>
+<RadzenText TextStyle="TextStyle.Body2" class="tip-desc">※価格・販売パック・KvKポイント対象は王国進行度やアップデートによって変更される場合があります。購入・使用前にゲーム内表示を必ず確認してください。</RadzenText>
