@@ -28,14 +28,24 @@
 
 .flyer-embed .flyer{
   position:relative;
-  width:1400px;
-  max-width:100%;
+  width:100%;
+  max-width:1400px;
   aspect-ratio: 1400 / 800;
   overflow:hidden;
+  container-type: inline-size;
   box-shadow: 0 30px 80px rgba(0,0,0,0.35);
 }
 .flyer-embed .flyer svg{ display:block; }
 .flyer-embed .flyer[hidden]{ display:none; }
+.flyer-embed .scale-frame{
+  position:absolute;
+  top:0;
+  left:0;
+  width:1400px;
+  height:800px;
+  transform-origin: top left;
+  transform: scale(calc(100cqw / 1400px));
+}
 
 /* ============ STANDARD (heraldic emerald) ============ */
 .flyer-embed .standard{
