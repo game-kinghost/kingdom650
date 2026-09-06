@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kingdom 650 Flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@400;500;700;800&family=Baloo+2:wght@600;700;800&family=Kiwi+Maru:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page-bg: #eceae4;
+    --page-ink: #33312c;
+    --page-line: #d8d4c8;
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; background: var(--page-bg); }
+  body{
+    min-height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 28px 16px 48px;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    color: var(--page-ink);
+  }
+  a{ text-decoration: none; }
+
+  .tabs{
+    display:flex; gap:8px; margin-bottom:22px;
+    background: #fff; border:1px solid var(--page-line); border-radius:999px; padding:4px;
+  }
+  .tab-btn{
+    font-family:"Noto Sans JP", sans-serif; font-size:14px; font-weight:700;
+    padding:9px 22px; border-radius:999px; border:none; background:transparent;
+    color:#8a867a; cursor:pointer; letter-spacing:1px;
+  }
+  .tab-btn.active{ background:#33312c; color:#f4f1e8; }
+  .tab-btn:focus-visible{ outline: 2px solid #33312c; outline-offset:2px; }
+
+  .flyer{
+    position:relative;
+    width:1400px;
+    max-width:100%;
+    aspect-ratio: 1400 / 800;
+    overflow:hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  }
+  .flyer svg{ display:block; }
+  .flyer[hidden]{ display:none; }
+
+  /* ============ STANDARD (heraldic emerald) ============ */
+  .standard{
+    --bg-0:#123324; --bg-1:#0c2419; --bg-2:#081a12;
+    --ink:#f2ecd8; --ink-dim:#a9c2ac;
+    --gold:#cda45e; --gold-light:#f0dcae; --gold-deep:#8f6a34;
+    --line: rgba(205,164,94,0.35);
+    background:
+      radial-gradient(900px 620px at 50% 0%, #1c4a34 0%, transparent 62%),
+      linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 55%, var(--bg-2) 100%);
+    color: var(--ink);
+  }
+  .standard .content{
+    position:relative; z-index:2;
+    display:flex; flex-direction:row; align-items:center; justify-content:center;
+    gap:4%; padding: 6.5% 6%; height:100%;
+  }
+  .standard .col{ position:relative; display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0; }
+  .standard .eyebrow{ letter-spacing:6px; font-size: clamp(11px,1.4vw,14px); color:var(--gold-light); font-weight:600; font-family:"Noto Sans JP",sans-serif; }
+  .standard .ribbon{ position:relative; margin-top:26px; }
+  .standard .ribbon-text{
+    font-family:"Cinzel","Shippori Mincho",serif; font-weight:700; letter-spacing:9px;
+    font-size: clamp(20px,2.6vw,26px); color:var(--bg-2); text-align:center;
+  }
+  .standard .medallion{ margin-top: 8px; }
+  .standard .num{
+    font-family:"Cinzel",serif; font-weight:900; font-size: clamp(58px,7.4vw,80px);
+    fill:url(#goldGradStd);
+  }
+  .standard .tagline{
+    font-family:"Shippori Mincho",serif; margin-top:26px; font-weight:700; text-align:center;
+    font-size: clamp(19px,2.4vw,25px); letter-spacing:1px;
+    color: var(--ink);
+    animation: stdTaglineGlow 3.6s ease-in-out infinite;
+  }
+  @keyframes stdTaglineGlow{
+    0%, 60%, 100%{ color: var(--ink); text-shadow: none; }
+    30%{ color: var(--gold-light); text-shadow: 0 0 20px rgba(240,220,174,0.9), 0 0 46px rgba(205,164,94,0.55); }
+  }
+  .standard .subtext{
+    margin-top:12px; font-size: clamp(12px,1.4vw,14px); color:var(--ink-dim);
+    text-align:center; line-height:1.9;
+  }
+  .standard .cta-banner{
+    position:relative; overflow:hidden;
+    margin-top:32px; width:100%; padding:15px 0; text-align:center;
+    background:linear-gradient(90deg, transparent, rgba(205,164,94,0.16), transparent);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .standard .cta-banner::before{
+    content:""; position:absolute; top:0; left:0; width:32%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,0.4), rgba(240,220,174,0.65), rgba(255,255,255,0.4), transparent);
+    transform: translateX(-160%) skewX(-20deg);
+    animation: stdCtaSweep 4s ease-in-out infinite;
+  }
+  .standard .cta-banner span{
+    position:relative; z-index:2; display:inline-block;
+    font-family:"Shippori Mincho",serif; font-size: clamp(16px,2.1vw,22px); font-weight:700; color:var(--gold-light); letter-spacing:2px;
+    animation: stdCtaPulse 4s ease-in-out infinite;
+  }
+  @keyframes stdCtaSweep{
+    0%{ transform: translateX(-160%) skewX(-20deg); }
+    20%{ transform: translateX(260%) skewX(-20deg); }
+    100%{ transform: translateX(260%) skewX(-20deg); }
+  }
+  @keyframes stdCtaPulse{
+    0%, 12%, 100%{ transform: scale(1); text-shadow: none; }
+    16%{ transform: scale(1.07); text-shadow: 0 0 18px rgba(240,220,174,0.85); }
+    26%{ transform: scale(1); text-shadow: none; }
+  }
+  .standard .list{ width:100%; margin-top:26px; display:flex; flex-direction:column; }
+  .standard .item{ display:flex; align-items:flex-start; gap:16px; padding:16px 4px; }
+  .standard .item + .item{ border-top:1px solid rgba(205,164,94,0.18); }
+  .standard .item .ic{ flex:none; margin-top:2px; }
+  .standard .item .t{ font-weight:700; font-size: clamp(14px,1.6vw,16px); }
+  .standard .item .d{ font-size: clamp(11px,1.25vw,13px); color:var(--ink-dim); line-height:1.7; margin-top:3px; }
+  .standard .contact{ margin-top:22px; width:100%; }
+  .standard .contact-inner{
+    border:1px solid var(--gold); border-radius:2px; padding: 4.2% 5%;
+    display:flex; flex-direction:column; align-items:center; gap:13px;
+    background:linear-gradient(180deg, rgba(205,164,94,0.08), transparent);
+    position:relative;
+  }
+  .standard .seal{ position:absolute; top:-26px; left:50%; transform:translateX(-50%); }
+  .standard .link-pill{ display:flex; align-items:center; gap:10px; padding:10px 22px; border:1px solid var(--line); border-radius:2px; }
+  .standard .hr{ width:100%; height:1px; background:var(--line); margin:2px 0; }
+  .standard .url{ font-family:"Cinzel",serif; font-size: clamp(13px,1.7vw,16px); font-weight:600; color:var(--gold-light); letter-spacing:0.5px; word-break:break-all; text-align:center; }
+  .standard .footer{ margin-top:20px; font-size:11px; letter-spacing:3px; color:#4a5f52; }
+
+  .standard .light-rays{ transform-origin: 55% 15%; animation: stdRayRotate 160s linear infinite; }
+  .standard .glow{
+    position:absolute; width:340px; height:340px; border-radius:50%;
+    background: radial-gradient(circle, rgba(240,220,174,0.45) 0%, rgba(240,220,174,0) 70%);
+    top: 96px; left:50%; transform: translateX(-50%);
+    animation: stdGlowPulse 5s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .standard .embers{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+  .standard .ember{
+    position:absolute; bottom:0; width:4px; height:4px; border-radius:50%;
+    background: var(--gold-light); opacity:0;
+    animation: stdEmberRise 7s ease-in infinite;
+  }
+  .standard .crown-bob{ animation: stdCrownBob 4.5s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+
+  @keyframes stdRayRotate{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+  @keyframes stdGlowPulse{ 0%,100%{ opacity:0.4; transform: translateX(-50%) scale(1);} 50%{ opacity:0.7; transform: translateX(-50%) scale(1.1);} }
+  @keyframes stdEmberRise{
+    0%{ transform:translateY(0) scale(1); opacity:0; }
+    12%{ opacity:0.9; }
+    88%{ opacity:0; }
+    100%{ transform:translateY(-360px) scale(0.5); opacity:0; }
+  }
+  @keyframes stdCrownBob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-4px);} }
+
+  @media (prefers-reduced-motion: reduce){
+    .standard .light-rays, .standard .glow, .standard .ember, .standard .crown-bob{ animation:none !important; }
+    .standard .shimmer-rect{ display:none; }
+    .standard .tagline{ animation:none !important; color: var(--ink) !important; text-shadow:none !important; }
+    .standard .cta-banner::before{ animation:none !important; display:none; }
+    .standard .cta-banner span{ animation:none !important; }
+  }
+
+  /* ============ MERHEN (pastel storybook) ============ */
+  .merhen{
+    --p-pink:#ffd9ec; --p-lav:#e3d8ff; --p-mint:#c9f6e6; --p-butter:#fff2bd;
+    --ink:#5b4b73; --ink-dim:#8577a0; --accent:#ff8fc0; --accent-2:#7a6bd6;
+    background: linear-gradient(160deg, var(--p-lav) 0%, var(--p-pink) 45%, var(--p-mint) 100%);
+    color: var(--ink);
+  }
+  .merhen .content{
+    position:relative; z-index:2;
+    display:flex; flex-direction:row; align-items:center; justify-content:center;
+    gap:4%; padding: 4% 6%; height:100%;
+  }
+  .merhen .col{ display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0; }
+  .merhen .eyebrow{
+    font-family:"Zen Maru Gothic",sans-serif; letter-spacing:4px; font-size: clamp(11px,1.4vw,14px);
+    color:var(--accent-2); font-weight:700; background:#fff; padding:6px 18px; border-radius:999px;
+  }
+  .merhen .hero{ position:relative; margin-top:18px; width:88%; max-width:360px; }
+  .merhen .hero svg{ display:block; width:100%; height:auto; }
+  .merhen .hero .spark{ transform-box: fill-box; transform-origin:50% 50%; animation: merhenTwinkle 2.4s ease-in-out infinite; }
+  .merhen .hero .star-ico{ transform-box: fill-box; transform-origin:50% 50%; animation: merhenFloat 3.4s ease-in-out infinite; }
+  @keyframes merhenTwinkle{ 0%,100%{ opacity:0.35; transform:scale(0.75);} 50%{ opacity:1; transform:scale(1.15);} }
+  @keyframes merhenFloat{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-6px);} }
+  .merhen .title-en{
+    font-family:"Fredoka",sans-serif; font-weight:700; font-size: clamp(34px,4.6vw,50px);
+    color:#fff; -webkit-text-stroke: 6px var(--accent-2); paint-order: stroke fill;
+    letter-spacing:1px; margin-top: 6px; text-align:center;
+  }
+  .merhen .tagline{
+    font-family:"Mochiy Pop One",sans-serif; margin-top:14px; text-align:center;
+    font-size: clamp(19px,2.5vw,25px); color:var(--accent-2); line-height:1.5;
+  }
+  .merhen .subtext{
+    font-family:"Zen Maru Gothic",sans-serif; margin-top:10px; font-size: clamp(12px,1.4vw,14px);
+    color:var(--ink-dim); text-align:center; line-height:1.9; font-weight:500;
+  }
+  .merhen .cta-banner{
+    margin-top:26px; width:100%; padding:14px 0; text-align:center; border-radius:999px;
+    background:#fff;
+    box-shadow: 0 6px 0 rgba(122,107,214,0.18);
+  }
+  .merhen .cta-banner span{ font-family:"Mochiy Pop One",sans-serif; font-size: clamp(16px,2.1vw,21px); color:var(--accent); }
+  .merhen .grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; width:100%; margin-top:26px; }
+  .merhen .card{
+    display:flex; flex-direction:column; gap:8px; padding: 6% 6%;
+    background:#fff; border-radius:22px;
+    box-shadow: 0 6px 0 rgba(122,107,214,0.14);
+  }
+  .merhen .card .t{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size: clamp(14px,1.6vw,16px); color:var(--accent-2); }
+  .merhen .card .d{ font-family:"Zen Maru Gothic",sans-serif; font-size: clamp(11px,1.25vw,12.5px); color:var(--ink-dim); line-height:1.7; }
+  .merhen .contact{ margin-top:22px; width:100%; }
+  .merhen .contact-inner{
+    border-radius:26px; padding: 4.4% 5%;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    background:#fff;
+    box-shadow: 0 8px 0 rgba(122,107,214,0.16);
+  }
+  .merhen .link-pill{
+    display:flex; align-items:center; gap:10px; padding:10px 20px; border-radius:999px;
+    background: var(--p-lav);
+  }
+  .merhen .link-pill span{ font-family:"Zen Maru Gothic",sans-serif; font-weight:700; font-size: clamp(12px,1.5vw,14px); color:var(--accent-2); }
+  .merhen .url{
+    font-family:"Fredoka",sans-serif; font-size: clamp(14px,1.8vw,17px); font-weight:600;
+    color:var(--accent-2); word-break:break-all; text-align:center;
+  }
+  .merhen .footer{ margin-top:18px; font-family:"Zen Maru Gothic",sans-serif; font-size:11px; letter-spacing:2px; color:#a598c2; }
+
+  .merhen .sparkle-field{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
+  .merhen .msprk{
+    position:absolute; bottom:-20px; width:14px; height:14px;
+    clip-path: polygon(50% 0%, 61% 35%, 100% 50%, 61% 65%, 50% 100%, 39% 65%, 0% 50%, 39% 35%);
+    animation-name: merhenRise; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
+  }
+  @keyframes merhenRise{
+    0%{ transform:translateY(0) rotate(0deg); opacity:0; }
+    10%{ opacity:1; }
+    50%{ transform:translateY(-360px) rotate(90deg); }
+    90%{ opacity:0.85; }
+    100%{ transform:translateY(-720px) rotate(180deg); opacity:0; }
+  }
+  .merhen .cta-banner{ position:relative; overflow:hidden; }
+  .merhen .cta-banner::before{
+    content:""; position:absolute; top:0; left:0; width:30%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,0.85), rgba(255,182,220,0.9), rgba(255,255,255,0.85), transparent);
+    transform: translateX(-160%) skewX(-20deg);
+    animation: merhenCtaSweep 4.2s ease-in-out infinite;
+  }
+  @keyframes merhenCtaSweep{
+    0%{ transform: translateX(-160%) skewX(-20deg); }
+    22%{ transform: translateX(260%) skewX(-20deg); }
+    100%{ transform: translateX(260%) skewX(-20deg); }
+  }
+  .merhen .cta-banner span{ position:relative; z-index:2; display:inline-block; }
+  .merhen .title-en{ animation: merhenTitlePulse 3s ease-in-out infinite; }
+  @keyframes merhenTitlePulse{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.045);} }
+  .merhen .hero .globe-bob{ transform-box: fill-box; transform-origin:50% 100%; animation: merhenGlobeBob 3.6s ease-in-out infinite; }
+  @keyframes merhenGlobeBob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-5px);} }
+
+  @media (prefers-reduced-motion: reduce){
+    .merhen .msprk, .merhen .cta-banner::before, .merhen .title-en, .merhen .hero .globe-bob{ animation:none !important; }
+  }
+
+  /* ============ BUBBLE (soap-bubble GIF version) ============ */
+  .bubblever{
+    --sky-1:#dff1ff; --sky-2:#e7e2ff; --sky-3:#dffaf1;
+    --ink:#2c3358; --ink-dim:#5b6390;
+    --accent:#5b7fd6; --accent-2:#8f6bd6;
+    --gold-1:#ffd27a; --gold-2:#f0a13a; --gold-3:#c97a1e;
+    background: linear-gradient(165deg, var(--sky-1) 0%, var(--sky-2) 55%, var(--sky-3) 100%);
+    color: var(--ink);
+  }
+  .bubblever .bubble-field{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+  .bubblever .bubble-field.fg{ z-index:5; }
+  .bubblever .bubble{
+    position:absolute; bottom:-80px; border-radius:50%;
+    background: radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0.05) 100%);
+    border:1px solid rgba(255,255,255,0.8);
+    box-shadow: inset -4px -5px 10px rgba(255,255,255,0.6), inset 4px 5px 12px rgba(255,255,255,0.18), 0 2px 8px rgba(60,50,20,0.08);
+    animation-name: bubbleRise; animation-timing-function: ease-in-out; animation-iteration-count: infinite;
+  }
+  .bubblever .bubble::after{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background: conic-gradient(from 0deg, rgba(255,180,210,0.4), rgba(180,255,220,0.36), rgba(160,210,255,0.36), rgba(210,170,255,0.4), rgba(255,180,210,0.4));
+    mix-blend-mode: screen; opacity:0.6;
+  }
+  @keyframes bubbleRise{
+    0%{ transform: translate(0,0); opacity:0; }
+    10%{ opacity:1; }
+    50%{ transform: translate(var(--drift), -430px); }
+    88%{ opacity:0.9; }
+    100%{ transform: translate(calc(var(--drift) * 1.8), -900px); opacity:0; }
+  }
+  .bubblever .bubble.sway{ animation-name: bubbleSway; }
+  @keyframes bubbleSway{
+    0%{ transform: translate(0,0); opacity:0; }
+    10%{ opacity:1; }
+    22%{ transform: translate(calc(var(--drift) * 1.2), -160px); }
+    40%{ transform: translate(calc(var(--drift) * -1.0), -320px); }
+    58%{ transform: translate(calc(var(--drift) * 1.3), -500px); }
+    76%{ transform: translate(calc(var(--drift) * -1.1), -680px); }
+    88%{ opacity:0.9; }
+    100%{ transform: translate(calc(var(--drift) * 1.0), -900px); opacity:0; }
+  }
+  .bubblever .bubble.pop{ animation-name: bubblePop; }
+  @keyframes bubblePop{
+    0%{ transform: translate(0,0) scale(1); opacity:0; filter:brightness(1); }
+    10%{ opacity:1; }
+    30%{ transform: translate(calc(var(--drift) * -0.9), calc(var(--pop-y) * 0.35)) scale(1); }
+    48%{ transform: translate(calc(var(--drift) * 1.0), calc(var(--pop-y) * 0.6)) scale(1); }
+    66%{ transform: translate(var(--drift), var(--pop-y)) scale(1); opacity:0.95; filter:brightness(1); }
+    75%{ transform: translate(var(--drift), var(--pop-y)) scale(1.6); opacity:0.55; filter:brightness(1.7); }
+    84%{ transform: translate(var(--drift), var(--pop-y)) scale(2.1); opacity:0; filter:brightness(1.7); }
+    100%{ transform: translate(var(--drift), var(--pop-y)) scale(2.1); opacity:0; filter:brightness(1); }
+  }
+
+  .bubblever .content{
+    position:relative; z-index:2;
+    display:flex; flex-direction:row; align-items:center; justify-content:center;
+    gap:5%; padding: 3% 6%; height:100%;
+  }
+  .bubblever .col{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0; }
+  .bubblever .eyebrow{
+    font-family:"Zen Maru Gothic",sans-serif; letter-spacing:4px; font-size:17px;
+    color:var(--accent-2); font-weight:700; background:rgba(255,255,255,0.75); padding:7px 20px; border-radius:999px;
+  }
+  .bubblever .badge{ position:relative; margin-top:24px; width:330px; height:330px; }
+  .bubblever .badge svg{ position:absolute; inset:0; }
+  .bubblever .badge-title{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .bubblever .badge-title .kw{ font-family:"Baloo 2",sans-serif; font-weight:700; font-size:19px; letter-spacing:5px; color:var(--accent-2); }
+  .bubblever .badge-title .num{
+    font-family:"Baloo 2",sans-serif; font-weight:800; font-size:112px; line-height:1;
+    background:linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .bubblever .tagline{
+    font-family:"Kiwi Maru",serif; margin-top:24px; text-align:center; font-weight:500;
+    font-size:40px; line-height:1.4; color:var(--ink);
+  }
+  .bubblever .subtext{
+    font-family:"Zen Maru Gothic",sans-serif; margin-top:12px; font-size:17px;
+    color:var(--ink-dim); text-align:center; font-weight:500;
+  }
+
+  .bubblever .stat-card{
+    width:100%; border-radius:22px; padding:28px 26px 30px;
+    background: linear-gradient(135deg, var(--gold-1) 0%, var(--gold-2) 55%, var(--gold-3) 100%);
+    box-shadow: 0 10px 26px rgba(201,122,30,0.35);
+  }
+  .bubblever .stat-head{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-family:"Zen Maru Gothic",sans-serif; font-weight:800; font-size:22px;
+    color:#5a3410;
+  }
+  .bubblever .stat-row{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:8px; margin-top:20px; }
+  .bubblever .stat{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .bubblever .stat .v{ font-family:"Baloo 2",sans-serif; font-weight:800; font-size:44px; color:#fff; text-shadow:0 2px 4px rgba(90,52,16,0.3); }
+  .bubblever .stat .v.win{ color:#eaffe9; }
+  .bubblever .stat .l{ font-family:"Zen Maru Gothic",sans-serif; font-size:16px; color:#5a3410; font-weight:700; }
+
+  .bubblever .cta{ margin-top:30px; width:100%; display:flex; flex-direction:column; align-items:center; gap:16px; }
+  .bubblever .cta-line{ font-family:"Kiwi Maru",serif; font-size:32px; color:var(--ink); text-align:center; font-weight:500; }
+  .bubblever .url-btn{
+    display:flex; align-items:center; gap:10px; padding:18px 30px; border-radius:999px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    box-shadow: 0 8px 0 rgba(90,80,150,0.25);
+    animation: ctaPulse 2.2s ease-in-out infinite;
+  }
+  .bubblever .url-btn span{ font-family:"Baloo 2",sans-serif; font-size:19px; font-weight:700; color:#fff; word-break:break-all; }
+  @keyframes ctaPulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.045); } }
+  .bubblever .footer{ position:absolute; left:0; right:0; bottom:16px; text-align:center; font-family:"Zen Maru Gothic",sans-serif; font-size:12px; letter-spacing:2px; color:#8a93bd; z-index:1; }
+
+  @media (prefers-reduced-motion: reduce){
+    .bubblever .bubble, .bubblever .url-btn{ animation:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tabs" role="tablist">
+  <button class="tab-btn active" data-target="standard" role="tab" aria-selected="true">スタンダード</button>
+  <button class="tab-btn" data-target="merhen" role="tab" aria-selected="false">メルヘン</button>
+  <button class="tab-btn" data-target="bubble" role="tab" aria-selected="false">バブル(GIF用)</button>
+</div>
+
+<!-- ============ STANDARD ============ -->
+<div class="flyer standard" id="standard">
+
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="goldGradStd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f0dcae"/>
+        <stop offset="55%" stop-color="#cda45e"/>
+        <stop offset="100%" stop-color="#8f6a34"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- soft diagonal light + vignette -->
+  <svg class="light-rays" width="1400" height="800" viewBox="0 0 1400 800" style="position:absolute; top:0; left:0;">
+    <polygon points="1150,0 1400,0 1400,420 900,650" fill="#e8c98a" opacity="0.06"/>
+    <polygon points="1400,0 1400,260 1220,420" fill="#e8c98a" opacity="0.06"/>
+    <polygon points="0,0 260,0 260,320 0,480" fill="#e8c98a" opacity="0.04"/>
+    <polygon points="0,800 0,480 260,620 200,800" fill="#e8c98a" opacity="0.045"/>
+    <polygon points="1400,800 1400,520 1120,660 1220,800" fill="#e8c98a" opacity="0.05"/>
+    <polygon points="560,0 760,0 700,380 620,380" fill="#e8c98a" opacity="0.035"/>
+  </svg>
+
+  <div class="content">
+    <div class="embers">
+      <span class="ember" style="left:4%;  animation-delay:0s;"></span>
+      <span class="ember" style="left:11%; animation-delay:2.2s;"></span>
+      <span class="ember" style="left:18%; animation-delay:4.1s;"></span>
+      <span class="ember" style="left:25%; animation-delay:1.1s;"></span>
+      <span class="ember" style="left:33%; animation-delay:3.3s;"></span>
+      <span class="ember" style="left:41%; animation-delay:0.6s;"></span>
+      <span class="ember" style="left:49%; animation-delay:5.0s;"></span>
+      <span class="ember" style="left:57%; animation-delay:1.8s;"></span>
+      <span class="ember" style="left:65%; animation-delay:3.9s;"></span>
+      <span class="ember" style="left:73%; animation-delay:0.4s;"></span>
+      <span class="ember" style="left:81%; animation-delay:2.7s;"></span>
+      <span class="ember" style="left:88%; animation-delay:4.6s;"></span>
+      <span class="ember" style="left:95%; animation-delay:1.4s;"></span>
+    </div>
+    <div class="col col-left">
+      <div class="glow"></div>
+
+      <div class="eyebrow">EVONY &nbsp;·&nbsp; THE KING'S RETURN</div>
+
+      <!-- ribbon banner -->
+      <svg class="ribbon" width="420" height="70" viewBox="0 0 420 70">
+        <defs>
+          <clipPath id="ribbonClip"><rect x="0" y="6" width="420" height="58"/></clipPath>
+          <linearGradient id="shimmerGradStd" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#fff" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <polygon points="0,10 40,10 20,35 40,60 0,60 20,35" fill="#8f6a34"/>
+        <polygon points="420,10 380,10 400,35 380,60 420,60 400,35" fill="#8f6a34"/>
+        <rect x="34" y="6" width="352" height="58" fill="url(#goldGradStd)"/>
+        <g clip-path="url(#ribbonClip)">
+          <rect class="shimmer-rect" x="-420" y="6" width="420" height="58" fill="url(#shimmerGradStd)" style="mix-blend-mode:screen;">
+            <animate attributeName="x" values="-420;420" dur="3.2s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+        <text x="210" y="43" text-anchor="middle" class="ribbon-text">KINGDOM</text>
+      </svg>
+
+      <!-- medallion: shield + crown + laurel -->
+      <svg class="medallion" width="440" height="403" viewBox="0 0 360 330">
+        <!-- laurel left -->
+        <g stroke="var(--gold)" stroke-width="2.4" fill="none" opacity="0.9">
+          <path d="M110 250 C 70 230, 55 190, 60 150 C 65 190, 80 210, 110 220"/>
+          <path d="M105 220 C 68 202, 55 168, 60 132"/>
+          <path d="M100 190 C 66 176, 55 148, 60 116"/>
+          <path d="M96 160 C 64 148, 56 126, 62 100"/>
+        </g>
+        <!-- laurel right -->
+        <g stroke="var(--gold)" stroke-width="2.4" fill="none" opacity="0.9">
+          <path d="M250 250 C 290 230, 305 190, 300 150 C 295 190, 280 210, 250 220"/>
+          <path d="M255 220 C 292 202, 305 168, 300 132"/>
+          <path d="M260 190 C 294 176, 305 148, 300 116"/>
+          <path d="M264 160 C 296 148, 304 126, 298 100"/>
+        </g>
+        <!-- crown -->
+        <g transform="translate(180,38)">
+          <g class="crown-bob">
+            <path d="M-42,26 L-42,4 L-22,20 L0,-14 L22,20 L42,4 L42,26 Z" fill="url(#goldGradStd)" stroke="#8f6a34" stroke-width="1.5"/>
+            <circle cx="0" cy="-14" r="4.5" fill="var(--gold-light)"/>
+          </g>
+        </g>
+        <!-- shield -->
+        <path d="M180,66 L262,90 C262,168 232,222 180,252 C128,222 98,168 98,90 Z"
+          fill="#0c2419" stroke="url(#goldGradStd)" stroke-width="4"/>
+        <path d="M180,80 L248,100 C248,166 222,212 180,238 C138,212 112,166 112,100 Z"
+          fill="none" stroke="var(--gold)" stroke-width="1.2" opacity="0.6"/>
+        <text x="180" y="178" text-anchor="middle" class="num">650</text>
+      </svg>
+    </div>
+
+    <div class="col col-right">
+      <div class="tagline">本気で戦い、本気で楽しむ。</div>
+      <div class="subtext">
+        移民・新規・復帰、すべてのガバナーを歓迎する王国。<br>
+        同盟選びも、遊び方も、自由に。
+      </div>
+
+      <div class="cta-banner"><span>移民・新規・復帰&nbsp; 大歓迎</span></div>
+
+      <div class="list">
+        <div class="item">
+          <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M12 2 L4 6 v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/><path d="M9 12 l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="t">初心者サポート</div><div class="d">幹部・古参が育成や課金相談まで手厚くフォロー。</div></div>
+        </div>
+        <div class="item">
+          <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><path d="M12 3 L14 9 L21 9 L15.5 13 L17.5 20 L12 16 L6.5 20 L8.5 13 L3 9 L10 9 Z" stroke-linejoin="round"/></svg>
+          <div><div class="t">本気のKvK</div><div class="d">事前作戦・VC連携で、勝ちにこだわる熱い戦い。</div></div>
+        </div>
+        <div class="item">
+          <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6" stroke-linecap="round"/><path d="M14.5 20c0-2.6 1.8-4.8 4-4.8s4 2.2 4 4.8" stroke-linecap="round"/></svg>
+          <div><div class="t">自由な同盟選び</div><div class="d">王国内の多彩な同盟から、自分に合う居場所を。</div></div>
+        </div>
+        <div class="item">
+          <svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M7 9h10M7 13h6" stroke-linecap="round"/></svg>
+          <div><div class="t">活気あるDiscord</div><div class="d">情報共有もイベントも、コミュニティで盛り上がる。</div></div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-inner">
+          <svg class="seal" width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="url(#goldGradStd)" stroke="#8f6a34" stroke-width="2"/><path d="M26 14 L29 22 L37 22 L30.5 27 L33 35 L26 30 L19 35 L21.5 27 L15 22 L23 22 Z" fill="#0c2419"/></svg>
+          <div style="font-size: clamp(12px,1.5vw,14px); color:var(--ink-dim); letter-spacing:1px; margin-top:14px;">気になったら、まずは覗いてみて。</div>
+          <div class="link-pill">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size: clamp(12px,1.5vw,14px); font-weight:600; color:var(--ink);">王国650 公式ページ</span>
+          </div>
+          <div class="hr"></div>
+          <div style="font-size: clamp(11px,1.3vw,13px); color:var(--ink-dim);">王国650の詳細・同盟情報はこちら</div>
+          <div class="url">https://game-kinghost.github.io/kingdom650/</div>
+        </div>
+      </div>
+
+      <div class="footer">KINGDOM #650 &nbsp;·&nbsp; EVONY: THE KING'S RETURN</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MERHEN ============ -->
+<div class="flyer merhen" id="merhen" hidden>
+
+  <!-- sparkle stars -->
+  <svg width="1400" height="800" viewBox="0 0 1400 800" style="position:absolute; top:0; left:0;">
+    <g fill="#fff">
+      <path d="M120 90 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5 Z" opacity="0.9"/>
+      <path d="M1220 140 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z" opacity="0.8"/>
+      <path d="M1280 320 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z" opacity="0.7"/>
+      <path d="M70 340 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z" opacity="0.7"/>
+      <path d="M1120 60 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 Z" opacity="0.6"/>
+      <path d="M260 250 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 Z" opacity="0.6"/>
+      <path d="M660 50 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z" opacity="0.7"/>
+      <circle cx="150" cy="180" r="3" opacity="0.7"/>
+      <circle cx="1180" cy="230" r="2.5" opacity="0.6"/>
+      <circle cx="60" cy="120" r="2" opacity="0.6"/>
+      <circle cx="1320" cy="90" r="2" opacity="0.6"/>
+      <circle cx="700" cy="140" r="2" opacity="0.5"/>
+    </g>
+  </svg>
+
+  <!-- clouds bottom -->
+  <svg width="1400" height="140" viewBox="0 0 1400 140" style="position:absolute; bottom:-20px; left:0;">
+    <g fill="#ffffff" opacity="0.75">
+      <ellipse cx="120" cy="100" rx="90" ry="34"/>
+      <ellipse cx="200" cy="80" rx="70" ry="30"/>
+      <ellipse cx="1180" cy="100" rx="100" ry="36"/>
+      <ellipse cx="1260" cy="75" rx="65" ry="28"/>
+      <ellipse cx="700" cy="112" rx="120" ry="30"/>
+    </g>
+  </svg>
+
+  <div class="content">
+    <div class="sparkle-field">
+      <span class="msprk" style="left:3%;  background:#ffb3d6; animation-duration:8.5s; animation-delay:0s;"></span>
+      <span class="msprk" style="left:11%; background:#c9a8ff; animation-duration:7.2s; animation-delay:1.4s;"></span>
+      <span class="msprk" style="left:19%; background:#a8e6c9; animation-duration:9.4s; animation-delay:2.8s;"></span>
+      <span class="msprk" style="left:28%; background:#fff3a0; animation-duration:7.8s; animation-delay:0.6s;"></span>
+      <span class="msprk" style="left:37%; background:#ffb3d6; animation-duration:8.8s; animation-delay:3.6s;"></span>
+      <span class="msprk" style="left:46%; background:#c9a8ff; animation-duration:7.5s; animation-delay:1.9s;"></span>
+      <span class="msprk" style="left:55%; background:#a8e6c9; animation-duration:9.0s; animation-delay:0.3s;"></span>
+      <span class="msprk" style="left:64%; background:#fff3a0; animation-duration:8.2s; animation-delay:2.3s;"></span>
+      <span class="msprk" style="left:73%; background:#ffb3d6; animation-duration:7.6s; animation-delay:4.1s;"></span>
+      <span class="msprk" style="left:81%; background:#c9a8ff; animation-duration:9.6s; animation-delay:1.1s;"></span>
+      <span class="msprk" style="left:89%; background:#a8e6c9; animation-duration:8.0s; animation-delay:3.0s;"></span>
+      <span class="msprk" style="left:96%; background:#fff3a0; animation-duration:7.4s; animation-delay:0.9s;"></span>
+    </div>
+    <div class="col col-left">
+      <div class="eyebrow">EVONY ・ THE KING'S RETURN</div>
+
+    <div class="hero">
+      <svg viewBox="0 0 300 200">
+        <defs>
+          <linearGradient id="rainbowGrad" x1="55" y1="0" x2="245" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ff9a9e"/>
+            <stop offset="20%" stop-color="#ffc38a"/>
+            <stop offset="40%" stop-color="#fff5a8"/>
+            <stop offset="60%" stop-color="#a8e6a3"/>
+            <stop offset="80%" stop-color="#8ec5ff"/>
+            <stop offset="100%" stop-color="#c9a8ff"/>
+          </linearGradient>
+          <radialGradient id="globeGrad" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#8fd8ff"/>
+            <stop offset="55%" stop-color="#4f9eea"/>
+            <stop offset="100%" stop-color="#2f6fc4"/>
+          </radialGradient>
+          <linearGradient id="numGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff8fc0"/>
+            <stop offset="100%" stop-color="#7a6bd6"/>
+          </linearGradient>
+        </defs>
+
+        <g class="spark" style="animation-delay:0s"><path d="M40 28 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3Z" fill="#fff3a0"/></g>
+        <g class="spark" style="animation-delay:0.7s"><path d="M262 36 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5Z" fill="#ffd7ea"/></g>
+        <g class="spark" style="animation-delay:1.3s"><path d="M150 6 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2Z" fill="#c9f0ff"/></g>
+
+        <path d="M55,95 A95,95 0 0,1 245,95" fill="none" stroke="url(#rainbowGrad)" stroke-width="18" stroke-linecap="round"/>
+
+        <g class="globe-bob">
+          <circle cx="150" cy="60" r="42" fill="url(#globeGrad)"/>
+          <path d="M120,46 Q140,36 158,48 Q172,56 165,72 Q148,84 130,74 Q114,62 120,46Z" fill="#7fd88f" opacity="0.85"/>
+          <path d="M154,64 Q170,62 176,76 Q168,86 155,82 Q147,74 154,64Z" fill="#7fd88f" opacity="0.8"/>
+          <ellipse cx="137" cy="47" rx="13" ry="6.5" fill="#ffffff" opacity="0.35"/>
+        </g>
+
+        <path class="star-ico" style="animation-delay:0s" d="M30 84 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4Z" fill="#ff9ec4"/>
+        <path class="star-ico" style="animation-delay:1s" d="M266 82 l3.5 10 10 3.5 -10 3.5 -3.5 10 -3.5 -10 -10 -3.5 10 -3.5Z" fill="#ffb3d6"/>
+
+        <text x="150" y="150" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="46" fill="url(#numGrad)">650</text>
+        <text x="150" y="176" text-anchor="middle" font-family="Mochiy Pop One, sans-serif" font-size="16" fill="#7a6bd6">650王国へようこそ♪</text>
+      </svg>
+    </div>
+
+    <div class="title-en">KINGDOM #650</div>
+    <div class="tagline">きらきら王国、はじまるよ♪</div>
+    <div class="subtext">
+      移民さんも、新規さんも、復帰さんもみんな歓迎。<br>
+      じぶんに合った同盟が、きっと見つかる。
+    </div>
+    </div>
+
+    <div class="col col-right">
+    <div class="cta-banner"><span>移民・新規・復帰&nbsp;大かんげい♡</span></div>
+
+    <div class="grid">
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 8.5 2.5 5 6 5c2 0 3.3 1 4 2.2C10.7 6 12 5 14 5c3.5 0 5 3.5 3.5 7-2.5 4.5-9.5 9-9.5 9Z"/></svg>
+        <div class="t">やさしい先輩サポート</div>
+        <div class="d">装備やイベントの相談も、みんなでフォローするよ。</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.8"><path d="M12 3 L14 9 L21 9 L15.5 13 L17.5 20 L12 16 L6.5 20 L8.5 13 L3 9 L10 9 Z" stroke-linejoin="round"/></svg>
+        <div class="t">みんなでワイワイ</div>
+        <div class="d">KvKもお祭り気分で、わいわい参加できるよ。</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6" stroke-linecap="round"/><path d="M14.5 20c0-2.6 1.8-4.8 4-4.8s4 2.2 4 4.8" stroke-linecap="round"/></svg>
+        <div class="t">じぶんらしい同盟えらび</div>
+        <div class="d">のんびり派も、がんばる派も、どっちも歓迎。</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="1.8"><rect x="3" y="5" width="18" height="13" rx="4"/><path d="M7 9h10M7 13h6" stroke-linecap="round"/></svg>
+        <div class="t">にぎやかDiscord</div>
+        <div class="d">おしゃべりも情報交換も、毎日たのしいよ。</div>
+      </div>
+    </div>
+
+    <div class="contact">
+      <div class="contact-inner">
+        <div style="font-family:'Zen Maru Gothic',sans-serif; font-size: clamp(12px,1.5vw,14px); color:var(--ink-dim); font-weight:500;">気になったら、まずは覗いてみてね♪</div>
+        <div class="link-pill">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>王国650 公式ページ</span>
+        </div>
+        <div style="font-family:'Zen Maru Gothic',sans-serif; font-size: clamp(11px,1.3vw,13px); color:var(--ink-dim); margin-top:4px;">王国650の詳細・同盟情報はこちら</div>
+        <div class="url">https://game-kinghost.github.io/kingdom650/</div>
+      </div>
+    </div>
+
+    <div class="footer">KINGDOM #650 ・ EVONY: THE KING'S RETURN</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BUBBLE (soap-bubble GIF version) ============ -->
+<div class="flyer bubblever" id="bubble" hidden>
+
+  <div class="bubble-field">
+    <div class="bubble" style="left:6%;  width:46px; height:46px; --drift:24px;  animation-duration:9.5s;  animation-delay:-2.1s;"></div>
+    <div class="bubble sway" style="left:14%; width:44px; height:44px; --drift:-30px; animation-duration:12s;   animation-delay:-6.4s;"></div>
+    <div class="bubble" style="left:22%; width:42px; height:42px; --drift:18px;  animation-duration:8s;    animation-delay:-3.7s;"></div>
+    <div class="bubble sway" style="left:30%; width:60px; height:60px; --drift:-40px; animation-duration:14s;   animation-delay:-9.2s;"></div>
+    <div class="bubble sway" style="left:40%; width:42px; height:42px; --drift:20px;  animation-duration:10s;   animation-delay:-1.3s;"></div>
+    <div class="bubble" style="left:48%; width:42px; height:42px; --drift:-16px; animation-duration:8.6s;  animation-delay:-5.9s;"></div>
+    <div class="bubble sway" style="left:58%; width:50px; height:50px; --drift:34px;  animation-duration:13s;   animation-delay:-4.4s;"></div>
+    <div class="bubble" style="left:66%; width:44px; height:44px; --drift:-22px; animation-duration:9s;    animation-delay:-7.8s;"></div>
+    <div class="bubble sway" style="left:74%; width:46px; height:46px; --drift:26px;  animation-duration:11.5s; animation-delay:-2.9s;"></div>
+    <div class="bubble" style="left:82%; width:42px; height:42px; --drift:14px;  animation-duration:7.5s;  animation-delay:-6.9s;"></div>
+    <div class="bubble sway" style="left:90%; width:42px; height:42px; --drift:-24px; animation-duration:10.5s; animation-delay:-3.2s;"></div>
+    <div class="bubble sway" style="left:2%;  width:70px; height:70px; --drift:36px;  animation-duration:15s;   animation-delay:-11s;"></div>
+    <div class="bubble" style="left:52%; width:42px; height:42px; --drift:10px;  animation-duration:7s;    animation-delay:-0.6s;"></div>
+    <div class="bubble" style="left:36%; width:46px; height:46px; --drift:-18px; animation-duration:9.2s;  animation-delay:-8.1s;"></div>
+    <div class="bubble sway" style="left:86%; width:46px; height:46px; --drift:-28px; animation-duration:12.5s; animation-delay:-1.8s;"></div>
+    <div class="bubble sway" style="left:18%; width:46px; height:46px; --drift:22px;  animation-duration:11s;   animation-delay:-4.9s;"></div>
+    <div class="bubble sway" style="left:8%;  width:100px; height:100px; --drift:40px;  animation-duration:16s; animation-delay:-7s;"></div>
+    <div class="bubble sway" style="left:45%; width:120px; height:120px; --drift:-50px; animation-duration:18s; animation-delay:-3s;"></div>
+    <div class="bubble sway" style="left:70%; width:90px;  height:90px;  --drift:30px;  animation-duration:15s; animation-delay:-10s;"></div>
+    <div class="bubble sway" style="left:95%; width:110px; height:110px; --drift:-35px; animation-duration:17s; animation-delay:-1s;"></div>
+    <div class="bubble" style="left:10%; width:42px; height:42px; --drift:12px;  animation-duration:7s;   animation-delay:-0.2s;"></div>
+    <div class="bubble" style="left:28%; width:42px; height:42px; --drift:-10px; animation-duration:6.5s; animation-delay:-1.1s;"></div>
+    <div class="bubble" style="left:44%; width:44px; height:44px; --drift:14px;  animation-duration:7.8s; animation-delay:-0.4s;"></div>
+    <div class="bubble" style="left:62%; width:42px; height:42px; --drift:-12px; animation-duration:6.8s; animation-delay:-2.0s;"></div>
+    <div class="bubble" style="left:78%; width:46px; height:46px; --drift:16px;  animation-duration:8.2s; animation-delay:-0.8s;"></div>
+    <div class="bubble" style="left:92%; width:42px; height:42px; --drift:-14px; animation-duration:7.2s; animation-delay:-1.6s;"></div>
+    <div class="bubble" style="left:5%;  width:46px; height:46px; --drift:18px;  animation-duration:8.6s; animation-delay:-3.4s;"></div>
+    <div class="bubble" style="left:35%; width:42px; height:42px; --drift:-13px; animation-duration:7.4s; animation-delay:-2.7s;"></div>
+    <div class="bubble" style="left:55%; width:44px; height:44px; --drift:15px;  animation-duration:8.0s; animation-delay:-0.1s;"></div>
+    <div class="bubble" style="left:85%; width:42px; height:42px; --drift:-16px; animation-duration:7.6s; animation-delay:-1.3s;"></div>
+  </div>
+
+  <div class="content">
+    <div class="col col-left">
+      <div class="eyebrow">EVONY ・ THE KING'S RETURN</div>
+
+      <div class="badge">
+        <svg viewBox="0 0 340 340">
+          <defs>
+            <radialGradient id="bubbleFill" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+              <stop offset="45%" stop-color="#eaf3ff" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#cfe0ff" stop-opacity="0.35"/>
+            </radialGradient>
+            <linearGradient id="bubbleRing" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffb6d9"/>
+              <stop offset="35%" stop-color="#b9ffdb"/>
+              <stop offset="65%" stop-color="#b9d8ff"/>
+              <stop offset="100%" stop-color="#d9b9ff"/>
+            </linearGradient>
+          </defs>
+          <circle cx="170" cy="170" r="150" fill="url(#bubbleFill)" stroke="url(#bubbleRing)" stroke-width="4"/>
+          <ellipse cx="120" cy="112" rx="34" ry="20" fill="#ffffff" opacity="0.55"/>
+        </svg>
+        <div class="badge-title">
+          <div class="kw">KINGDOM</div>
+          <div class="num">650</div>
+        </div>
+      </div>
+
+      <div class="tagline">理由はいらない。<br>とにかく、650へ。</div>
+      <div class="subtext">移民も、新規も、復帰も。心から歓迎します。</div>
+    </div>
+
+    <div class="col col-right">
+      <div class="stat-card">
+        <div class="stat-head">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M3 8 L7 11 L12 4 L17 11 L21 8 L19 18 L5 18 Z"/></svg>
+          直近のKvK戦績
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="v">12</div><div class="l">総戦数</div></div>
+          <div class="stat"><div class="v win">9</div><div class="l">勝利</div></div>
+          <div class="stat"><div class="v">3</div><div class="l">敗北</div></div>
+          <div class="stat"><div class="v">75%</div><div class="l">勝率</div></div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="cta-line">650王国で待ってるよ</div>
+        <div class="url-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>https://game-kinghost.github.io/kingdom650/</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bubble-field fg">
+      <div class="bubble pop" style="left:24%; width:44px; height:44px; --drift:14px;  --pop-y:-500px; animation-duration:3.4s; animation-delay:-0.4s;"></div>
+      <div class="bubble pop" style="left:30%; width:46px; height:46px; --drift:-16px; --pop-y:-520px; animation-duration:4.0s; animation-delay:-1.6s;"></div>
+      <div class="bubble pop" style="left:20%; width:42px; height:42px; --drift:10px;  --pop-y:-480px; animation-duration:3.0s; animation-delay:-1.0s;"></div>
+      <div class="bubble pop" style="left:70%; width:40px; height:40px; --drift:16px;  --pop-y:-510px; animation-duration:3.6s; animation-delay:-0.2s;"></div>
+      <div class="bubble pop" style="left:76%; width:42px; height:42px; --drift:-14px; --pop-y:-490px; animation-duration:3.2s; animation-delay:-1.4s;"></div>
+      <div class="bubble pop" style="left:82%; width:50px; height:50px; --drift:18px;  --pop-y:-530px; animation-duration:4.4s; animation-delay:-2.4s;"></div>
+      <div class="bubble" style="left:26%; width:42px; height:42px; --drift:8px;  animation-duration:8s;   animation-delay:-6s;"></div>
+      <div class="bubble" style="left:73%; width:44px; height:44px; --drift:-10px; animation-duration:7.4s; animation-delay:-2s;"></div>
+      <div class="bubble" style="left:22%; width:42px; height:42px; --drift:10px;  animation-duration:7.6s; animation-delay:-2.3s;"></div>
+      <div class="bubble sway" style="left:33%; width:46px; height:46px; --drift:-14px; animation-duration:9s;   animation-delay:-0.5s;"></div>
+      <div class="bubble" style="left:72%; width:44px; height:44px; --drift:12px;  animation-duration:8.4s; animation-delay:-1.7s;"></div>
+      <div class="bubble sway" style="left:80%; width:44px; height:44px; --drift:-16px; animation-duration:9.4s; animation-delay:-3.6s;"></div>
+      <div class="bubble" style="left:28%; width:36px; height:36px; --drift:12px;  animation-duration:8.8s; animation-delay:-4.2s;"></div>
+      <div class="bubble" style="left:78%; width:38px; height:38px; --drift:-14px; animation-duration:8.6s; animation-delay:-1.9s;"></div>
+      <div class="bubble sway" style="left:24%; width:44px; height:44px; --drift:-16px; animation-duration:9.6s; animation-delay:-2.8s;"></div>
+    </div>
+
+    <div class="footer">KINGDOM #650 ・ EVONY: THE KING'S RETURN</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.tab-btn');
+  var panels = { standard: document.getElementById('standard'), merhen: document.getElementById('merhen'), bubble: document.getElementById('bubble') };
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      var target = btn.getAttribute('data-target');
+      Object.keys(panels).forEach(function(key){ panels[key].hidden = (key !== target); });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

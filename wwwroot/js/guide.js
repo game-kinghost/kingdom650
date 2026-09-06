@@ -70,9 +70,9 @@ document.addEventListener('click', function (e) {
     }
 
     var INTENSITIES = [
-        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 1.5 },
-        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 1.75 },
-        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 2 }
+        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 1 },
+        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 1.15 },
+        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 1.3 }
     ];
 
     function paint(bubble) {
