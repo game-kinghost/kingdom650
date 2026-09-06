@@ -70,9 +70,9 @@ document.addEventListener('click', function (e) {
     }
 
     var INTENSITIES = [
-        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 2.5 },
-        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 3 },
-        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 3.5 }
+        { inner: 0.18, outer: 0.07, border: 0.18, borderWidth: 1.5 },
+        { inner: 0.32, outer: 0.14, border: 0.4, borderWidth: 1.75 },
+        { inner: 0.55, outer: 0.28, border: 0.75, borderWidth: 2 }
     ];
 
     function paint(bubble) {
@@ -83,6 +83,7 @@ document.addEventListener('click', function (e) {
         bubble.el.style.height = bubble.r * 2 + 'px';
         bubble.el.style.background = 'radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.45) 30%, rgba(' + rgb + ',' + tone.inner + ') 65%, rgba(' + rgb + ',' + tone.outer + ') 100%)';
         bubble.el.style.border = tone.borderWidth + 'px solid rgba(' + rgb + ',' + tone.border + ')';
+        bubble.el.style.boxShadow = 'inset 0 0 10px rgba(255,255,255,0.6), 0 3px 12px rgba(' + rgb + ',0.35)';
     }
 
     function place(bubble) {
@@ -90,10 +91,10 @@ document.addEventListener('click', function (e) {
     }
 
     function respawn(bubble, w, h) {
-        bubble.r = rand(11, 30);
+        bubble.r = Math.random() < 0.2 ? rand(32, 46) : rand(11, 30);
         bubble.color = COLORS[Math.floor(rand(0, COLORS.length))];
         var toneRoll = Math.random();
-        bubble.tone = toneRoll < 0.5 ? INTENSITIES[0] : (toneRoll < 0.8 ? INTENSITIES[1] : INTENSITIES[2]);
+        bubble.tone = toneRoll < 0.25 ? INTENSITIES[0] : (toneRoll < 0.6 ? INTENSITIES[1] : INTENSITIES[2]);
         bubble.x = rand(bubble.r, Math.max(bubble.r + 1, w - bubble.r));
         bubble.y = rand(bubble.r, Math.max(bubble.r + 1, h - bubble.r));
         var speed = rand(12, 26);
@@ -210,10 +211,12 @@ document.addEventListener('click', function (e) {
         if (!container || container.dataset.sparklesInit) return;
         container.dataset.sparklesInit = '1';
 
+        var GLYPHS = ['✦', '✦', '✦', '❁', '❋'];
+
         for (var i = 0; i < SPARKLE_COUNT; i++) {
             var el = document.createElement('span');
             el.className = 'sparkle';
-            el.textContent = '✦';
+            el.textContent = GLYPHS[Math.floor(rand(0, GLYPHS.length))];
             el.style.top = rand(4, 90) + '%';
             el.style.left = rand(3, 95) + '%';
             el.style.fontSize = rand(0.6, 2.1).toFixed(2) + 'rem';

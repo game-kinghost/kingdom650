@@ -293,16 +293,78 @@ code {
     border-bottom: 3px solid #d98c1f;
 }
 
+.hero-banner-wrap {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+    .hero-banner-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -14px;
+        z-index: 0;
+        border-radius: 30px;
+        background: linear-gradient(120deg, rgba(255, 173, 224, 0.6) 0%, rgba(173, 216, 255, 0.55) 30%, rgba(186, 255, 214, 0.5) 60%, rgba(255, 214, 153, 0.55) 100%);
+        filter: blur(18px);
+    }
+
 .hero-banner {
     position: relative;
+    z-index: 1;
     width: 100%;
     min-height: 220px;
     overflow: hidden;
     background: radial-gradient(120% 140% at 50% 12%, #fffdf7 0%, #fff3da 45%, #fbe2ac 100%);
     border-radius: 18px;
-    margin-bottom: 1.5rem;
     box-sizing: border-box;
     box-shadow: 0 10px 28px rgba(163, 93, 0, 0.12), inset 0 0 0 1px rgba(217, 140, 31, 0.16);
+}
+
+.hero-deco {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-deco-cloud-1 {
+    bottom: -18px;
+    left: -10px;
+    width: 160px;
+    height: 90px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 236, 210, 0.5) 60%, rgba(255, 236, 210, 0) 100%);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.hero-deco-cloud-2 {
+    bottom: -24px;
+    right: -14px;
+    width: 190px;
+    height: 100px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 236, 210, 0.5) 60%, rgba(255, 236, 210, 0) 100%);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.hero-deco-flower-1 {
+    bottom: 14%;
+    left: 4%;
+    font-size: 1.1rem;
+    color: rgba(255, 182, 213, 0.85);
+}
+
+.hero-deco-flower-2 {
+    bottom: 22%;
+    left: 9%;
+    font-size: 0.8rem;
+    color: rgba(255, 214, 153, 0.85);
+}
+
+.hero-deco-flower-3 {
+    bottom: 16%;
+    right: 6%;
+    font-size: 1rem;
+    color: rgba(186, 255, 214, 0.85);
 }
 
 .hero-checker {
@@ -355,6 +417,38 @@ code {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.35) 62%, rgba(255, 255, 255, 0) 85%);
     transform: translate(-50%, -50%);
     pointer-events: none;
+}
+
+.hero-trails {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hero-trail {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 1 16;
+    opacity: 0.8;
+}
+
+.hero-trail-1 {
+    stroke: rgba(255, 255, 255, 0.85);
+    animation: hero-trail-move 7s linear infinite;
+}
+
+.hero-trail-2 {
+    stroke: rgba(255, 209, 102, 0.85);
+    animation: hero-trail-move 9s linear infinite reverse;
+}
+
+@keyframes hero-trail-move {
+    to {
+        stroke-dashoffset: -340;
+    }
 }
 
 .hero-marquee {
@@ -466,12 +560,12 @@ code {
     }
 
 .mascot-shadow {
-    width: 70px;
-    height: 12px;
-    margin-top: -6px;
-    background: rgba(0, 0, 0, 0.18);
+    width: 90px;
+    height: 16px;
+    margin-top: -8px;
+    background: rgba(163, 93, 0, 0.28);
     border-radius: 50%;
-    filter: blur(2px);
+    filter: blur(3px);
 }
 
 .mascot-sprite {
