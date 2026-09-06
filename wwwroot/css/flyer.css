@@ -26,17 +26,29 @@
 .flyer-embed .tab-btn.active{ background:#33312c; color:#f4f1e8; }
 .flyer-embed .tab-btn:focus-visible{ outline: 2px solid #33312c; outline-offset:2px; }
 
-.flyer-embed .flyer{
+.flyer-embed .flyer-stage{
   position:relative;
   width:100%;
   max-width:1400px;
   aspect-ratio: 1400 / 800;
+}
+.flyer-embed .flyer{
+  position:absolute;
+  inset:0;
   overflow:hidden;
   container-type: inline-size;
   box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+}
+.flyer-embed .flyer.is-active{
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+  z-index:1;
 }
 .flyer-embed .flyer svg{ display:block; }
-.flyer-embed .flyer[hidden]{ display:none; }
 .flyer-embed .scale-frame{
   position:absolute;
   top:0;

@@ -38,16 +38,38 @@
   .tab-btn.active{ background:#33312c; color:#f4f1e8; }
   .tab-btn:focus-visible{ outline: 2px solid #33312c; outline-offset:2px; }
 
-  .flyer{
+  .flyer-stage{
     position:relative;
     width:1400px;
     max-width:100%;
     aspect-ratio: 1400 / 800;
+  }
+  .flyer{
+    position:absolute;
+    inset:0;
     overflow:hidden;
+    container-type: inline-size;
     box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+  }
+  .flyer.is-active{
+    visibility:visible;
+    opacity:1;
+    pointer-events:auto;
+    z-index:1;
   }
   .flyer svg{ display:block; }
-  .flyer[hidden]{ display:none; }
+  .scale-frame{
+    position:absolute;
+    top:0;
+    left:0;
+    width:1400px;
+    height:800px;
+    transform-origin: top left;
+    transform: scale(calc(100cqw / 1400px));
+  }
 
   /* ============ STANDARD (heraldic emerald) ============ */
   .standard{
@@ -413,8 +435,10 @@
   <button class="tab-btn" data-target="bubble" role="tab" aria-selected="false">バブル</button>
 </div>
 
+<div class="flyer-stage">
+
 <!-- ============ STANDARD ============ -->
-<div class="flyer standard" id="standard">
+<div class="flyer standard is-active" id="standard">
 <div class="scale-frame">
 
   <svg width="0" height="0">
@@ -560,7 +584,7 @@
 </div>
 
 <!-- ============ MERHEN ============ -->
-<div class="flyer merhen" id="merhen" hidden>
+<div class="flyer merhen" id="merhen" aria-hidden="true">
 <div class="scale-frame">
 
   <!-- sparkle stars -->
@@ -706,7 +730,7 @@
 </div>
 
 <!-- ============ BUBBLE (soap-bubble GIF version) ============ -->
-<div class="flyer bubblever" id="bubble" hidden>
+<div class="flyer bubblever" id="bubble" aria-hidden="true">
 <div class="scale-frame">
 
   <div class="bubble-field">
@@ -820,6 +844,8 @@
 </div>
 </div>
 
+</div>
+
 <script>
 (function(){
   var buttons = document.querySelectorAll('.tab-btn');
@@ -829,7 +855,11 @@
       buttons.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
       btn.classList.add('active'); btn.setAttribute('aria-selected','true');
       var target = btn.getAttribute('data-target');
-      Object.keys(panels).forEach(function(key){ panels[key].hidden = (key !== target); });
+      Object.keys(panels).forEach(function(key){
+        var isActive = key === target;
+        panels[key].classList.toggle('is-active', isActive);
+        panels[key].setAttribute('aria-hidden', String(!isActive));
+      });
     });
   });
 })();

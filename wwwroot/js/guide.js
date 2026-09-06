@@ -67,7 +67,9 @@ document.addEventListener('click', function (e) {
 
         var target = btn.getAttribute('data-target');
         flyerRoot.querySelectorAll('.flyer').forEach(function (panel) {
-            panel.hidden = (panel.id !== target);
+            var isActive = panel.id === target;
+            panel.classList.toggle('is-active', isActive);
+            panel.setAttribute('aria-hidden', String(!isActive));
         });
     }
 
