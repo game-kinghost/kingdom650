@@ -53,6 +53,27 @@ document.addEventListener('click', function (e) {
     history.replaceState(null, '', '#' + id);
 });
 
+document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.flyer-embed .tab-btn');
+    if (!btn) return;
+
+    var tabs = btn.closest('.tabs');
+    var flyerRoot = btn.closest('.flyer-embed');
+    if (!tabs || !flyerRoot) return;
+
+    tabs.querySelectorAll('.tab-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    var target = btn.getAttribute('data-target');
+    flyerRoot.querySelectorAll('.flyer').forEach(function (panel) {
+        panel.hidden = (panel.id !== target);
+    });
+});
+
 (function () {
     var BUBBLE_COUNT = 32;
     var COLORS = [
