@@ -1,7 +1,3 @@
-/* 100vw doesn't subtract the scrollbar, so the full-bleed .flyer-embed below
-   overflows by a few px on pages with a vertical scrollbar; clip it here. */
-body{ overflow-x: hidden; }
-
 .flyer-embed{
   --page-bg: #eceae4;
   --page-ink: #33312c;
@@ -14,12 +10,6 @@ body{ overflow-x: hidden; }
   color: var(--page-ink);
   background: var(--page-bg);
   border-radius: 18px;
-  position: relative;
-  left: 50%;
-  width: 100vw;
-  max-width: 1600px;
-  transform: translateX(-50%);
-  box-sizing: border-box;
 }
 .flyer-embed *{ box-sizing: border-box; }
 .flyer-embed a{ text-decoration: none; }
