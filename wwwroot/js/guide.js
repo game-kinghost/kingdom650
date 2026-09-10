@@ -53,6 +53,27 @@ document.addEventListener('click', function (e) {
     history.replaceState(null, '', '#' + id);
 });
 
+document.addEventListener('click', function (e) {
+    var link = e.target.closest('.nav-item-dropdown > a');
+    var dropdown = link && link.parentElement;
+    var hasSubmenu = dropdown && dropdown.querySelector(':scope > .nav-submenu');
+
+    if (hasSubmenu && !dropdown.classList.contains('open')) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(function (d) {
+            if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.add('open');
+        return;
+    }
+
+    if (!e.target.closest('.nav-item-dropdown')) {
+        document.querySelectorAll('.nav-item-dropdown.open').forEach(function (d) {
+            d.classList.remove('open');
+        });
+    }
+});
+
 (function () {
     var FLYER_CYCLE_MS = 5000;
     var flyerCycleTimers = new WeakMap();
