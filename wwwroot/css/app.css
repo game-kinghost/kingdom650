@@ -1346,6 +1346,31 @@ code {
     filter: drop-shadow(0 6px 14px rgba(163, 93, 0, 0.35));
 }
 
+.kvk-crest-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.kvk-sparkle {
+    position: absolute;
+    font-size: 1.1rem;
+    line-height: 1;
+    pointer-events: none;
+    animation: kvk-sparkle-twinkle 2.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(255, 224, 130, 0.9));
+}
+
+@keyframes kvk-sparkle-twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.4) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(15deg);
+    }
+}
+
 .kvk-hero .kvk-stat-band {
     margin: 0;
     flex: 1 1 320px;
